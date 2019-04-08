@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GruopManageVC">
+            <connections>
+                <outlet property="doneButton" destination="hlU-3a-Nf2" id="0Yt-ez-hcK"/>
+                <outlet property="tableview" destination="tM8-hb-9zI" id="5e3-aj-DcK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tM8-hb-9zI">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="cmy-nD-h8N"/>
+                        <outlet property="delegate" destination="-1" id="jPK-At-fW5"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlU-3a-Nf2">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.40016730589999999" blue="0.35851170409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="3On-3u-VFj"/>
+                    </constraints>
+                    <state key="normal" title="添加分组">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="addGroup:" destination="-1" eventType="touchUpInside" id="Gal-VX-icI"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hlU-3a-Nf2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CSM-NZ-6Pg"/>
+                <constraint firstAttribute="trailing" secondItem="hlU-3a-Nf2" secondAttribute="trailing" id="Ohk-t6-cZr"/>
+                <constraint firstItem="tM8-hb-9zI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="R8A-6G-2GC"/>
+                <constraint firstAttribute="bottom" secondItem="hlU-3a-Nf2" secondAttribute="bottom" id="U17-QE-WSG"/>
+                <constraint firstItem="hlU-3a-Nf2" firstAttribute="top" secondItem="tM8-hb-9zI" secondAttribute="bottom" constant="9" id="ZlX-OY-Hig"/>
+                <constraint firstAttribute="trailing" secondItem="tM8-hb-9zI" secondAttribute="trailing" id="paO-rj-rMs"/>
+                <constraint firstItem="tM8-hb-9zI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yth-Sy-wBd"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="141.5"/>
+        </view>
+    </objects>
+</document>

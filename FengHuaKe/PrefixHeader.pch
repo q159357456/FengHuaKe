@@ -1,0 +1,197 @@
+//
+//  PrefixHeader.pch
+//  FengHuaKe
+//
+//  Created by 工博计算机 on 18/3/7.
+//  Copyright © 2018年 gongbo. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#define EMOAppKEY @"1126171121115912#tourist"
+#define APNsCertName @"fengDis"//@"qingenFengHuaKe-devolop"
+#define PAPATH @"http://121.201.28.179:8866/api"
+//#define PAPATH @"http://192.168.88.200:8866/api"
+#define  PLACEHOLDER @"placeHolder"
+
+#define ICONPL @"EaseUIResource.bundle/user"
+
+#define DefineWeakSelf __weak __typeof(self) weakSelf = self
+
+
+#define userDefault  [NSUserDefaults standardUserDefaults]
+#define Mytoken [[NSUserDefaults standardUserDefaults]objectForKey:@"token"]
+#define UniqUserID  [userDefault objectForKey:@"uniqUserID"]
+#define userNickNmae  [userDefault objectForKey:@"usernikeName"]
+#define userIcon  [userDefault objectForKey:@"userIcon"]
+#define userType  [userDefault objectForKey:@"usertype"]
+#define userCity  [userDefault objectForKey:@"usercity"]
+
+
+
+
+#define DEMO_CALL 1
+#define DAY @"day"
+#define NIGHT @"night"
+#define SDColor(r, g, b, a) [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:a]
+#define Global_tintColor [UIColor colorWithRed:0 green:(190 / 255.0) blue:(12 / 255.0) alpha:1]
+#define Global_mainBackgroundColor SDColor(248, 248, 248, 1)
+
+#define TimeLineCellHighlightedColor [UIColor colorWithRed:92/255.0 green:140/255.0 blue:193/255.0 alpha:1.0]
+
+#define SCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+
+#define STATES_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
+
+#define NAV_HEIGHT 64.0f
+#define TAB_HEIGHT 49.0f
+
+
+// ***** 屏幕宽高 *****//
+#define WIDTH_PRO(X) (X)*(SCREEN_WIDTH/375)
+#define HEIGHT_PRO(Y) (Y)*(SCREEN_HEIGHT/667)
+
+//同意群邀请
+#define AgreeGroupInvate @"AgreeGroupInvate"
+//会员类型
+#define MEMBERTYPE @"M"
+
+//返回值
+#define ReturnValue [obj[@"sysmodel"][@"blresult"] integerValue]
+
+#define ErrorValue obj[@"sysmodel"][@"strresult"]
+
+
+
+//颜色
+#define RGBA(r, g, b, a)                    [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r, g, b)                        RGBA(r, g, b, 1.0f)
+#define defaultColor1 RGB(248,248,248)
+#define ZWHCOLOR(Str) [ZSColor hexStringToColor:(Str)]
+
+#define textDefault RGB(77, 77, 77)
+// ***** 主色 *****//
+#define MAINCOLOR ZWHCOLOR(@"#4BA4FF")
+// ***** 分割线颜色 *****//
+#define LINECOLOR [ZSColor hexStringToColor:@"f3f3f3"]
+// ***** 背景颜色 *****//
+#define BACKCOLOR [ZSColor hexStringToColor:@"f0f0f0"]
+// ***** 深灰 *****//
+#define DEEPLINE [ZSColor hexStringToColor:@"#808080"]
+//***** 灰色背景颜色 *****//
+#define GRAYBACKCOLOR RGBALPHA(246, 246, 246, 1)
+//***** 随机颜色 *****//
+#define randomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0f]
+
+// 弱引用
+#define MJWeakSelf __weak typeof(self) weakSelf = self;
+
+//字体
+#define HTFont(s) [UIFont fontWithName:@"Helvetica-Light" size:s / 2 * MULPITLE]
+#define MULPITLE [[UIScreen mainScreen] bounds].size.width / 375
+
+//字体
+#define ZWHFont(s) [UIFont systemFontOfSize:s* MULPITLE]
+
+//导航栏高度
+#define ZWHNavHeight (ISIphoneX==0?64.0f:88.0f)
+
+//判读您是否Iphonex
+#define ISIphoneX [HttpTool isNavX]
+
+// ***** cell分割线 *****//
+#define CellLine     UIView *butomLineZWH = [[UIView alloc]init];\
+butomLineZWH.backgroundColor = LINECOLOR; \
+[self.contentView addSubview:butomLineZWH]; \
+[butomLineZWH mas_makeConstraints:^(MASConstraintMaker *make) {\
+make.left.right.bottom.equalTo(self.contentView); \
+make.height.mas_equalTo(1);\
+}];\
+
+// ***** 加载框 *****//
+#define ShowProgress [SVProgressHUD show];
+
+// ***** 正在加载提示 不允许用户其他操作 *****//
+#define NotAllowUser [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+
+
+//屏幕宽高
+#define ScreenWidth CGRectGetWidth([UIScreen mainScreen].bounds)
+#define ScreenHeight CGRectGetHeight([UIScreen mainScreen].bounds)
+//
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+// 注册通知
+#define NOTIFY_ADD(_noParamsFunc, _notifyName)  [[NSNotificationCenter defaultCenter] \
+addObserver:self \
+selector:@selector(_noParamsFunc) \
+name:_notifyName \
+object:nil];
+
+// 发送通知
+#define NOTIFY_POST(_notifyName)   [[NSNotificationCenter defaultCenter] postNotificationName:_notifyName object:nil];
+
+// 移除通知
+#define NOTIFY_REMOVE(_notifyName) [[NSNotificationCenter defaultCenter] removeObserver:self name:_notifyName object:nil];
+#define NOTIFY_REMOVEALL [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+
+//通知
+#define KNOTIFICATION_LOGINCHANGE @"loginStateChange"
+#define KNOTIFICATIONNAME_DELETEALLMESSAGE @"RemoveAllMessages"
+#define NOTIFICATION_SLIDERTIT @"setSliderTitles"
+
+#define NOTIFICATION_ALIPAY @"zwhalipay"
+#define NOTIFICATION_ORDERLIST @"zwhorderlist"
+#define NOTIFICATION_SHOPCAR @"zwhshopcarrefresh"
+
+#define NOTIFICATION_GETINSURANCE @"zwhgetinsurance"
+
+#define NOTIF_AFTER @"zwhafterlist"
+#define NOTIF_SHOW @"refreshFriendshow"
+#define NOTIF_PHOTO @"refreshPhoto"
+#define NOTIF_PICTURE @"zwhRefreshPicture"
+
+
+
+
+
+#define CHATVIEWBACKGROUNDCOLOR [UIColor colorWithRed:0.936 green:0.932 blue:0.907 alpha:1]
+#define UIColorFromRGB(hexValue) [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0]
+#define MainColor  UIColorFromRGB(0x4BA4FF)
+#import "SVProgressHUD.h"
+#import "FMDB.h"
+#import "MJRefresh.h"
+#import "AFNetworking.h"
+#import "DataProcess.h"
+#import "NetDataTool.h"
+#import "UIImageView+WebCache.h"
+#import "UIView+Extension.h"
+#import "ZSColor.h"
+#import "Masonry.h"
+#import "QMUIKit.h"
+#import "APIConfig.h"
+#import "ZSBaseHandle.h"
+#import "HttpHandler.h"
+#import "HttpTool.h"
+#import "ZSBaseModel.h"
+#import "MJExtension.h"
+#import "MBProgressHUD.h"
+#import "EaseUI.h"
+#import "AlipaySDK.framework/Headers/AlipaySDK.h"
+#import "ZWHBaseViewController.h"
+#import "SDCycleScrollView.h"
+#import "UIViewController+NavBarHidden.h"
+#import "NSString+RegexCategory.h"
+#import "NSString+Addition.h"
+#import "ZWHFMDBManager.h"
+//#import "POP.h"
+#import "SGPagingView.h"
+
+//#import "EaseUI.h"
+#endif /* PrefixHeader_pch */
+
+

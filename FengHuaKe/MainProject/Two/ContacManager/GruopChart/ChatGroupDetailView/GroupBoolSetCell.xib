@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="GroupBoolSetCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fee-oB-7v3">
+                        <rect key="frame" x="10" y="11" width="239" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="IHX-YN-gec"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dK4-6M-OEE">
+                        <rect key="frame" x="257" y="6" width="49" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="Hc3-Pw-taa"/>
+                            <constraint firstAttribute="height" constant="31" id="cAA-K5-Y6z"/>
+                        </constraints>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Fee-oB-7v3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="832-eH-COn"/>
+                    <constraint firstItem="Fee-oB-7v3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="D1F-lK-3ED"/>
+                    <constraint firstItem="dK4-6M-OEE" firstAttribute="leading" secondItem="Fee-oB-7v3" secondAttribute="trailing" constant="8" id="LN5-tL-9bE"/>
+                    <constraint firstItem="dK4-6M-OEE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Vmm-wO-i5P"/>
+                    <constraint firstAttribute="trailing" secondItem="dK4-6M-OEE" secondAttribute="trailing" constant="16" id="fMv-N8-na8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="swich" destination="dK4-6M-OEE" id="MlQ-YF-2Qe"/>
+                <outlet property="titleLable" destination="Fee-oB-7v3" id="3RF-0O-DFZ"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
