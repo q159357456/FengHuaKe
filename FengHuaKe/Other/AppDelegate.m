@@ -10,8 +10,8 @@
 #import "AppDelegate+EaseMob.h"
 #import "EaseUI.h"
 #import <IQKeyboardManager.h>
-#import "BMKMapComponent.h"
 #import "FriendsShowTBVC.h"
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import "WXApi.h"
 
 #import <UMCommon/UMCommon.h> // 公共组件是所有友盟产品的基础组件，必选

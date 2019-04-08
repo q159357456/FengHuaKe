@@ -7,9 +7,9 @@
 //
 
 #import "ZWHMapViewController.h"
-#import "BMKMapView.h"
-#import "BMKAnnotation.h"
-#import "BMKPointAnnotation.h"
+#import <BaiduMapAPI_Map/BMKMapView.h>
+#import <BaiduMapAPI_Map/BMKAnnotation.h>
+#import <BaiduMapAPI_Map/BMKPointAnnotation.h>
 
 @interface ZWHMapViewController ()<BMKMapViewDelegate>
 
