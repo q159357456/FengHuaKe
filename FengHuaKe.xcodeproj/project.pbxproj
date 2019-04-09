@@ -434,6 +434,8 @@
 		7CFC3973207B422400111EB1 /* PublishShowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC3971207B422400111EB1 /* PublishShowVC.xib */; };
 		7CFC3978207B47FA00111EB1 /* PublishCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC3976207B47FA00111EB1 /* PublishCollectionViewCell.m */; };
 		7CFC3979207B47FA00111EB1 /* PublishCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC3977207B47FA00111EB1 /* PublishCollectionViewCell.xib */; };
+		7FACD374225C4CEE0081033C /* GBAirTiketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FACD373225C4CEE0081033C /* GBAirTiketViewController.m */; };
+		7FACD377225C50110081033C /* GBBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FACD376225C50110081033C /* GBBaseWebViewController.m */; };
 		860CF2D92137DC4A00C68916 /* ZWHResonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */; };
 		860CF2DE2137E86E00C68916 /* ZWHOrderServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2DD2137E86E00C68916 /* ZWHOrderServiceViewController.m */; };
 		860CF2E12137E88700C68916 /* ZWHAfterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2E02137E88700C68916 /* ZWHAfterListViewController.m */; };
@@ -1340,6 +1342,10 @@
 		7CFC3975207B47FA00111EB1 /* PublishCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishCollectionViewCell.h; sourceTree = "<group>"; };
 		7CFC3976207B47FA00111EB1 /* PublishCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishCollectionViewCell.m; sourceTree = "<group>"; };
 		7CFC3977207B47FA00111EB1 /* PublishCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublishCollectionViewCell.xib; sourceTree = "<group>"; };
+		7FACD372225C4CEE0081033C /* GBAirTiketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBAirTiketViewController.h; sourceTree = "<group>"; };
+		7FACD373225C4CEE0081033C /* GBAirTiketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBAirTiketViewController.m; sourceTree = "<group>"; };
+		7FACD375225C50110081033C /* GBBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBBaseWebViewController.h; sourceTree = "<group>"; };
+		7FACD376225C50110081033C /* GBBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBBaseWebViewController.m; sourceTree = "<group>"; };
 		860CF2D72137DC4A00C68916 /* ZWHResonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWHResonTableViewCell.h; sourceTree = "<group>"; };
 		860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWHResonTableViewCell.m; sourceTree = "<group>"; };
 		860CF2DC2137E86E00C68916 /* ZWHOrderServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWHOrderServiceViewController.h; sourceTree = "<group>"; };
@@ -2116,6 +2122,8 @@
 				86787555211C3A690061E875 /* ZWHBaseViewController.m */,
 				86F3E2AF213788610019FE72 /* ZWHBaseNavigationViewController.h */,
 				86F3E2B0213788610019FE72 /* ZWHBaseNavigationViewController.m */,
+				7FACD375225C50110081033C /* GBBaseWebViewController.h */,
+				7FACD376225C50110081033C /* GBBaseWebViewController.m */,
 			);
 			path = "Tar+Nav+BaseUI";
 			sourceTree = "<group>";
@@ -2181,6 +2189,7 @@
 		7C5509312051217A007FBC12 /* Three */ = {
 			isa = PBXGroup;
 			children = (
+				7FACD371225C4CCB0081033C /* airticket(机票) */,
 				861307512212768A0096FB60 /* Memberfootprint(会员足迹) */,
 				861E14D321D0C86C00B31BB5 /* Service(客服) */,
 				861E14CC21D0C37D00B31BB5 /* TourismMade(旅游定制) */,
@@ -3358,6 +3367,15 @@
 				7CFC3977207B47FA00111EB1 /* PublishCollectionViewCell.xib */,
 			);
 			path = publishView;
+			sourceTree = "<group>";
+		};
+		7FACD371225C4CCB0081033C /* airticket(机票) */ = {
+			isa = PBXGroup;
+			children = (
+				7FACD372225C4CEE0081033C /* GBAirTiketViewController.h */,
+				7FACD373225C4CEE0081033C /* GBAirTiketViewController.m */,
+			);
+			path = "airticket(机票)";
 			sourceTree = "<group>";
 		};
 		860CF2DA2137E83800C68916 /* Aftersale(售后服务) */ = {
@@ -4795,7 +4813,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FengHuaKe/Pods-FengHuaKe-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FengHuaKe/Pods-FengHuaKe-resources.sh",
 				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle",
 				"${PODS_ROOT}/EaseUI/EaseUI/resources/EaseUIResource.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
@@ -4816,7 +4834,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FengHuaKe/Pods-FengHuaKe-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FengHuaKe/Pods-FengHuaKe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C86BD93CE55DF9104E3F55F4 /* [CP] Embed Pods Frameworks */ = {
@@ -4825,8 +4843,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FengHuaKe/Pods-FengHuaKe-frameworks.sh",
-				"${PODS_ROOT}/Hyphenate/iOS_Pods_IMFullSDK_V3.5.3/Hyphenate.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-FengHuaKe/Pods-FengHuaKe-frameworks.sh",
+				"${PODS_ROOT}/Hyphenate/iOS_Pods_IMFullSDK_V3.5.2/Hyphenate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -4834,7 +4852,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FengHuaKe/Pods-FengHuaKe-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FengHuaKe/Pods-FengHuaKe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4864,6 +4882,7 @@
 				86EDCA5321114B6B002C0AC8 /* ZWHCashNTableViewCell.m in Sources */,
 				7CB478E820DDF31B000EAD16 /* InsuranceVM.m in Sources */,
 				7C5508FB205118BB007FBC12 /* UITextField+Shake.m in Sources */,
+				7FACD374225C4CEE0081033C /* GBAirTiketViewController.m in Sources */,
 				7CCB165C206AA1CF00CF208A /* CallResolutionViewController.m in Sources */,
 				7C7326CC2060F4FE008021AC /* BaseTableViewCell.m in Sources */,
 				7C5508F520511752007FBC12 /* UITextView+PlaceHolder.m in Sources */,
@@ -4875,6 +4894,7 @@
 				7C55091A20511DD4007FBC12 /* UIImage+Water.m in Sources */,
 				7C84E4EF20AD216100830B1E /* BillTopView.m in Sources */,
 				7C550CD420579C7E007FBC12 /* ConversationListController.m in Sources */,
+				7FACD377225C50110081033C /* GBBaseWebViewController.m in Sources */,
 				7CCB165F206AA1CF00CF208A /* CallSettingViewController.m in Sources */,
 				7C2B3117205BAB4F00BA30AB /* AddFriendVC.m in Sources */,
 				8678754C211C29200061E875 /* ZWHProductListCollectionViewCell.m in Sources */,
