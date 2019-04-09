@@ -183,6 +183,7 @@ object:nil];
 #import "EaseUI.h"
 #import "AlipaySDK.framework/Headers/AlipaySDK.h"
 #import "ZWHBaseViewController.h"
+#import "GBBaseWebViewController.h"
 #import "SDCycleScrollView.h"
 #import "UIViewController+NavBarHidden.h"
 #import "NSString+RegexCategory.h"

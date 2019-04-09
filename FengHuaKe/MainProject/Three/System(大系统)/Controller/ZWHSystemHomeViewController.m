@@ -33,7 +33,7 @@
 #import "ZWHVisaCViewController.h"
 #import "ZWHTourismMadeViewController.h"
 #import "ZWHMeFootViewController.h"
-
+#import "GBAirTiketViewController.h"
 @interface ZWHSystemHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *systemTable;
@@ -66,6 +66,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     //[self.navigationController setNavigationBarHidden:YES animated:YES];
     //[self setInViewWillAppear];
     
@@ -430,12 +431,24 @@
     switch (btn.tag) {
         case 0:
         {
-            [self canshow];
-            //            ZWHScanViewController *vc = [[ZWHScanViewController alloc]init];
-            //            [self.navigationController pushViewController:vc animated:YES];
-            //            ScroWeboViewController *vc = [[ScroWeboViewController alloc]init];
-            //            vc.hidesBottomBarWhenPushed = YES;
-            //            [self.navigationController pushViewController:vc animated:YES];
+            //机票
+//            [self canshow];
+
+//                        ScroWeboViewController *vc = [[ScroWeboViewController alloc]init];
+//                        vc.hidesBottomBarWhenPushed = YES;
+//                        [self.navigationController pushViewController:vc animated:YES];
+            QMUIAlertAction *action1 = [QMUIAlertAction actionWithTitle:@"取消" style:QMUIAlertActionStyleCancel handler:NULL];
+            QMUIAlertAction *action2 = [QMUIAlertAction actionWithTitle:@"进入" style:QMUIAlertActionStyleDestructive handler:^(__kindof QMUIAlertController *aAlertController, QMUIAlertAction *action) {
+                GBAirTiketViewController *vc = [[GBAirTiketViewController alloc]init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+           
+            }];
+            QMUIAlertController *alertController = [QMUIAlertController alertControllerWithTitle:@"提示" message:@"智慧旅游APP推广活动期间,会员直接进入航空系统享受内部成本价,进入机票系统\n 账号:Opxiaoyin\n 密码:Op22010355" preferredStyle:QMUIAlertControllerStyleAlert];
+            [alertController addAction:action1];
+            [alertController addAction:action2];
+            [alertController showWithAnimated:YES];
+         
         }
             break;
         case 1:
