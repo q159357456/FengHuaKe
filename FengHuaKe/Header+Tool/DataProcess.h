@@ -16,6 +16,7 @@
 #define KValue @"value"
 //支付指令
 #define payCommand(type) ([DataProcess getPayCommandWithType:type])
+#define GETRequestStr(sysmodel,start,end,type) ([DataProcess getRequestStr:sysmodel Strat:start End:end Type:type])
 typedef void (^PhotopBlock)(UIImage *image);
 typedef enum {
     hotel =0,

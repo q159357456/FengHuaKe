@@ -13,6 +13,10 @@
 #define picpath @"http://img.fhtx.onedft.cn/"
 //密文
 #define CIPHERTEXT @"R0IyMDE4QEZlbmdodWFDYWxs-sign-"
+//
+NSString* dosome(){
+    return @"something";
+}
 @implementation DataProcess
 +(DataProcess*) shareInstance
 {
@@ -435,6 +439,29 @@
     CGContextFillRect(context, rect);
     UIImage*theImage=UIGraphicsGetImageFromCurrentImageContext();UIGraphicsEndImageContext();
     return theImage;
+    
+}
+
+//NSString* GetRequestStr(NSDictionary *sysmodel,NSNumber * start, NSNumber * end, NSString* type){
+//   
+//}
++(NSString*)getRequestStr:(NSDictionary*)sysmode Strat:(NSNumber*)start End:(NSNumber*)end Type:(NSString*)type{
+    
+    NSString *time=[DataProcess getCurrrntDate];
+    NSString *signStr;
+    if (start==nil || end==nil) {
+        signStr=[DataProcess getSignWithEndindex:nil querytype:nil Startindex:nil Timestamp:time];
+    }else{
+        signStr=[DataProcess getSignWithEndindex:[end stringValue] querytype:type Startindex:[start stringValue] Timestamp:time];
+    }
+    NSString *jsonpara=[DataProcess getJsonStrWithObj:sysmodel];
+    NSString *s = start==nil?@"-1":[start stringValue];
+    NSString *e = end==nil?@"-1":[end stringValue];
+    NSString *t = type==nil?@"0":type;
+    NSDictionary *dic=@{@"sysmodel":jsonpara,@"endindex": e,@"startindex":s,@"querytype":t,@"timestamp":time,@"sign":signStr};
+    NSString *dicjson=[DataProcess getJsonStrWithObj:dic];
+    NSString *requestStr=[DataProcess getParseWithStr:dicjson];
+    return requestStr;
     
 }
 @end

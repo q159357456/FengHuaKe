@@ -7,7 +7,6 @@
 //
 
 #import "GBBaseWebViewController.h"
-
 @interface GBBaseWebViewController ()
 @end
 
@@ -90,9 +89,6 @@
 //    "document.getElementsByTagName('head')[0].appendChild(script);";
 //    [webView evaluateJavaScript:injectionJSString completionHandler:^(id _Nullable ret, NSError * _Nullable error) {
 //    }];
-
-    
-    
     
 }
 // 页面加载失败时调用
