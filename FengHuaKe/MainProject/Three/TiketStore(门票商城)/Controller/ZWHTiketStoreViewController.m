@@ -57,15 +57,15 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    if (_ticketTable) {
-        [self scrollViewDidScroll:_ticketTable];
-    }
+//    if (_ticketTable) {
+//        [self scrollViewDidScroll:_ticketTable];
+//    }
 }
 
 
--(UIImage *)navigationBarBackgroundImage{
-    return [UIImage new];
-}
+//-(UIImage *)navigationBarBackgroundImage{
+//    return [UIImage new];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -79,12 +79,11 @@
     
     self.dataArray = [NSMutableArray array];
     self.index = 1;
-    
-    _ticketTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-HEIGHT_PRO(50)) style:UITableViewStylePlain];
+    _ticketTable = [[UITableView alloc] initWithFrame:CGRectMake(0,NavigationContentTopConstant, SCREEN_WIDTH, SCREEN_HEIGHT-HEIGHT_PRO(50)) style:UITableViewStylePlain];
     [self.view addSubview:_ticketTable];
-    [_ticketTable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.bottom.right.equalTo(self.view);
-    }];
+//    [_ticketTable mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.top.bottom.right.equalTo(self.view);
+//    }];
     _ticketTable.delegate = self;
     _ticketTable.dataSource = self;
     _ticketTable.separatorStyle = 0;
@@ -353,6 +352,7 @@
         [[_searchBar.heightAnchor constraintEqualToConstant:44] setActive:YES];
     }
     _searchBar.placeholder = @"信息搜索";
+    _searchBar.qmui_placeholderColor = [UIColor blackColor];
     _searchBar.searchBarStyle = UISearchBarStyleMinimal;
     _searchBar.delegate = self;
     UITextField *searchField = [_searchBar valueForKey:@"_searchField"];
@@ -363,7 +363,8 @@
     
     _cityB = [[QMUIButton alloc]init];
     [_cityB setTitleColor:[UIColor whiteColor] forState:0];
-    [_cityB setTitle:[userCity stringByReplacingOccurrencesOfString:@"市" withString:@""] forState:0];
+//    [_cityB setTitle:[userCity stringByReplacingOccurrencesOfString:@"市" withString:@""] forState:0];
+     [_cityB setTitle:@"东莞" forState:0];
     [_cityB setImage:[UIImage imageNamed:@"groupdown"] forState:0];
     [_cityB setImagePosition:QMUIButtonImagePositionRight];
     [_cityB setTintColorAdjustsTitleAndImage:[UIColor whiteColor]];
@@ -495,30 +496,30 @@
     vc.code = model.productno;
     [self.navigationController pushViewController:vc animated:YES];
 }
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [_searchBar endEditing:YES];
-    
-    if (scrollView == _ticketTable) {
-        CGFloat minAlphaOffset = 0;//- 64;
-        CGFloat maxAlphaOffset = 200;
-        CGFloat offset = scrollView.contentOffset.y;
-        CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
-        //_barImageView.alpha = alpha;
-        UIColor *color = [[UIColor alloc]initWithRed:75/255.0f green:164/255.0f blue:255/255.0f alpha:alpha];
-        [self.navigationController.navigationBar setBackgroundImage:[DataProcess imageWithColor:color] forBarMetrics:UIBarMetricsDefault];
-        CGFloat navhig = ISIphoneX==0?64.0f:88.0f;
-        
-        //让组标题悬停
-        if (_headerView) {
-            if (scrollView.contentOffset.y >= _headerView.frame.size.height-navhig) {
-                scrollView.contentInset = UIEdgeInsetsMake(navhig, 0, 0, 0);
-            }else{
-                scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-            }
-        }
-    }
-}
+#pragma mark - scoViewDelegate
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    [_searchBar endEditing:YES];
+//
+//    if (scrollView == _ticketTable) {
+//        CGFloat minAlphaOffset = 0;//- 64;
+//        CGFloat maxAlphaOffset = 200;
+//        CGFloat offset = scrollView.contentOffset.y;
+//        CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
+//        //_barImageView.alpha = alpha;
+//        UIColor *color = [[UIColor alloc]initWithRed:75/255.0f green:164/255.0f blue:255/255.0f alpha:alpha];
+//        [self.navigationController.navigationBar setBackgroundImage:[DataProcess imageWithColor:color] forBarMetrics:UIBarMetricsDefault];
+//        CGFloat navhig = ISIphoneX==0?64.0f:88.0f;
+//
+//        //让组标题悬停
+//        if (_headerView) {
+//            if (scrollView.contentOffset.y >= _headerView.frame.size.height-navhig) {
+//                scrollView.contentInset = UIEdgeInsetsMake(navhig, 0, 0, 0);
+//            }else{
+//                scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+//            }
+//        }
+//    }
+//}
 
 #pragma mark - uicollectviewdelegate
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -613,7 +614,7 @@
 -(SDCycleScrollView *)topScrView{
     if (!_topScrView) {
         NSArray *array = @[[UIImage imageNamed:@"ceshi_3_1"]];
-        _topScrView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEIGHT_PRO(220)) delegate:self placeholderImage:[UIImage imageNamed:PLACEHOLDER]];
+        _topScrView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEIGHT_PRO(220)) delegate:self placeholderImage:[UIImage imageNamed:@"ceshi_3_1"]];
         _topScrView.localizationImageNamesGroup = array;
         _topScrView.backgroundColor = [UIColor whiteColor];
         _topScrView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;

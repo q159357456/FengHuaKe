@@ -18,23 +18,21 @@
     [self.view addSubview:self.webview];
     // Do any additional setup after loading the view.
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     self.webview.UIDelegate = nil;
     self.webview.navigationDelegate = nil;
     self.webview.scrollView.delegate = nil;
-}
--(BOOL)shouldCustomizeNavigationBarTransitionIfHideable
-{
-    return YES;
+     [self.navigationController setNavigationBarHidden:NO];
+   
 }
 
--(BOOL)preferredNavigationBarHidden{
-    
-    return self.navBarHidden;
-    
-}
 
 -(WKWebView *)webview
 {

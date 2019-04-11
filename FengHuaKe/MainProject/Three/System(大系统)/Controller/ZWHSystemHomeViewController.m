@@ -603,8 +603,9 @@
 
 -(SDCycleScrollView *)topScrView{
     if (!_topScrView) {
+        
         NSArray *array = @[[UIImage imageNamed:@"ceshi_3_1"]];
-        _topScrView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEIGHT_PRO(200)) delegate:self placeholderImage:[UIImage imageNamed:PLACEHOLDER]];
+        _topScrView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEIGHT_PRO(200)) delegate:self placeholderImage:[UIImage imageNamed:@"ceshi_3_1"]];
         _topScrView.localizationImageNamesGroup = array;
         _topScrView.backgroundColor = [UIColor whiteColor];
         _topScrView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;

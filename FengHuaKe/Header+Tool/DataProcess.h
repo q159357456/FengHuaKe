@@ -16,7 +16,11 @@
 #define KValue @"value"
 //支付指令
 #define payCommand(type) ([DataProcess getPayCommandWithType:type])
+//requestStr
 #define GETRequestStr(sysmodel,start,end,type) ([DataProcess getRequestStr:sysmodel Strat:start End:end Type:type])
+//默认城市
+#define defaultCityName @"东莞市"
+#define defaultCityCode @"441900"
 typedef void (^PhotopBlock)(UIImage *image);
 typedef enum {
     hotel =0,
@@ -35,8 +39,6 @@ typedef enum {
     ComToPay,
     //货到付款
     GetProToPay
-    
-    
 }PayWay;
 @interface DataProcess : NSObject<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,copy)PhotopBlock photoBlock;
@@ -100,6 +102,10 @@ typedef enum {
  获得sign字符串
  */
 +(NSString*)getSignWithEndindex:(NSString*)endindex querytype:(NSString*)querytype Startindex:(NSString*)startindex Timestamp:(NSString*)timestamp;
+/**
+ 获得Request字符串
+ */
++(NSString*)getRequestStr:(NSDictionary*)sysmode Strat:(NSNumber*)start End:(NSNumber*)end Type:(NSString*)type;
 /**
  参数处理方式
  */
