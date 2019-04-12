@@ -9,6 +9,7 @@
 #import "DataProcess.h"
 #import "NSDate+Extension.h"
 #import "NSString+Addition.h"
+#import "NetDataTool.h"
 #define key @"userNameStore"
 #define picpath @"http://img.fhtx.onedft.cn/"
 //密文
@@ -464,4 +465,24 @@ NSString* dosome(){
     
 }
 
+//通用请求
++(void)requestDataWithURL:(NSString*)url RequestStr:(NSString*)requestStr Result:(void(^)(id  obj,id erro))result{
+    
+    [[NetDataTool shareInstance]getNetData:PAPATH url:url With:requestStr and:^(id responseObject) {
+        NSDictionary *dic1=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        if ([dic1[@"sysmodel"][@"blresult"] integerValue] == 1) {
+             result(dic1,nil);
+        }else
+        {
+            [SVProgressHUD setMinimumDismissTimeInterval:1];
+            [SVProgressHUD showErrorWithStatus:dic1[@"sysmodel"][@"strresult"]];
+
+        }
+       
+    } Faile:^(NSError *error) {
+        
+        result(nil,error);
+    }];
+    
+}
 @end

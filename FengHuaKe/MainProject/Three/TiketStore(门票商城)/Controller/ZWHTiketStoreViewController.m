@@ -17,8 +17,8 @@
 #import "ZWHTicketDetailViewController.h"
 #import "ZWHTicketListViewController.h"
 #import "ZWHNorSearchViewController.h"
-
-@interface ZWHTiketStoreViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate>
+#import "ChooseCityVC_New.h"
+@interface ZWHTiketStoreViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate,SDCycleScrollViewDelegate>
 
 @property(nonatomic,strong)UITableView *ticketTable;
 @property(nonatomic,strong)SDCycleScrollView *topScrView;
@@ -79,7 +79,7 @@
     
     self.dataArray = [NSMutableArray array];
     self.index = 1;
-    _ticketTable = [[UITableView alloc] initWithFrame:CGRectMake(0,NavigationContentTopConstant, SCREEN_WIDTH, SCREEN_HEIGHT-HEIGHT_PRO(50)) style:UITableViewStylePlain];
+    _ticketTable = [[UITableView alloc] initWithFrame:CGRectMake(0,NavigationBarHeight, SCREEN_WIDTH, SCREEN_HEIGHT-HEIGHT_PRO(50)) style:UITableViewStylePlain];
     [self.view addSubview:_ticketTable];
 //    [_ticketTable mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.left.top.bottom.right.equalTo(self.view);
@@ -371,8 +371,16 @@
     _cityB.titleLabel.font = HTFont(28);
     [_cityB sizeToFit];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_cityB];
+    [_cityB addTarget:self action:@selector(choosecity) forControlEvents:UIControlEventTouchUpInside];
 }
-
+-(void)choosecity{
+   
+    ChooseCityVC_New *vc = [[ChooseCityVC_New alloc]init];
+    vc.backBlock = ^(NSString *code, NSString *name) {
+        [_cityB setTitle:name forState:0];
+    };
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark - 获得热门景点
 -(void)getHotSpot{
     MJWeakSelf

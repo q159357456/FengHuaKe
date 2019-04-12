@@ -182,12 +182,7 @@
 
 +(void)AddressProvinceSuccess:(Success)Success Fail:(Fail)fail
 {
-//    NSString *time=mytimestamp;
-//    NSString *signStr=[DataProcess getSignWithEndindex:nil querytype:nil Startindex:nil Timestamp:time];
-//
-//    NSDictionary *dic=@{@"sysmodel":@{},@"endindex":@"-1",@"startindex":@"-1",@"querytype":@"0",@"timestamp":time,@"sign":signStr};
-//    NSString *dicjson=[DataProcess getJsonStrWithObj:dic];
-//    NSString *requestStr=[DataProcess getParseWithStr:dicjson];
+
     NSString *requestStr= GETRequestStr(nil,nil, nil, nil);
     NSLog(@"requestStr:%@",requestStr);
     [[NetDataTool shareInstance]getNetData:PAPATH url:@"Address/Province" With:requestStr and:^(id responseObject) {

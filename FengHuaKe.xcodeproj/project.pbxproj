@@ -434,6 +434,12 @@
 		7CFC3973207B422400111EB1 /* PublishShowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC3971207B422400111EB1 /* PublishShowVC.xib */; };
 		7CFC3978207B47FA00111EB1 /* PublishCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC3976207B47FA00111EB1 /* PublishCollectionViewCell.m */; };
 		7CFC3979207B47FA00111EB1 /* PublishCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC3977207B47FA00111EB1 /* PublishCollectionViewCell.xib */; };
+		7FA50EEB225F1BE800262EE0 /* HotCityCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA50EE2225F1BE800262EE0 /* HotCityCollectionCell.xib */; };
+		7FA50EEC225F1BE800262EE0 /* UIResponder+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA50EE6225F1BE800262EE0 /* UIResponder+Event.m */; };
+		7FA50EED225F1BE800262EE0 /* ChooseCityVC_New.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA50EE7225F1BE800262EE0 /* ChooseCityVC_New.m */; };
+		7FA50EEE225F1BE800262EE0 /* HotCityCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA50EE8225F1BE800262EE0 /* HotCityCollectionCell.m */; };
+		7FA50EEF225F1BE800262EE0 /* AllCityTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA50EE9225F1BE800262EE0 /* AllCityTableView.m */; };
+		7FA50EF0225F1BE800262EE0 /* HotCityCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA50EEA225F1BE800262EE0 /* HotCityCollectionView.m */; };
 		7FACD374225C4CEE0081033C /* GBAirTiketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FACD373225C4CEE0081033C /* GBAirTiketViewController.m */; };
 		7FACD377225C50110081033C /* GBBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FACD376225C50110081033C /* GBBaseWebViewController.m */; };
 		860CF2D92137DC4A00C68916 /* ZWHResonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */; };
@@ -1342,6 +1348,18 @@
 		7CFC3975207B47FA00111EB1 /* PublishCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishCollectionViewCell.h; sourceTree = "<group>"; };
 		7CFC3976207B47FA00111EB1 /* PublishCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishCollectionViewCell.m; sourceTree = "<group>"; };
 		7CFC3977207B47FA00111EB1 /* PublishCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublishCollectionViewCell.xib; sourceTree = "<group>"; };
+		7FA50EE0225F1BE800262EE0 /* ChooseCityVC_New.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseCityVC_New.h; sourceTree = "<group>"; };
+		7FA50EE1225F1BE800262EE0 /* UIResponder+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Event.h"; sourceTree = "<group>"; };
+		7FA50EE2225F1BE800262EE0 /* HotCityCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotCityCollectionCell.xib; sourceTree = "<group>"; };
+		7FA50EE3225F1BE800262EE0 /* AllCityTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCityTableView.h; sourceTree = "<group>"; };
+		7FA50EE4225F1BE800262EE0 /* HotCityCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCityCollectionCell.h; sourceTree = "<group>"; };
+		7FA50EE5225F1BE800262EE0 /* HotCityCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCityCollectionView.h; sourceTree = "<group>"; };
+		7FA50EE6225F1BE800262EE0 /* UIResponder+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Event.m"; sourceTree = "<group>"; };
+		7FA50EE7225F1BE800262EE0 /* ChooseCityVC_New.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCityVC_New.m; sourceTree = "<group>"; };
+		7FA50EE8225F1BE800262EE0 /* HotCityCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCityCollectionCell.m; sourceTree = "<group>"; };
+		7FA50EE9225F1BE800262EE0 /* AllCityTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCityTableView.m; sourceTree = "<group>"; };
+		7FA50EEA225F1BE800262EE0 /* HotCityCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCityCollectionView.m; sourceTree = "<group>"; };
+		7FA50EF1225F255A00262EE0 /* RequestAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestAPI.h; sourceTree = "<group>"; };
 		7FACD372225C4CEE0081033C /* GBAirTiketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBAirTiketViewController.h; sourceTree = "<group>"; };
 		7FACD373225C4CEE0081033C /* GBAirTiketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBAirTiketViewController.m; sourceTree = "<group>"; };
 		7FACD375225C50110081033C /* GBBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBBaseWebViewController.h; sourceTree = "<group>"; };
@@ -1788,12 +1806,14 @@
 				861307622223C2F30096FB60 /* share_ios_6.9.5 */,
 				7C55094A20522DBB007FBC12 /* FengHuaKe.entitlements */,
 				68658366204F80AA002EAAD5 /* PrefixHeader.pch */,
+				7FA50EF1225F255A00262EE0 /* RequestAPI.h */,
 				867874E52112B0270061E875 /* Other */,
 				86EDCA30210EF693002C0AC8 /* Http */,
 				86EDCA1A210EC081002C0AC8 /* Lib */,
 				7C55092D20512113007FBC12 /* MainProject */,
 				7C5509262051201E007FBC12 /* Tar+Nav+BaseUI */,
 				68658365204F8071002EAAD5 /* Header+Tool */,
+				7FA50EDE225F1AB800262EE0 /* reusableComponents */,
 				6865833B204F7B68002EAAD5 /* Main.storyboard */,
 				6865833E204F7B68002EAAD5 /* Assets.xcassets */,
 				68658340204F7B68002EAAD5 /* LaunchScreen.storyboard */,
@@ -3369,6 +3389,32 @@
 			path = publishView;
 			sourceTree = "<group>";
 		};
+		7FA50EDE225F1AB800262EE0 /* reusableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				7FA50EDF225F1BE800262EE0 /* ChooseCity */,
+			);
+			path = reusableComponents;
+			sourceTree = "<group>";
+		};
+		7FA50EDF225F1BE800262EE0 /* ChooseCity */ = {
+			isa = PBXGroup;
+			children = (
+				7FA50EE3225F1BE800262EE0 /* AllCityTableView.h */,
+				7FA50EE9225F1BE800262EE0 /* AllCityTableView.m */,
+				7FA50EE0225F1BE800262EE0 /* ChooseCityVC_New.h */,
+				7FA50EE7225F1BE800262EE0 /* ChooseCityVC_New.m */,
+				7FA50EE4225F1BE800262EE0 /* HotCityCollectionCell.h */,
+				7FA50EE8225F1BE800262EE0 /* HotCityCollectionCell.m */,
+				7FA50EE2225F1BE800262EE0 /* HotCityCollectionCell.xib */,
+				7FA50EE5225F1BE800262EE0 /* HotCityCollectionView.h */,
+				7FA50EEA225F1BE800262EE0 /* HotCityCollectionView.m */,
+				7FA50EE1225F1BE800262EE0 /* UIResponder+Event.h */,
+				7FA50EE6225F1BE800262EE0 /* UIResponder+Event.m */,
+			);
+			path = ChooseCity;
+			sourceTree = "<group>";
+		};
 		7FACD371225C4CCB0081033C /* airticket(机票) */ = {
 			isa = PBXGroup;
 			children = (
@@ -4732,6 +4778,7 @@
 				7CCB16A5206AA1CF00CF208A /* Button_Mute_disabled@2x.png in Resources */,
 				6865833D204F7B68002EAAD5 /* Main.storyboard in Resources */,
 				7CCB16AB206AA1CF00CF208A /* Button_Camera_active.png in Resources */,
+				7FA50EEB225F1BE800262EE0 /* HotCityCollectionCell.xib in Resources */,
 				7CCB167A206AA1CF00CF208A /* Button_Speaker_active@3x.png in Resources */,
 				7CCB16A7206AA1CF00CF208A /* Button_Mute_disabled.png in Resources */,
 				7C59C5C4207F67E8005D0A68 /* CatageFiveCell.xib in Resources */,
@@ -4888,6 +4935,7 @@
 				7C5508F520511752007FBC12 /* UITextView+PlaceHolder.m in Sources */,
 				8678756B211E6FED0061E875 /* ZWHAdvertModel.m in Sources */,
 				869265B72140BF870091C131 /* ZWHAfterListTableViewCell.m in Sources */,
+				7FA50EEF225F1BE800262EE0 /* AllCityTableView.m in Sources */,
 				7C716CC420DA423900AE2BB1 /* TicketHotCell.m in Sources */,
 				7C60DB6E2084757A0048CF7E /* LMStyleFormatCell.m in Sources */,
 				7C72208620D8B08700805CAD /* RoomBillPayWayCell.m in Sources */,
@@ -4926,9 +4974,11 @@
 				86787556211C3A690061E875 /* ZWHBaseViewController.m in Sources */,
 				86F3E29721366A390019FE72 /* ZWHTripViewController.m in Sources */,
 				7C7326A920609C6F008021AC /* PopupView.m in Sources */,
+				7FA50EEE225F1BE800262EE0 /* HotCityCollectionCell.m in Sources */,
 				7CB4791120E1EDC9000EAD16 /* InsuranceBillVC.m in Sources */,
 				7CB478E420DDF0E7000EAD16 /* InsuranceVC.m in Sources */,
 				86F3E2B421378C130019FE72 /* ZWHAlbumViewController.m in Sources */,
+				7FA50EF0225F1BE800262EE0 /* HotCityCollectionView.m in Sources */,
 				7CCB16B7206AAA3600CF208A /* DemoCallManager.m in Sources */,
 				7C60DB6D2084757A0048CF7E /* LMWordViewController.m in Sources */,
 				8678759621250D500061E875 /* ZWHInsuranceViewController.m in Sources */,
@@ -4961,6 +5011,7 @@
 				867875AD2126A9690061E875 /* ZWHTiketCollectionViewCell.m in Sources */,
 				8613075722166AA50096FB60 /* ZWHMeFootViewController.m in Sources */,
 				7CFC396C207AFE0A00111EB1 /* WaitingView.m in Sources */,
+				7FA50EEC225F1BE800262EE0 /* UIResponder+Event.m in Sources */,
 				7C60768420A97BA8000EE248 /* AdressManagerInputCell.m in Sources */,
 				86A3E2052154CA240080F916 /* ScroWeboViewController.m in Sources */,
 				7C55091C20511DD4007FBC12 /* UIImage+CIImage.m in Sources */,
@@ -5089,6 +5140,7 @@
 				86787553211C33D40061E875 /* ZWHSystemHomeViewController.m in Sources */,
 				7C2BD7E4207CC72000BFC76D /* PictureManagerCell.m in Sources */,
 				8678757E212155B60061E875 /* ZWHProductDetailView.m in Sources */,
+				7FA50EED225F1BE800262EE0 /* ChooseCityVC_New.m in Sources */,
 				7C716CC120DA422500AE2BB1 /* TicketClassifyCell.m in Sources */,
 				867874E82112DC410061E875 /* ZWHColleagueModel.m in Sources */,
 				7C60DB7E2084757A0048CF7E /* LMPhotoCollectionCell.m in Sources */,

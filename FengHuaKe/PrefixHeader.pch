@@ -8,6 +8,11 @@
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
+
+#ifdef __OBJC__
+#import "RequestAPI.h"
+#endif
+
 #define EMOAppKEY @"1126171121115912#tourist"
 #define APNsCertName @"fengDis"//@"qingenFengHuaKe-devolop"
 #define PAPATH @"http://121.201.28.179:8866/api"
@@ -62,7 +67,9 @@
 
 #define ErrorValue obj[@"sysmodel"][@"strresult"]
 
+#define ReturnState [obj[@"sysmodel"][@"blresult"] integerValue]
 
+#define ReturnResult obj[@"sysmodel"][@"strresult"]
 
 //颜色
 #define RGBA(r, g, b, a)                    [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
@@ -191,7 +198,6 @@ object:nil];
 #import "ZWHFMDBManager.h"
 //#import "POP.h"
 #import "SGPagingView.h"
-
 //#import "EaseUI.h"
 #endif /* PrefixHeader_pch */
 

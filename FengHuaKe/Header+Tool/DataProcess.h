@@ -107,6 +107,10 @@ typedef enum {
  */
 +(NSString*)getRequestStr:(NSDictionary*)sysmode Strat:(NSNumber*)start End:(NSNumber*)end Type:(NSString*)type;
 /**
+ 通用请求
+ */
++(void)requestDataWithURL:(NSString*)url RequestStr:(NSString*)requestStr Result:(void(^)(id  obj,id erro))result;
+/**
  参数处理方式
  */
 +(NSString*)getParseWithStr:(NSString*)parse;
