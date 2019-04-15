@@ -71,6 +71,8 @@
 
 #define ReturnResult obj[@"sysmodel"][@"strresult"]
 
+#define ReturnDataList obj[@"DataList"]
+
 //颜色
 #define RGBA(r, g, b, a)                    [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 #define RGB(r, g, b)                        RGBA(r, g, b, 1.0f)
@@ -176,6 +178,7 @@ object:nil];
 #import "DataProcess.h"
 #import "NetDataTool.h"
 #import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
 #import "UIView+Extension.h"
 #import "ZSColor.h"
 #import "Masonry.h"
@@ -186,6 +189,7 @@ object:nil];
 #import "HttpTool.h"
 #import "ZSBaseModel.h"
 #import "MJExtension.h"
+#import "BaseModelObject.h"
 #import "MBProgressHUD.h"
 #import "EaseUI.h"
 #import "AlipaySDK.framework/Headers/AlipaySDK.h"

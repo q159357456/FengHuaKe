@@ -17,7 +17,9 @@
 //支付指令
 #define payCommand(type) ([DataProcess getPayCommandWithType:type])
 //requestStr
-#define GETRequestStr(sysmodel,start,end,type) ([DataProcess getRequestStr:sysmodel Strat:start End:end Type:type])
+#define GETRequestStr(datalist,sysmodel,start,end,type) ([DataProcess getRequestStrDataList:datalist Sysmodel:sysmodel Strat:start End:end Type:type])
+//sd_image_cache
+#define ImageCacheDefine(originalView,imageurl) ([DataProcess sd_imageCacheDefine:originalView ImageURL:imageurl])
 //默认城市
 #define defaultCityName @"东莞市"
 #define defaultCityCode @"441900"
@@ -105,7 +107,7 @@ typedef enum {
 /**
  获得Request字符串
  */
-+(NSString*)getRequestStr:(NSDictionary*)sysmode Strat:(NSNumber*)start End:(NSNumber*)end Type:(NSString*)type;
++(NSString*)getRequestStrDataList:(NSArray*)datalist Sysmodel:(NSDictionary*)sysmode Strat:(NSNumber*)start End:(NSNumber*)end Type:(NSString*)type;
 /**
  通用请求
  */
@@ -129,6 +131,8 @@ typedef enum {
 +(UIImage*)barImage;
 +(UIImage*)clearImage;
 +(UIImage *)imageWithColor:(UIColor *)color;
-
-
+/**
+ sdimagecache封装
+ */
++(void)sd_imageCacheDefine:(UIView*)view ImageURL:(NSString*)imageurl;
 @end

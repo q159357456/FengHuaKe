@@ -183,7 +183,7 @@
 +(void)AddressProvinceSuccess:(Success)Success Fail:(Fail)fail
 {
 
-    NSString *requestStr= GETRequestStr(nil,nil, nil, nil);
+    NSString *requestStr= GETRequestStr(nil,nil,nil, nil, nil);
     NSLog(@"requestStr:%@",requestStr);
     [[NetDataTool shareInstance]getNetData:PAPATH url:@"Address/Province" With:requestStr and:^(id responseObject) {
         NSDictionary *dic1=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];

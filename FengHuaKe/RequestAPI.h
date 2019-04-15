@@ -8,11 +8,14 @@
 
 #ifndef RequestAPI_h
 #define RequestAPI_h
+
 //省
 #define Address_Province @"Address/Province"
 //市
 #define Address_City @"Address/City"
 //区
 #define Address_District @"Address/District"
+//选择客服
+#define Case_CustomerService @"Case/CustomerService"
 
 #endif /* RequestAPI_h */

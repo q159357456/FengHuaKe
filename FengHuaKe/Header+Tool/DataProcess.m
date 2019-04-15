@@ -264,7 +264,6 @@ NSString* dosome(){
 +(NSString*)getJsonStrWithObj:(id)obj
 {
     NSData *data1=[NSJSONSerialization dataWithJSONObject:obj options:kNilOptions error:nil];
-    
     NSString *jsonStr=[[NSString alloc]initWithData:data1 encoding:NSUTF8StringEncoding];
     return jsonStr;
 }
@@ -444,7 +443,7 @@ NSString* dosome(){
 }
 
 
-+(NSString*)getRequestStr:(NSDictionary*)sysmode Strat:(NSNumber*)start End:(NSNumber*)end Type:(NSString*)type{
++(NSString*)getRequestStrDataList:(NSArray*)datalist Sysmodel:(NSDictionary*)sysmode Strat:(NSNumber*)start End:(NSNumber*)end Type:(NSString*)type{
     NSString *time=[DataProcess getCurrrntDate];
     NSString *signStr;
     if (start==nil || end==nil) {
@@ -452,13 +451,15 @@ NSString* dosome(){
     }else{
         signStr=[DataProcess getSignWithEndindex:[end stringValue] querytype:type Startindex:[start stringValue] Timestamp:time];
     }
+    NSArray *a = datalist==nil?@[]:datalist;
     NSDictionary *d = sysmode==nil?@{}:sysmode;
     NSString *jsonpara=[DataProcess getJsonStrWithObj:d];
+    NSString *lsitpara = [DataProcess getJsonStrWithObj:a];
     NSString *s = start==nil?@"-1":[start stringValue];
     NSString *e = end==nil?@"-1":[end stringValue];
     NSString *t = type==nil?@"0":type;
     
-    NSDictionary *dic=@{@"sysmodel":jsonpara,@"endindex": e,@"startindex":s,@"querytype":t,@"timestamp":time,@"sign":signStr};
+    NSDictionary *dic=@{@"DataList":lsitpara,@"sysmodel":jsonpara,@"endindex": e,@"startindex":s,@"querytype":t,@"timestamp":time,@"sign":signStr};
     NSString *dicjson=[DataProcess getJsonStrWithObj:dic];
     NSString *requestStr=[DataProcess getParseWithStr:dicjson];
     return requestStr;
@@ -470,12 +471,14 @@ NSString* dosome(){
     
     [[NetDataTool shareInstance]getNetData:PAPATH url:url With:requestStr and:^(id responseObject) {
         NSDictionary *dic1=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+//        NSLog(@"strresult==>%@",dic1);
         if ([dic1[@"sysmodel"][@"blresult"] integerValue] == 1) {
              result(dic1,nil);
         }else
         {
-            [SVProgressHUD setMinimumDismissTimeInterval:1];
-            [SVProgressHUD showErrorWithStatus:dic1[@"sysmodel"][@"strresult"]];
+            result(nil,dic1);
+//            [SVProgressHUD setMinimumDismissTimeInterval:1];
+//            [SVProgressHUD showErrorWithStatus:dic1[@"sysmodel"][@"strresult"]];
 
         }
        
@@ -483,6 +486,25 @@ NSString* dosome(){
         
         result(nil,error);
     }];
+    
+}
+
++(void)sd_imageCacheDefine:(UIView*)view ImageURL:(NSString*)imageurl{
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",SERVER_IMG,imageurl];
+//    NSLog(@"url==>%@",url);
+    if ([view.class isEqual:[UIImageView class]]) {
+        UIImageView *imageview = (UIImageView*)view;
+        [imageview  sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:PLACEHOLDER]];
+        
+    }else if ([view.class isEqual:[UIButton class]]){
+        
+        UIButton *btn = (UIButton*)view;
+        [btn sd_setImageWithURL:[NSURL URLWithString:url] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:PLACEHOLDER]];
+    }else
+    {
+            NSAssert(nil, @"class不匹配");
+    }
     
 }
 @end

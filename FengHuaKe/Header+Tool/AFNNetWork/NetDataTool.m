@@ -37,7 +37,6 @@
        
      [manager.requestSerializer setValue:Mytoken forHTTPHeaderField:@"token"];
     }
-//     [manager.requestSerializer setValue:Mytoken forHTTPHeaderField:@"token"];
     [manager.requestSerializer setQueryStringSerializationWithBlock:^NSString * _Nonnull(NSURLRequest * _Nonnull request, id  _Nonnull parameters, NSError * _Nullable __autoreleasing * _Nullable error) {
         //在这里面对parameters进行处理
         return parameters;
@@ -49,16 +48,16 @@
         success(responseObject);
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSString *wrong=[NSString stringWithFormat:@"%@",error];
-        if ([wrong containsString:@"The request timed out"])
-        {
-            [SVProgressHUD setMinimumDismissTimeInterval:1];
-            [SVProgressHUD showErrorWithStatus:@"请求超时"];
-        }else
-        {
-            [SVProgressHUD setMinimumDismissTimeInterval:1];
-            [SVProgressHUD showErrorWithStatus:@"请求失败"];
-        }
+//        NSString *wrong=[NSString stringWithFormat:@"%@",error];
+//        if ([wrong containsString:@"The request timed out"])
+//        {
+//            [SVProgressHUD setMinimumDismissTimeInterval:1];
+//            [SVProgressHUD showErrorWithStatus:@"请求超时"];
+//        }else
+//        {
+//            [SVProgressHUD setMinimumDismissTimeInterval:1];
+//            [SVProgressHUD showErrorWithStatus:@"请求失败"];
+//        }
         faile(error);
     }];
 }

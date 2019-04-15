@@ -34,6 +34,8 @@
 #import "ZWHTourismMadeViewController.h"
 #import "ZWHMeFootViewController.h"
 #import "GBAirTiketViewController.h"
+
+#import "RentCarViewController.h"
 @interface ZWHSystemHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *systemTable;
@@ -489,7 +491,11 @@
             break;
         case 5:
         {
-            [self canshow];
+            //租车
+            RentCarViewController *vc = [[RentCarViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            
+//            [self canshow];
         }
             break;
         case 6:

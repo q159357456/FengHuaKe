@@ -54,7 +54,7 @@
 }
 -(void)getCityDataWithProcode:(NSString *)proCode{
     DefineWeakSelf;
-    [DataProcess requestDataWithURL:Address_City RequestStr:GETRequestStr(@{@"para1":proCode}, nil, nil, nil) Result:^(id obj, id erro) {
+    [DataProcess requestDataWithURL:Address_City RequestStr:GETRequestStr(nil,@{@"para1":proCode}, nil, nil, nil) Result:^(id obj, id erro) {
         if (!erro) {
             NSArray *array = [HttpTool getArrayWithData:ReturnResult];
             weakSelf.data = [AreaModel getDatawithdic:array];

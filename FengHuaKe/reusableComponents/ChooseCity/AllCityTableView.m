@@ -62,7 +62,7 @@
 //
 -(void)getAllProvinceData{
     DefineWeakSelf;
-    [DataProcess requestDataWithURL:Address_Province RequestStr:GETRequestStr(nil, nil, nil, nil) Result:^(id obj,id erro) {
+    [DataProcess requestDataWithURL:Address_Province RequestStr:GETRequestStr(nil,nil, nil, nil, nil) Result:^(id obj,id erro) {
         if (!erro) {
             
             NSArray *array = [HttpTool getArrayWithData:ReturnResult];
