@@ -23,7 +23,6 @@
     DefineWeakSelf;
     [DataProcess requestDataWithURL:Case_CustomerService RequestStr:GETRequestStr(nil, sys, @1, @10, nil) Result:^(id obj, id erro) {
         if (!erro) {
-//            NSLog(@"obj==>%@",obj);
             weakSelf.dataSuorce = [RentCarModel transformToModelList:ReturnDataList];
             [weakSelf.tableView reloadData];
         }
@@ -62,7 +61,6 @@
     RentCarModel *model = self.dataSuorce[indexPath.row];
     ChatViewController* chatController = [[ChatViewController alloc] initWithConversationChatter:[NSString stringWithFormat:@"%ld",model.ring_id] conversationType:EMConversationTypeChat];
     chatController.title = model.name;
-    
     [self.navigationController pushViewController:chatController animated:YES];
 }
 /*

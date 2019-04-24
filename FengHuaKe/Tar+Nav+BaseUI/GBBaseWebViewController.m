@@ -50,7 +50,6 @@
         WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
         WKPreferences *preferences = [WKPreferences new];
         preferences.javaScriptCanOpenWindowsAutomatically = YES;
-        //        preferences.minimumFontSize = 16.0;
         configuration.preferences = preferences;
         _webview = [[WKWebView alloc]initWithFrame:react configuration:configuration];
         _webview.UIDelegate = self;

@@ -17,5 +17,9 @@
 #define Address_District @"Address/District"
 //选择客服
 #define Case_CustomerService @"Case/CustomerService"
+//获取案例分类
+#define Case_Class  @"Case/Class"
+//获取企业列表
+#define Enterprise_List @"Enterprise/List"
 
 #endif /* RequestAPI_h */
