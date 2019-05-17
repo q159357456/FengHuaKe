@@ -101,7 +101,7 @@
     }
     DefineWeakSelf;
     GBSegmentView *segment = [GBSegmentView initialSegmentViewFrame:CGRectMake(0, classView.bottom, SCREEN_WIDTH, HEIGHT_PRO(40)) DataSource:tittleArray CallBack:^(NSInteger index) {
-        FootPtintModel *model = weakSelf.CatagryData[index];
+        FootPtintModel *model = weakSelf.CatagryData[index-1];
         weakSelf.gloablCategry = model.code;
         [weakSelf RequestData];
         
