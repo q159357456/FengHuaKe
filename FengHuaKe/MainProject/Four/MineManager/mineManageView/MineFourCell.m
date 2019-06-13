@@ -96,6 +96,26 @@
                     _cash.layer.masksToBounds = YES;
                 }
                     break;
+                case 2:
+                {
+                    _brokerage = [[UILabel alloc]init];
+                    _brokerage.text = @"-";
+                    _brokerage.textColor = ZWHCOLOR(@"#4BA4FF");
+                    _brokerage.font = HTFont(24);
+                    _brokerage.backgroundColor = ZWHCOLOR(@"#DEDEDE");
+                    _brokerage.textAlignment = NSTextAlignmentCenter;
+                    [imalable addSubview:_brokerage];
+                    [_brokerage mas_makeConstraints:^(MASConstraintMaker *make) {
+                        make.bottom.equalTo(imalable.mas_bottom).offset(-5);
+                        make.centerX.equalTo(imalable);
+                        make.height.mas_equalTo(16);
+                        make.width.mas_equalTo(w*0.6);
+                    }];
+                    _brokerage.layer.cornerRadius = 6;
+                    _brokerage.layer.masksToBounds = YES;
+                   
+                }
+                    break;
                 case 3:
                 {
                     _integral = [[UILabel alloc]init];
@@ -113,25 +133,6 @@
                     }];
                     _integral.layer.cornerRadius = 6;
                     _integral.layer.masksToBounds = YES;
-                }
-                    break;
-                case 5:
-                {
-                    _brokerage = [[UILabel alloc]init];
-                    _brokerage.text = @"-";
-                    _brokerage.textColor = ZWHCOLOR(@"#4BA4FF");
-                    _brokerage.font = HTFont(24);
-                    _brokerage.backgroundColor = ZWHCOLOR(@"#DEDEDE");
-                    _brokerage.textAlignment = NSTextAlignmentCenter;
-                    [imalable addSubview:_brokerage];
-                    [_brokerage mas_makeConstraints:^(MASConstraintMaker *make) {
-                        make.bottom.equalTo(imalable.mas_bottom).offset(-5);
-                        make.centerX.equalTo(imalable);
-                        make.height.mas_equalTo(16);
-                        make.width.mas_equalTo(w*0.6);
-                    }];
-                    _brokerage.layer.cornerRadius = 6;
-                    _brokerage.layer.masksToBounds = YES;
                 }
                     break;
                 default:

@@ -74,21 +74,21 @@
     self.unchangArray=@[@[@"MineOneCell",@"MineTwoCell",@"MineTwoCell"],@[@"MineThreeCell",@"MineThreeCell"],@[@"CatageThreeCell",@"MineFourCell"],@[@"CatageThreeCell",@"MineFourCell"],@[@"CatageThreeCell",@"MineFourCell"],@[@"CatageThreeCell",@"MineFourCell"]];
     NSArray *array1=@[@"全部订单",@"待付款",@"待评价",@"售后服务"];
     NSArray *array2=@[@"旅游订单",@"酒店订单",@"商城订单",@"餐饮订单"];
-    NSArray *array3=@[@"代金券",@"现金",@"返现",@"积分",@"优惠券",@"佣金"];
+    NSArray *array3=@[@"代金券",@"现金",@"佣金",@"积分"];
     NSArray *array4=@[@"我的上级",@"我的下级",@"我的商家",@"我的供应商"];
     NSArray *array5=@[@"收获地址",@"我的收藏",@"浏览历史",@"历史行程"];
     NSArray *array6=@[@"我的保险",@"发票管理",@"出行管家",@"签证"];
     
-    self.titeArray=@[@[@"",@"旅游直播",@"自主程序链接"],@[array1,array2],@[@"我的资产",array3],@[@"我的团队",array4],@[@"记录",array5],@[@"其他",array6]];
+    self.titeArray=@[@[@"",@"导游博客",@"自主程序链接"],@[array1,array2],@[@"我的资产",array3],@[@"我的团队",array4],@[@"记录",array5],@[@"其他",array6]];
     
-    NSArray *imageArray1=@[@"ceshi_4_6",@"ceshi_4_7",@"ceshi_4_8",@"ceshi_4_7",@"ceshi_4_9",@"ceshi_4_10"];
+    NSArray *imageArray1=@[@"ceshi_4_6",@"ceshi_4_7",@"ceshi_4_10",@"ceshi_4_7"];
     NSArray *imageArray2=@[@"ceshi_4_11",@"ceshi_4_12",@"ceshi_4_13",@"ceshi_4_14"];
     NSArray *imageArray3=@[@"ceshi_4_15",@"ceshi_4_16",@"ceshi_4_17",@"ceshi_4_18"];
     NSArray *imageArray4=@[@"ceshi_4_19",@"ceshi_4_20",@"ceshi_4_21",@"ceshi_4_22"];
     self.imageArray=@[@[@"",@"ceshi_4_4",@"ceshi_4_5"],@[@"",@""],@[@"",imageArray1],@[@"",imageArray2],@[@"",imageArray3],@[@"",imageArray4]];
     
     
-    self.rowHeightArray=@[@[@43,@43,@43],@[@43,@43],@[@38,@200],@[@38,@100],@[@38,@100],@[@38,@100]];
+    self.rowHeightArray=@[@[@43,@43,@43],@[@43,@43],@[@38,@100],@[@38,@100],@[@38,@100],@[@38,@100]];
     [self.view addSubview:self.tableview];
     self.tableview.tableFooterView=[[UIView alloc]init];
     self.tableview.tableHeaderView = self.ZWHheaderView;
@@ -398,7 +398,7 @@
         }else if (indexPath.section==self.unchangArray.count-4){
             fourcell.isDouble = YES;
             if (_assetDict) {
-                NSLog(@"%@",_assetDict);
+//                NSLog(@"%@",_assetDict);
                 fourcell.cash.text = [NSString stringWithFormat:@"%@",_assetDict[@"cash"]];
                 fourcell.eCoupon.text = [NSString stringWithFormat:@"%@张",_assetDict[@"eCoupon"]];
                 fourcell.integral.text = [NSString stringWithFormat:@"%@",_assetDict[@"integral"]];
@@ -420,6 +420,13 @@
                         [self.navigationController pushViewController:vc animated:YES];
                     }
                         break;
+                    case 3:
+                    {
+                        //佣金
+                        ZWHBrokerageViewController *vc=[[ZWHBrokerageViewController alloc]init];
+                        [self.navigationController pushViewController:vc animated:YES];
+                    }
+                        break;
                     case 4:
                     {
                         //积分
@@ -427,13 +434,7 @@
                         [self.navigationController pushViewController:vc animated:YES];
                     }
                         break;
-                    case 6:
-                    {
-                        //佣金
-                        ZWHBrokerageViewController *vc=[[ZWHBrokerageViewController alloc]init];
-                        [self.navigationController pushViewController:vc animated:YES];
-                    }
-                        break;
+                
                 }
             };
         }else if (indexPath.section==self.unchangArray.count-3){
