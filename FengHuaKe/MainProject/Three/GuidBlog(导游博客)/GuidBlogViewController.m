@@ -51,6 +51,9 @@
     //出生年月
     GuiApplyClickChoiceView * birthday = [[GuiApplyClickChoiceView alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY(sex.frame) , ScreenWidth, WIDTH_PRO(40))];
     birthday.label.text = @"出生年月";
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(chooseBirthDay:)];
+    birthday.clickLabel.userInteractionEnabled = YES;
+    [birthday addGestureRecognizer:tap];
     //学历
     GuidApplyTxtInputView * education = [[GuidApplyTxtInputView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(birthday.frame), ScreenWidth, WIDTH_PRO(40))];
      education.label.text = @"学历";
@@ -80,7 +83,7 @@
     [scro setContentSize:CGSizeMake(ScreenWidth, CGRectGetMaxY(guidPic2.frame))];
     
 }
-
+#pragma mark
 /*
 #pragma mark - Navigation
 
