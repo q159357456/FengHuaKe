@@ -35,7 +35,7 @@
 #import "ZWHMyQRViewController.h"
 #import "FMDBUserTable.h"
 #import "FMDBGroupTable.h"
-
+#import "GuidBlogViewController.h"
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate>
 @property(nonatomic,strong)UITableView *tableview;
 @property(nonatomic,strong)NSArray *unchangArray;
@@ -79,7 +79,7 @@
     NSArray *array5=@[@"收获地址",@"我的收藏",@"浏览历史",@"历史行程"];
     NSArray *array6=@[@"我的保险",@"发票管理",@"出行管家",@"签证"];
     
-    self.titeArray=@[@[@"",@"导游博客",@"自主程序链接"],@[array1,array2],@[@"我的资产",array3],@[@"我的团队",array4],@[@"记录",array5],@[@"其他",array6]];
+    self.titeArray=@[@[@"",@"自主程序链接",@"导游博客"],@[array1,array2],@[@"我的资产",array3],@[@"我的团队",array4],@[@"记录",array5],@[@"其他",array6]];
     
     NSArray *imageArray1=@[@"ceshi_4_6",@"ceshi_4_7",@"ceshi_4_10",@"ceshi_4_7"];
     NSArray *imageArray2=@[@"ceshi_4_11",@"ceshi_4_12",@"ceshi_4_13",@"ceshi_4_14"];
@@ -268,6 +268,7 @@
     }
     if ([cellid isEqualToString:@"MineTwoCell"]) {
         [cell updateCellWithData:@[self.titeArray[indexPath.section][indexPath.row],self.imageArray[indexPath.section][indexPath.row]]];
+        
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
     }
@@ -501,6 +502,19 @@
         return 15;
     }
     return 0;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 1) {
+        //自主连接
+        NSLog(@"自主连接");
+    }
+    
+    if (indexPath.row == 2) {
+        //导游博客
+        GuidBlogViewController * guid = [[GuidBlogViewController alloc]init];
+        [self.navigationController pushViewController:guid animated:YES];
+    }
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
