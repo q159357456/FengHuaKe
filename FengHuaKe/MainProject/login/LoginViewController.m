@@ -44,8 +44,9 @@
     NSString *username = _userField.text;
     NSString *password = _passField.text;
     if (username.length == 0 || password.length == 0) {
-        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"登陆信息" message:@"账号密码为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
-        [alert show];
+//        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"登陆信息" message:@"账号密码为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+//        [alert show];
+        [SVProgressHUD showErrorWithStatus:@"账号或密码为空"];
         return NO;
     }else
     {
@@ -71,18 +72,27 @@
     [LoginManagerVM LoginMemberWithPara1:username Para2:password Success:^(id responseData) {
         //储存token值
         NSDictionary *dic=responseData;
+//        NSLog(@"储存token值==>%@",dic);
 //        NSLog(@"token:%@",dic[@"DataList"][0][@"token"]);
         if ([dic[@"sysmodel"][@"blresult"] intValue]) {
             [self hideHud];
-            NSDictionary *userdict = dic[@"DataList"][0][@"shopinfo"];
-            NSMutableDictionary *iconDict = [HttpTool takeOffNullWithDict:userdict];
-            [userDefault setObject:dic[@"DataList"][0][@"token"] forKey:@"token"];
-            [userDefault setObject:dic[@"DataList"][0][@"shopinfo"][@"MS001"] forKey:@"uniqUserID"];
-            [userDefault setObject:dic[@"DataList"][0][@"shopinfo"][@"MS002"] forKey:@"usernikeName"];
-            [userDefault setObject:iconDict[@"UDF06"] forKey:@"userIcon"];
-            [userDefault synchronize];
-            NSString *md5Pass=[DataProcess getMD5TextWithStr:password];
-            [weakSelf loginWithUsername:dic[@"DataList"][0][@"shopinfo"][@"MS001"] password:md5Pass];
+            NSArray * temp = dic[@"DataList"];
+            if (temp.count) {
+                NSDictionary *userdict = dic[@"DataList"][0][@"shopinfo"];
+                NSMutableDictionary *iconDict = [HttpTool takeOffNullWithDict:userdict];\
+                NSString * token = dic[@"DataList"][0][@"token"]? dic[@"DataList"][0][@"token"]:@"0";
+                [userDefault setObject:token forKey:@"token"];
+                [userDefault setObject:iconDict[@"MS001"] forKey:@"uniqUserID"];
+                [userDefault setObject:iconDict[@"MS002"] forKey:@"usernikeName"];
+                [userDefault setObject:iconDict[@"UDF06"] forKey:@"userIcon"];
+                [userDefault synchronize];
+                NSString *md5Pass=[DataProcess getMD5TextWithStr:password];
+                [weakSelf loginWithUsername:iconDict[@"MS001"] password:md5Pass];
+            }else
+            {
+                [self showHint:@"登录信息错误"];
+            }
+           
         }else
         {
             [self hideHud];
@@ -107,7 +117,6 @@
         if (!aError) {
             //设置是否自动登录
             [[EMClient sharedClient].options setIsAutoLogin:YES];
-
             //保存最近一次登录用户名
             [weakself saveLastLoginUsername];
             //发送自动登陆状态通知

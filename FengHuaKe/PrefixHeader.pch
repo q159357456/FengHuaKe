@@ -149,7 +149,7 @@ object:nil];
 
 
 //通知
-#define KNOTIFICATION_LOGINCHANGE @"loginStateChange"
+//#define KNOTIFICATION_LOGINCHANGE @"loginStateChange"
 #define KNOTIFICATIONNAME_DELETEALLMESSAGE @"RemoveAllMessages"
 #define NOTIFICATION_SLIDERTIT @"setSliderTitles"
 
