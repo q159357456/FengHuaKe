@@ -448,6 +448,14 @@
 		7FA50EF0225F1BE800262EE0 /* HotCityCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA50EEA225F1BE800262EE0 /* HotCityCollectionView.m */; };
 		7FACD374225C4CEE0081033C /* GBAirTiketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FACD373225C4CEE0081033C /* GBAirTiketViewController.m */; };
 		7FACD377225C50110081033C /* GBBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FACD376225C50110081033C /* GBBaseWebViewController.m */; };
+		7FB7FA3722B33A28006B3484 /* GuidBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA3622B33A28006B3484 /* GuidBlogViewController.m */; };
+		7FB7FA3A22B3428D006B3484 /* GuidModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA3922B3428D006B3484 /* GuidModel.m */; };
+		7FB7FA5622B378B8006B3484 /* GuidApplyAddPicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA4D22B378B8006B3484 /* GuidApplyAddPicView.m */; };
+		7FB7FA5722B378B8006B3484 /* GuidApplyBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA4F22B378B8006B3484 /* GuidApplyBaseView.m */; };
+		7FB7FA5822B378B8006B3484 /* GuidApplyTxtInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA5122B378B8006B3484 /* GuidApplyTxtInputView.m */; };
+		7FB7FA5922B378B8006B3484 /* GuidApplyBoolChoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA5322B378B8006B3484 /* GuidApplyBoolChoiceView.m */; };
+		7FB7FA5A22B378B8006B3484 /* GuiApplyClickChoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA5522B378B8006B3484 /* GuiApplyClickChoiceView.m */; };
+		7FB7FA5E22B397CF006B3484 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA5D22B397CF006B3484 /* DatePickerView.m */; };
 		7FE6083322641F35007A73A1 /* RentCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083222641F35007A73A1 /* RentCarViewController.m */; };
 		7FE6083622643133007A73A1 /* BaseModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083522643133007A73A1 /* BaseModelObject.m */; };
 		860CF2D92137DC4A00C68916 /* ZWHResonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */; };
@@ -1382,6 +1390,22 @@
 		7FACD373225C4CEE0081033C /* GBAirTiketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBAirTiketViewController.m; sourceTree = "<group>"; };
 		7FACD375225C50110081033C /* GBBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBBaseWebViewController.h; sourceTree = "<group>"; };
 		7FACD376225C50110081033C /* GBBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBBaseWebViewController.m; sourceTree = "<group>"; };
+		7FB7FA3522B33A28006B3484 /* GuidBlogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidBlogViewController.h; sourceTree = "<group>"; };
+		7FB7FA3622B33A28006B3484 /* GuidBlogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidBlogViewController.m; sourceTree = "<group>"; };
+		7FB7FA3822B3428D006B3484 /* GuidModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidModel.h; sourceTree = "<group>"; };
+		7FB7FA3922B3428D006B3484 /* GuidModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidModel.m; sourceTree = "<group>"; };
+		7FB7FA4C22B378B8006B3484 /* GuidApplyTxtInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuidApplyTxtInputView.h; sourceTree = "<group>"; };
+		7FB7FA4D22B378B8006B3484 /* GuidApplyAddPicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuidApplyAddPicView.m; sourceTree = "<group>"; };
+		7FB7FA4E22B378B8006B3484 /* GuidApplyBoolChoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuidApplyBoolChoiceView.h; sourceTree = "<group>"; };
+		7FB7FA4F22B378B8006B3484 /* GuidApplyBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuidApplyBaseView.m; sourceTree = "<group>"; };
+		7FB7FA5022B378B8006B3484 /* GuiApplyClickChoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuiApplyClickChoiceView.h; sourceTree = "<group>"; };
+		7FB7FA5122B378B8006B3484 /* GuidApplyTxtInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuidApplyTxtInputView.m; sourceTree = "<group>"; };
+		7FB7FA5222B378B8006B3484 /* GuidApplyBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuidApplyBaseView.h; sourceTree = "<group>"; };
+		7FB7FA5322B378B8006B3484 /* GuidApplyBoolChoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuidApplyBoolChoiceView.m; sourceTree = "<group>"; };
+		7FB7FA5422B378B8006B3484 /* GuidApplyAddPicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuidApplyAddPicView.h; sourceTree = "<group>"; };
+		7FB7FA5522B378B8006B3484 /* GuiApplyClickChoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuiApplyClickChoiceView.m; sourceTree = "<group>"; };
+		7FB7FA5C22B397CF006B3484 /* DatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
+		7FB7FA5D22B397CF006B3484 /* DatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
 		7FE6083122641F35007A73A1 /* RentCarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RentCarViewController.h; sourceTree = "<group>"; };
 		7FE6083222641F35007A73A1 /* RentCarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RentCarViewController.m; sourceTree = "<group>"; };
 		7FE6083422643133007A73A1 /* BaseModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModelObject.h; sourceTree = "<group>"; };
@@ -1906,6 +1930,7 @@
 				869265DE2148F25C0091C131 /* UIColor+Extension.m */,
 				7FE6083422643133007A73A1 /* BaseModelObject.h */,
 				7FE6083522643133007A73A1 /* BaseModelObject.m */,
+				7FB7FA5B22B396BA006B3484 /* UIDatePicker */,
 				7C716CD220DB489D00AE2BB1 /* SDCycleScrollView */,
 				7C84E52220AD8B8A00830B1E /* DicAndModel */,
 				7CBCB71E2088726200C144F4 /* uiviewController */,
@@ -2233,6 +2258,7 @@
 		7C5509312051217A007FBC12 /* Three */ = {
 			isa = PBXGroup;
 			children = (
+				7FB7FA3422B33A0D006B3484 /* GuidBlog(导游博客) */,
 				7F91F3432260756600ABF47D /* RentCar(租车) */,
 				7FACD371225C4CCB0081033C /* airticket(机票) */,
 				861307512212768A0096FB60 /* Memberfootprint(会员足迹) */,
@@ -3479,6 +3505,44 @@
 				7FACD373225C4CEE0081033C /* GBAirTiketViewController.m */,
 			);
 			path = "airticket(机票)";
+			sourceTree = "<group>";
+		};
+		7FB7FA3422B33A0D006B3484 /* GuidBlog(导游博客) */ = {
+			isa = PBXGroup;
+			children = (
+				7FB7FA3522B33A28006B3484 /* GuidBlogViewController.h */,
+				7FB7FA3622B33A28006B3484 /* GuidBlogViewController.m */,
+				7FB7FA3822B3428D006B3484 /* GuidModel.h */,
+				7FB7FA3922B3428D006B3484 /* GuidModel.m */,
+				7FB7FA4B22B378B8006B3484 /* ApplySubViews */,
+			);
+			path = "GuidBlog(导游博客)";
+			sourceTree = "<group>";
+		};
+		7FB7FA4B22B378B8006B3484 /* ApplySubViews */ = {
+			isa = PBXGroup;
+			children = (
+				7FB7FA5022B378B8006B3484 /* GuiApplyClickChoiceView.h */,
+				7FB7FA5522B378B8006B3484 /* GuiApplyClickChoiceView.m */,
+				7FB7FA5422B378B8006B3484 /* GuidApplyAddPicView.h */,
+				7FB7FA4D22B378B8006B3484 /* GuidApplyAddPicView.m */,
+				7FB7FA5222B378B8006B3484 /* GuidApplyBaseView.h */,
+				7FB7FA4F22B378B8006B3484 /* GuidApplyBaseView.m */,
+				7FB7FA4E22B378B8006B3484 /* GuidApplyBoolChoiceView.h */,
+				7FB7FA5322B378B8006B3484 /* GuidApplyBoolChoiceView.m */,
+				7FB7FA4C22B378B8006B3484 /* GuidApplyTxtInputView.h */,
+				7FB7FA5122B378B8006B3484 /* GuidApplyTxtInputView.m */,
+			);
+			path = ApplySubViews;
+			sourceTree = "<group>";
+		};
+		7FB7FA5B22B396BA006B3484 /* UIDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				7FB7FA5C22B397CF006B3484 /* DatePickerView.h */,
+				7FB7FA5D22B397CF006B3484 /* DatePickerView.m */,
+			);
+			path = UIDatePicker;
 			sourceTree = "<group>";
 		};
 		860CF2DA2137E83800C68916 /* Aftersale(售后服务) */ = {
@@ -5053,6 +5117,7 @@
 				860CF2DE2137E86E00C68916 /* ZWHOrderServiceViewController.m in Sources */,
 				869265BD214207820091C131 /* ZWHMyinsuranceViewController.m in Sources */,
 				7C59C5AE207F0202005D0A68 /* UpLoadPicToPhotoVC.m in Sources */,
+				7FB7FA3722B33A28006B3484 /* GuidBlogViewController.m in Sources */,
 				7C84E4F720AD320900830B1E /* PayViewController.m in Sources */,
 				867875B3212A972D0061E875 /* ZWHFMDBManager.m in Sources */,
 				7C5508E920510960007FBC12 /* UIView+Extension.m in Sources */,
@@ -5126,6 +5191,7 @@
 				86F3E2902134EABD0019FE72 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				7C9A0727207313730067A7E6 /* FriendsCommentView.m in Sources */,
 				7C2B3139205D07FC00BA30AB /* FMDBGroupTable.m in Sources */,
+				7FB7FA5A22B378B8006B3484 /* GuiApplyClickChoiceView.m in Sources */,
 				7C55092020511DD4007FBC12 /* UIImage+Rotate.m in Sources */,
 				7C0E4045206B3CB000A29079 /* ContractDetailVC.m in Sources */,
 				861E14C121CB71BA00B31BB5 /* ZWHVisaCViewController.m in Sources */,
@@ -5144,6 +5210,8 @@
 				8678753A211BD2B70061E875 /* ZWHOrderPayViewController.m in Sources */,
 				7CACBFE82059FF0600AF7DEC /* ContractManagerVC.m in Sources */,
 				7C0E405F206B964400A29079 /* CatageFourCell.m in Sources */,
+				7FB7FA5E22B397CF006B3484 /* DatePickerView.m in Sources */,
+				7FB7FA5922B378B8006B3484 /* GuidApplyBoolChoiceView.m in Sources */,
 				7C60766820A92E71000EE248 /* ShopCarModel.m in Sources */,
 				7CB4791820E21C13000EAD16 /* Product.m in Sources */,
 				86787574211EC60C0061E875 /* ZWHClassifyViewController.m in Sources */,
@@ -5278,6 +5346,7 @@
 				7C5508F02051171E007FBC12 /* UIView+Animation.m in Sources */,
 				7C9A073620731C8E0067A7E6 /* FriendsShowModel.m in Sources */,
 				7C2B3145205E3E4400BA30AB /* GroupManagerCell.m in Sources */,
+				7FB7FA5622B378B8006B3484 /* GuidApplyAddPicView.m in Sources */,
 				7C550943205123FE007FBC12 /* CatageManagerVC.m in Sources */,
 				7F580A1C226F1765005AA644 /* GBSegmentView.m in Sources */,
 				7CCB15EF206A910200CF208A /* ChatViewController.m in Sources */,
@@ -5309,6 +5378,7 @@
 				869265CD21475C050091C131 /* ZWHPushShowViewController.m in Sources */,
 				7F580A2322701332005AA644 /* UIViewController+GBSearchBar.m in Sources */,
 				86F3E23C212E4BB80019FE72 /* ZWHHotelHomeSectionTableViewCell.m in Sources */,
+				7FB7FA5822B378B8006B3484 /* GuidApplyTxtInputView.m in Sources */,
 				7C55095320537ABF007FBC12 /* AppDelegate+EaseMob.m in Sources */,
 				7CB478CC20DCC65E000EAD16 /* TicektBillVC.m in Sources */,
 				86926C0A21532F380091C131 /* ZWHPersonTableViewCell.m in Sources */,
@@ -5343,6 +5413,7 @@
 				7CBCB7662089D8DE00C144F4 /* TypeView.m in Sources */,
 				7C84E50220AD673400830B1E /* PayVM.m in Sources */,
 				86F3E27E2133A3C20019FE72 /* ZWHClassiftRightCollectionViewCell.m in Sources */,
+				7FB7FA3A22B3428D006B3484 /* GuidModel.m in Sources */,
 				7C716CFF20DB8B3000AE2BB1 /* TiketDetailThirdCell.m in Sources */,
 				7CB478DC20DCEE93000EAD16 /* BPPCalendarModel.m in Sources */,
 				7C0E407E206CB92F00A29079 /* MineOneCell.m in Sources */,
@@ -5390,6 +5461,7 @@
 				869265D92148E0050091C131 /* ZWHMyHeaderView.m in Sources */,
 				7C9A073A207320A60067A7E6 /* LEETheme.m in Sources */,
 				867875992125134E0061E875 /* ZWHInsuranceListViewController.m in Sources */,
+				7FB7FA5722B378B8006B3484 /* GuidApplyBaseView.m in Sources */,
 				86F3E245212E882C0019FE72 /* ZWHHotelDetailViewController.m in Sources */,
 				8613075A221F879F0096FB60 /* ZWHFootListViewController.m in Sources */,
 				867875C2212BE2E90061E875 /* ZWHTicketSecondTableViewCell.m in Sources */,
