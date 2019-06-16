@@ -32,9 +32,9 @@
 }
 -(void)addPic:(UIButton*)sender{
     NSLog(@"选择图片");
-//    [[DataProcess shareInstance] choosePhotoWithBlock:^(UIImage *image) {
-//
-//    }];
+    [[DataProcess shareInstance] choosePhotoWithBlock:^(UIImage *image) {
+        [sender setBackgroundImage:image forState:UIControlStateNormal];
+    }];
     
 }
 @end

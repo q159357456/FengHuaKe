@@ -11,6 +11,7 @@
 #import "GuidApplyBoolChoiceView.h"
 #import "GuidApplyAddPicView.h"
 #import "GuiApplyClickChoiceView.h"
+#import "DatePickerView.h"
 //#import "GuidModel.h"
 @interface GuidBlogViewController ()
 //@property(nonatomic,strong)GuidModel * guidModel;
@@ -51,6 +52,7 @@
     //出生年月
     GuiApplyClickChoiceView * birthday = [[GuiApplyClickChoiceView alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY(sex.frame) , ScreenWidth, WIDTH_PRO(40))];
     birthday.label.text = @"出生年月";
+    birthday.tag = 1;
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(chooseBirthDay:)];
     birthday.clickLabel.userInteractionEnabled = YES;
     [birthday addGestureRecognizer:tap];
@@ -83,7 +85,19 @@
     [scro setContentSize:CGSizeMake(ScreenWidth, CGRectGetMaxY(guidPic2.frame))];
     
 }
-#pragma mark
+#pragma mark - action
+-(void)chooseBirthDay:(UITapGestureRecognizer*)tap{
+    MJWeakSelf;
+    [DatePickerView showDatePickerCallBack:^(NSDate * _Nonnull date) {
+        NSLog(@"date==>%@",date);
+        GuiApplyClickChoiceView * birthday = (GuiApplyClickChoiceView*)[weakSelf.view viewWithTag:1];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        NSString *strDate = [dateFormatter stringFromDate:date];
+        birthday.clickLabel.text = strDate;
+    }];
+    
+}
 /*
 #pragma mark - Navigation
 

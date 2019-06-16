@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DatePickerView : UIView
-
++(void)showDatePickerCallBack:(void(^)(NSDate *date))block;
 @end
 
 NS_ASSUME_NONNULL_END
