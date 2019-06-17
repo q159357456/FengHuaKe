@@ -8,8 +8,9 @@
 
 #import "GuidApplyAddPicView.h"
 #import "DataProcess.h"
+@interface GuidApplyAddPicView()
+@end
 @implementation GuidApplyAddPicView
-
 -(instancetype)initWithFrame:(CGRect)frame Num:(NSInteger)num
 {
     if (self = [super initWithFrame:frame]) {
@@ -17,6 +18,7 @@
         for (NSInteger i=0; i<num; i++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             [self addSubview:btn];
+            btn.tag = i + 1;
             CGFloat temp = WIDTH_PRO(60);
             [btn mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerY.mas_equalTo(self.mas_centerY);
@@ -27,13 +29,21 @@
             [btn setBackgroundImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
             [btn addTarget:self action:@selector(addPic:) forControlEvents:UIControlEventTouchUpInside];
         }
+        self.imageArray = [NSMutableArray array];
     }
     return self;
 }
 -(void)addPic:(UIButton*)sender{
     NSLog(@"选择图片");
+    MJWeakSelf;
     [[DataProcess shareInstance] choosePhotoWithBlock:^(UIImage *image) {
         [sender setBackgroundImage:image forState:UIControlStateNormal];
+        if (sender.tag == 1) {
+            [weakSelf.imageArray insertObject:image atIndex:0];
+        }else
+        {
+            [weakSelf.imageArray insertObject:image atIndex:1];
+        }
     }];
     
 }

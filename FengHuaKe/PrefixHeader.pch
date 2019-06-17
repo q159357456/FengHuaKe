@@ -67,7 +67,7 @@
 
 #define ErrorValue obj[@"sysmodel"][@"strresult"]
 
-#define ReturnState [obj[@"sysmodel"][@"blresult"] integerValue]
+#define ReturnState [obj[@"sysmodel"][@"intresult"] integerValue]
 
 #define ReturnResult obj[@"sysmodel"][@"strresult"]
 

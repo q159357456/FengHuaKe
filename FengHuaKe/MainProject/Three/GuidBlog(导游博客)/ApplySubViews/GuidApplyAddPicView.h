@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GuidApplyAddPicView : GuidApplyBaseView
 -(instancetype)initWithFrame:(CGRect)frame Num:(NSInteger)num;
 @property(nonatomic,strong)NSArray * picData;
+@property(nonatomic,strong)NSMutableArray * imageArray;
+//@property(nonatomic,copy)void(^addPicBlock)(NSArray *imageArray);
 @end
 
 NS_ASSUME_NONNULL_END

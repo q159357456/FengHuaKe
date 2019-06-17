@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString * memberid;
 @property(nonatomic,copy)NSString * membertype;
 @property(nonatomic,copy)NSString * name;
-@property(nonatomic,assign)NSInteger * age;
+@property(nonatomic,copy)NSString *sex;
+@property(nonatomic,assign)NSInteger age;
 @property(nonatomic,copy)NSString * birthdate;
 @property(nonatomic,copy)NSString * education;
 @property(nonatomic,copy)NSString * guide_card;
@@ -25,6 +26,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)NSInteger likenums;
 @property(nonatomic,assign)NSInteger focusnums;
 @property(nonatomic,assign)NSInteger collectnums;
+@property(nonatomic,copy)NSString * id_type;
+@property(nonatomic,copy)NSString * id_num;
+@property(nonatomic,copy)NSString * id_card_1;
+@property(nonatomic,copy)NSString * id_card_2;
+//@property(nonatomic,copy)NSString * guide_card;
+@property(nonatomic,copy)NSString * education_card;
 @end
 
 NS_ASSUME_NONNULL_END
