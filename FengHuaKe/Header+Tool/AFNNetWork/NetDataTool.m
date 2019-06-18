@@ -27,7 +27,7 @@
     NSString *path=[NSString stringWithFormat:@"%@/%@",rootUrl,url];
     NSLog(@"path:%@",path);
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
- 
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer =[AFHTTPResponseSerializer serializer];
     //与后台约定好可接收的Content-Type
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",nil];

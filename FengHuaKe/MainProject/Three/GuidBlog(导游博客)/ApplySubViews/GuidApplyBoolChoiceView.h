@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GuidApplyBoolChoiceView : GuidApplyBaseView
+{
+    NSString *_value;
+}
+@property(nonatomic,strong)UISegmentedControl * seg;
 @property(nonatomic,copy)NSString *value;
 @end
 

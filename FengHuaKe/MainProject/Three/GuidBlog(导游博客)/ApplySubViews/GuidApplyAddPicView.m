@@ -38,13 +38,69 @@
     MJWeakSelf;
     [[DataProcess shareInstance] choosePhotoWithBlock:^(UIImage *image) {
         [sender setBackgroundImage:image forState:UIControlStateNormal];
+        UIImage * newImag = [self compressImageQuality:image toByte:1024*100];
         if (sender.tag == 1) {
-            [weakSelf.imageArray insertObject:image atIndex:0];
+            if (weakSelf.imageArray.count >= 1)
+            {
+                 [weakSelf.imageArray replaceObjectAtIndex:0 withObject:newImag];
+            }else
+            {
+               
+                [weakSelf.imageArray insertObject:newImag atIndex:0];
+            }
+          
         }else
         {
-            [weakSelf.imageArray insertObject:image atIndex:1];
+            if (weakSelf.imageArray.count>=2)
+            {
+                 [weakSelf.imageArray replaceObjectAtIndex:1 withObject:newImag];
+            }else
+            {
+                 [weakSelf.imageArray insertObject:newImag atIndex:1];
+            }
+           
         }
     }];
     
 }
+//压缩图片
+- (UIImage *)compressImageQuality:(UIImage *)image toByte:(NSInteger)maxLength {
+    CGFloat compression = 1;
+    NSData *data = UIImageJPEGRepresentation(image, compression);
+    NSLog(@"data.length===>%ld",data.length);
+    if (data.length < maxLength) return image;
+    CGFloat max = 1;
+    CGFloat min = 0;
+    while (data.length >= maxLength) {
+        compression = (max + min) / 2;
+        data = UIImageJPEGRepresentation(image, compression);
+        if (data.length < maxLength * 0.9) {
+            min = compression;
+        } else if (data.length > maxLength) {
+            max = compression;
+        } else {
+            break;
+        }
+    }
+//    NSLog(@"data.length===>%ld",data.length);
+    UIImage *resultImage = [UIImage imageWithData:data];
+//    CGFloat cgImageBytesPerRow = CGImageGetBytesPerRow(resultImage.CGImage); // 2560
+//    CGFloat cgImageHeight = CGImageGetHeight(resultImage.CGImage); // 1137
+//    NSUInteger size  = cgImageHeight * cgImageBytesPerRow;
+//    NSLog(@"size===>%ld",size);
+    return resultImage;
+}
+
+-(void)setImageArray:(NSMutableArray *)imageArray
+{
+    _imageArray = imageArray;
+    for (NSInteger i =0; i<imageArray.count; i++) {
+        UIButton * btn = [self viewWithTag:i+1];
+        NSString * base64 = _imageArray[i];
+        NSData *data = [[NSData alloc]initWithBase64EncodedString:base64 options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        UIImage * image = [[UIImage alloc]initWithData:data];
+        [btn setBackgroundImage:image forState:UIControlStateNormal];
+    }
+}
+
 @end

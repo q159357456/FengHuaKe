@@ -75,15 +75,18 @@
     NSArray *array1=@[@"全部订单",@"待付款",@"待评价",@"售后服务"];
     NSArray *array2=@[@"旅游订单",@"酒店订单",@"商城订单",@"餐饮订单"];
     NSArray *array3=@[@"代金券",@"现金",@"佣金",@"积分"];
-    NSArray *array4=@[@"我的上级",@"我的下级",@"我的商家",@"我的供应商"];
-    NSArray *array5=@[@"收获地址",@"我的收藏",@"浏览历史",@"历史行程"];
-    NSArray *array6=@[@"我的保险",@"发票管理",@"出行管家",@"签证"];
+//    NSArray *array4=@[@"我的上级",@"我的下级",@"我的商家",@"我的供应商"];
+    NSArray *array4=@[@"我的粉丝",@"会员升级"];
+    NSArray *array5=@[@"收获地址",@"我的收藏",@"浏览历史"];
+    NSArray *array6=@[@"我的保险",@"发票管理",@"拼单",@"关于我们"];
     
     self.titeArray=@[@[@"",@"自主程序链接",@"导游博客"],@[array1,array2],@[@"我的资产",array3],@[@"我的团队",array4],@[@"记录",array5],@[@"其他",array6]];
     
     NSArray *imageArray1=@[@"ceshi_4_6",@"ceshi_4_7",@"ceshi_4_10",@"ceshi_4_7"];
-    NSArray *imageArray2=@[@"ceshi_4_11",@"ceshi_4_12",@"ceshi_4_13",@"ceshi_4_14"];
-    NSArray *imageArray3=@[@"ceshi_4_15",@"ceshi_4_16",@"ceshi_4_17",@"ceshi_4_18"];
+//    NSArray *imageArray2=@[@"ceshi_4_11",@"ceshi_4_12",@"ceshi_4_13",@"ceshi_4_14"];
+    NSArray *imageArray2=@[@"ceshi_4_11",@"ceshi_4_12"];
+//    NSArray *imageArray3=@[@"ceshi_4_15",@"ceshi_4_16",@"ceshi_4_17",@"ceshi_4_18"];
+    NSArray *imageArray3=@[@"ceshi_4_15",@"ceshi_4_16",@"ceshi_4_17"];
     NSArray *imageArray4=@[@"ceshi_4_19",@"ceshi_4_20",@"ceshi_4_21",@"ceshi_4_22"];
     self.imageArray=@[@[@"",@"ceshi_4_4",@"ceshi_4_5"],@[@"",@""],@[@"",imageArray1],@[@"",imageArray2],@[@"",imageArray3],@[@"",imageArray4]];
     
@@ -444,18 +447,18 @@
                 switch ([data integerValue]) {
                     case 1:
                     {
-                        //我的上级
+                        //我的粉丝
                         ZWHColleagueViewController *vc=[[ZWHColleagueViewController alloc]init];
-                        vc.title = @"我的上级";
+                        vc.title = @"我的粉丝";
                         [self.navigationController pushViewController:vc animated:YES];
                         
                     }
                         break;
                     case 2:
                     {
-                        //我的下级
+                        //会员升级
                         ZWHColleagueViewController *vc=[[ZWHColleagueViewController alloc]init];
-                        vc.title = @"我的下级";
+                        vc.title = @"会员升级";
                         [self.navigationController pushViewController:vc animated:YES];
                         
                     }

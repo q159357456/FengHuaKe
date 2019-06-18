@@ -17,6 +17,7 @@
          NSArray *arr = [[NSArray alloc]initWithObjects:@"男",@"女", nil];
         UISegmentedControl * seg =[[UISegmentedControl alloc]initWithItems:arr];
         [self addSubview:seg];
+        self.seg = seg;
         [seg mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(self);
             make.right.mas_equalTo(self.mas_right).offset(-15);
@@ -35,17 +36,28 @@
     switch (control.selectedSegmentIndex) {
         case 0:
         {
-            self.value = @"男";
+            _value = @"男";
         }
             break;
         case 1:
         {
-            self.value = @"女";
+            _value = @"女";
         }
             break;
         default:
             break;
     }
+}
+-(void)setValue:(NSString *)value
+{
+    _value = value;
+    if ([_value isEqualToString:@"男"]) {
+        [self.seg setSelectedSegmentIndex:0];
+    }else
+    {
+        [self.seg setSelectedSegmentIndex:1];
+    }
+    
 }
 -(NSString *)value
 {
@@ -54,4 +66,5 @@
     }
     return _value;
 }
+
 @end

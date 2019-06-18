@@ -11,6 +11,7 @@
 #import "EaseUI.h"
 #import "RegistrViewController.h"
 #import "LoginManagerVM.h"
+
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UITextField *userField;

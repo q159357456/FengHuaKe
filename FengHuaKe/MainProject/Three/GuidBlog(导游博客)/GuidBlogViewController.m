@@ -13,6 +13,7 @@
 #import "GuiApplyClickChoiceView.h"
 #import "DatePickerView.h"
 #import "GuidModel.h"
+//#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String])
 //#import "GuidModel.h"
 @interface GuidBlogViewController ()
 @property(nonatomic,strong)GuidApplyTxtInputView * name;
@@ -31,10 +32,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-
+//    NSLog(@"=====>%@",[self textStr]);
     //判断是不是已经是导游
     NSDictionary *dic = @{@"para1":UniqUserID,@"para2":MEMBERTYPE};
-        NSLog(@"dic===>%@",dic);
+//        NSLog(@"dic===>%@",dic);
     DefineWeakSelf;
     [SVProgressHUD showWithStatus:@"加载中.."];
     [DataProcess requestDataWithURL:Guide_Verify RequestStr:GETRequestStr(nil, dic, nil, nil, nil) Result:^(id obj, id erro) {
@@ -46,21 +47,27 @@
             {
             //还不是导游
                 [weakSelf initSubViews];
+                
             }
                 break;
             case 0:
             {
                 //导游审核中
+                 self.guidModel = [GuidModel mj_objectWithKeyValues:ReturnDataList[0]];
+                 [weakSelf initSubViews];
+                
             }
                 break;
             case 1:
             {
                 //是导游
+                 [weakSelf initSubViews];
             }
                 break;
             case 2:
             {
                 //导游驳回
+                 [weakSelf initSubViews];
             }
                 break;
                 
@@ -135,13 +142,30 @@
     [scro addSubview:btn];
     [scro setContentSize:CGSizeMake(ScreenWidth, CGRectGetMaxY(guidPic2.frame))];
     
+    if (self.guidModel) {
+        self.name.textfield.text = self.guidModel.name;
+        self.sex.value = self.guidModel.sex;
+        self.birthday.clickLabel.text = self.guidModel.birthdate;
+        self.education.textfield.text = self.guidModel.education;
+        self.licenceCode.textfield.text = self.guidModel.id_num;
+        if (self.guidModel.id_card_1.length && self.guidModel.id_card_2.length) {
+            self.licencePic.imageArray = [@[self.guidModel.id_card_1,self.guidModel.id_card_2] mutableCopy];
+        }
+        if (self.guidModel.guide_card.length) {
+            self.guidPic1.imageArray = [@[self.guidModel.guide_card] mutableCopy];
+        }
+        
+        if (self.guidModel.education_card.length) {
+            self.guidPic2 =  [@[self.guidModel.education_card] mutableCopy];
+        }
+    }
+    
 }
 #pragma mark - action
 -(void)chooseBirthDay:(UITapGestureRecognizer*)tap{
     [self.view endEditing:YES];
     MJWeakSelf;
     [DatePickerView showDatePickerCallBack:^(NSDate * _Nonnull date) {
-        NSLog(@"date==>%@",date);
         GuiApplyClickChoiceView * birthday = (GuiApplyClickChoiceView*)[weakSelf.view viewWithTag:1];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -168,55 +192,52 @@
         return;
     }
     
-    self.guidModel = [[GuidModel alloc]init];
-    self.guidModel.age = 0;
-    self.guidModel.memberid = UniqUserID;
-    self.guidModel.membertype = MEMBERTYPE;
-    self.guidModel.name = self.name.outPutTxt;
-    self.guidModel.sex = self.sex.value;
-    self.guidModel.birthdate = [self.birthday.clickLabel.text  isEqual: @"请选择生日"] ? @"":self.birthday.clickLabel.text;
-    self.guidModel.education = self.education.outPutTxt;
-    self.guidModel.id_type = @"身份证";
-    self.guidModel.id_num = self.licenceCode.outPutTxt;
-    UIImage  * image1 = self.licencePic.imageArray[0];
-    UIImage  * image2 = self.licencePic.imageArray[1];
-    self.guidModel.id_card_1 = [UIImagePNGRepresentation(image1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    self.guidModel.id_card_2 = [UIImagePNGRepresentation(image2) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    UIImage  * image3 = self.guidPic1.imageArray[0];
-    self.guidModel.guide_card = [UIImagePNGRepresentation(image3) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    if (self.guidPic2.imageArray.count>0) {
-        UIImage  * image4 = self.guidPic2.imageArray[0];
-        self.guidModel.education_card = [UIImagePNGRepresentation(image4) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    }else
-    {
-        self.guidModel.education_card = @"";
-    }
-//     NSLog(@"===>%@",self.guidModel.education_card);
-//     NSLog(@"===>%@",self.guidModel.guide_card);
-//     NSLog(@"===>%@",self.guidModel.id_card_1);
-//     NSLog(@"===>%@",self.guidModel.id_card_2);
-////     self.guidModel.education_card = @"";
-//     self.guidModel.guide_card = @"";
-//     self.guidModel.id_card_1 = @"";
-//     self.guidModel.id_card_2 = @"";
-//    NSLog(@"%@",self.guidModel.id_card_1);
-//    NSLog(@"%@",self.guidModel.id_card_2);
-    self.guidModel.id_num = @"513436200006129153";
-//    self.guidModel.id_card_1 = @"";
-//    self.guidModel.id_card_2 = @"";
-//    self.guidModel.guide_card = @"";
-    NSDictionary * paramsDic = [self.guidModel mj_keyValuesWithIgnoredKeys:@[@"statu",@"applydate",@"auditdate",@"fansnums",@"likenums",@"focusnums",@"collectnums"]];
-    NSDictionary * sysmodel = @{@"blresult":@"false",@"para1":@"png",@"para2":@"png",@"para3":@"png",@"para4":@"png"};
+    GuidModel * guidModel = [[GuidModel alloc]init];
+    guidModel.age = 0;
+    guidModel.memberid = UniqUserID;
+    guidModel.membertype = MEMBERTYPE;
+    guidModel.name = self.name.outPutTxt;
+    guidModel.sex = self.sex.value;
+    guidModel.birthdate = [self.birthday.clickLabel.text  isEqual: @"请选择生日"] ? @"":self.birthday.clickLabel.text;
+    guidModel.education = self.education.outPutTxt;
+    guidModel.id_type = @"身份证";
+    guidModel.id_num = self.licenceCode.outPutTxt;
+//    UIImage  * image1 = self.licencePic.imageArray[0];
+//    UIImage  * image2 = self.licencePic.imageArray[1];
+//    guidModel.id_card_1 = [UIImagePNGRepresentation(image1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//    guidModel.id_card_2 = [UIImagePNGRepresentation(image2) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//    UIImage  * image3 = self.guidPic1.imageArray[0];
+//    guidModel.guide_card = [UIImagePNGRepresentation(image3) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//    if (self.guidPic2.imageArray.count>0) {
+//        UIImage  * image4 = self.guidPic2.imageArray[0];
+//        guidModel.education_card = [UIImagePNGRepresentation(image4) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//    }else
+//    {
+//        guidModel.education_card = @"";
+//    }
+////    guidModel.id_num = @"420102199105187578";
+    guidModel.id_card_1 = @"";
+    guidModel.id_card_2 = @"";
+    guidModel.education_card = @"";
+    guidModel.guide_card = @"";
+    NSDictionary * paramsDic = [guidModel mj_keyValuesWithIgnoredKeys:@[@"statu",@"applydate",@"auditdate",@"fansnums",@"likenums",@"focusnums",@"collectnums"]];
+    NSDictionary * sysmodel = @{@"blresult":self.guidModel?@"true":@"false",@"para1":@"png",@"para2":@"png",@"para3":@"png",@"para4":@"png"};
     [SVProgressHUD showWithStatus:@"加载中"];
-//    NSLog(@"参数==>%@",GETRequestStr(@[paramsDic], sysmodel, nil, nil, nil));
-//    NSString *temp = @"";
+    NSLog(@"RequestStr==>%@",GETRequestStr(@[paramsDic], sysmodel, nil, nil, nil));
     [DataProcess requestDataWithURL:Guide_ApplyGuide RequestStr: GETRequestStr(@[paramsDic], sysmodel, nil, nil, nil) Result:^(id obj, id erro) {
         [SVProgressHUD dismiss];
         NSLog(@"上传结果===>%@",obj);
         NSLog(@"wwwwerro===>%@",erro);
     }];
+//    [DataProcess requestDataWithURL:Guide_ApplyGuide RequestStr: [self textStr] Result:^(id obj, id erro) {
+//        [SVProgressHUD dismiss];
+//        NSLog(@"上传结果===>%@",obj);
+//        NSLog(@"wwwwerro===>%@",erro);
+//    }];
   
 }
+
+
 /*
 #pragma mark - Navigation
 
@@ -226,5 +247,17 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(NSString*)textStr{
+   
+    NSString * temp = [[NSBundle mainBundle] pathForResource:@"jsonTest" ofType:@"txt"];
+    NSString * re = [[NSString alloc]initWithContentsOfFile:temp encoding:NSUTF8StringEncoding error:nil];
+//    NSData *data = [[NSData alloc]initWithBase64EncodedString:re options:NSDataBase64DecodingIgnoreUnknownCharacters];
+//    UIImage * image = [[UIImage alloc]initWithData:data];
+//    NSLog(@"image===>%@",image);
+//    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+//    imageView.image = image;
+//    [self.view addSubview:imageView];
+    return re;
+  
+}
 @end

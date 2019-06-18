@@ -107,7 +107,7 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if ([_dataArray[section] count] > 0) {
-        return section==0?@"我的上级":@"我的下级";
+        return section==0?@"我的推荐人":@"我的粉丝";
     }
     return nil;
 }
