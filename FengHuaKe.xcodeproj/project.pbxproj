@@ -439,7 +439,7 @@
 		7F580A1C226F1765005AA644 /* GBSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A1B226F1765005AA644 /* GBSegmentView.m */; };
 		7F580A2322701332005AA644 /* UIViewController+GBSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A2222701332005AA644 /* UIViewController+GBSearchBar.m */; };
 		7F6FCB9E22B896F600172FA9 /* base64Test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F6FCB9D22B896F500172FA9 /* base64Test.txt */; };
-		7F6FCBA222B8C08800172FA9 /* jsonTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F6FCBA122B8C08700172FA9 /* jsonTest.txt */; };
+		7F6FCBA622BA18FB00172FA9 /* jsonTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F6FCBA522BA18FB00172FA9 /* jsonTest.txt */; };
 		7F91F34A226075D900ABF47D /* RentCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91F348226075D900ABF47D /* RentCarCell.m */; };
 		7F91F34B226075D900ABF47D /* RentCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F91F349226075D900ABF47D /* RentCarCell.xib */; };
 		7FA50EEB225F1BE800262EE0 /* HotCityCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA50EE2225F1BE800262EE0 /* HotCityCollectionCell.xib */; };
@@ -1374,7 +1374,7 @@
 		7F580A2122701332005AA644 /* UIViewController+GBSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GBSearchBar.h"; sourceTree = "<group>"; };
 		7F580A2222701332005AA644 /* UIViewController+GBSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GBSearchBar.m"; sourceTree = "<group>"; };
 		7F6FCB9D22B896F500172FA9 /* base64Test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = base64Test.txt; sourceTree = "<group>"; };
-		7F6FCBA122B8C08700172FA9 /* jsonTest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonTest.txt; sourceTree = "<group>"; };
+		7F6FCBA522BA18FB00172FA9 /* jsonTest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonTest.txt; sourceTree = "<group>"; };
 		7F91F347226075D900ABF47D /* RentCarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RentCarCell.h; sourceTree = "<group>"; };
 		7F91F348226075D900ABF47D /* RentCarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RentCarCell.m; sourceTree = "<group>"; };
 		7F91F349226075D900ABF47D /* RentCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RentCarCell.xib; sourceTree = "<group>"; };
@@ -1852,7 +1852,7 @@
 		68658331204F7B68002EAAD5 /* FengHuaKe */ = {
 			isa = PBXGroup;
 			children = (
-				7F6FCBA122B8C08700172FA9 /* jsonTest.txt */,
+				7F6FCBA522BA18FB00172FA9 /* jsonTest.txt */,
 				7F6FCB9D22B896F500172FA9 /* base64Test.txt */,
 				861307912223C4A00096FB60 /* normal */,
 				861307622223C2F30096FB60 /* share_ios_6.9.5 */,
@@ -4859,7 +4859,7 @@
 				7CCB167F206AA1CF00CF208A /* Button_Speaker.png in Resources */,
 				7C0E4089206CB96000A29079 /* MineThreeCell.xib in Resources */,
 				7CCB1674206AA1CF00CF208A /* Button_Speaker@3x.png in Resources */,
-				7F6FCBA222B8C08800172FA9 /* jsonTest.txt in Resources */,
+				7F6FCBA622BA18FB00172FA9 /* jsonTest.txt in Resources */,
 				7CCB1671206AA1CF00CF208A /* Button_Speaker_active@2x.png in Resources */,
 				7CCB1672206AA1CF00CF208A /* conf_uncheck@3x.png in Resources */,
 				7CFC3979207B47FA00111EB1 /* PublishCollectionViewCell.xib in Resources */,

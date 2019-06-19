@@ -454,6 +454,8 @@ NSString* dosome(){
     }else{
         signStr=[DataProcess getSignWithEndindex:[end stringValue] querytype:type Startindex:[start stringValue] Timestamp:time];
     }
+//    NSLog(@"time===> %@",time);
+//    NSLog(@"signStr=> %@",signStr);
     NSArray *a = datalist==nil?@[]:datalist;
     NSDictionary *d = sysmode==nil?@{}:sysmode;
     NSString *jsonpara=[DataProcess getJsonStrWithObj:d];

@@ -96,9 +96,7 @@
     _imageArray = imageArray;
     for (NSInteger i =0; i<imageArray.count; i++) {
         UIButton * btn = [self viewWithTag:i+1];
-        NSString * base64 = _imageArray[i];
-        NSData *data = [[NSData alloc]initWithBase64EncodedString:base64 options:NSDataBase64DecodingIgnoreUnknownCharacters];
-        UIImage * image = [[UIImage alloc]initWithData:data];
+        UIImage * image = _imageArray[i];
         [btn setBackgroundImage:image forState:UIControlStateNormal];
     }
 }
