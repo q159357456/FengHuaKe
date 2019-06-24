@@ -13,7 +13,8 @@
 #import "GuiApplyClickChoiceView.h"
 #import "DatePickerView.h"
 #import "GuidModel.h"
-#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String])
+#import "AlreadyApplyController.h"
+
 
 @interface GuidBlogViewController ()
 @property(nonatomic,strong)GuidApplyTxtInputView * name;
@@ -32,10 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-//    [self textCeatImage:[self textStr]];
+
     //判断是不是已经是导游
     NSDictionary *dic = @{@"para1":UniqUserID,@"para2":MEMBERTYPE};
-//        NSLog(@"dic===>%@",dic);
     DefineWeakSelf;
     [SVProgressHUD showWithStatus:@"加载中.."];
     [DataProcess requestDataWithURL:Guide_Verify RequestStr:GETRequestStr(nil, dic, nil, nil, nil) Result:^(id obj, id erro) {
@@ -55,19 +55,29 @@
                 //导游审核中
                  self.guidModel = [GuidModel mj_objectWithKeyValues:ReturnDataList[0]];
                  [weakSelf initSubViews];
+//               [ weakSelf addAlreadyChildController];
                 
             }
                 break;
             case 1:
             {
                 //是导游
-                 [weakSelf initSubViews];
+//                 [weakSelf initSubViews];
+//                [weakSelf addAlreadyChildController];
+                self.guidModel = [GuidModel mj_objectWithKeyValues:ReturnDataList[0]];
+                [weakSelf initSubViews];
             }
                 break;
             case 2:
             {
                 //导游驳回
                  [weakSelf initSubViews];
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                                message:@"导游被驳回,请重新填写"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"关闭"
+                                                      otherButtonTitles:nil];
+                 [alert show];
             }
                 break;
                 
@@ -81,6 +91,12 @@
     
     //上传导导游信息
     // Do any additional setup after loading the view.
+}
+-(void)addAlreadyChildController{
+    AlreadyApplyController * vc = [[AlreadyApplyController alloc]init];
+    vc.view.frame = self.view.bounds;
+    [self.view addSubview:vc.view];
+    [self addChildViewController:vc];
 }
 -(void)initSubViews{
     
@@ -206,8 +222,7 @@
 
 //上传
 -(void)upLoadGuidInfo{
-//    [SVProgressHUD setMaximumDismissTimeInterval:1];
-//    NSLog(@"self.name===> %@",[self.name outPutTxt]);
+
     if (self.name.outPutTxt.length== 0 ) {
         [SVProgressHUD showErrorWithStatus:@"名字必须填写"];
         return;
@@ -233,39 +248,29 @@
     guidModel.id_num = self.licenceCode.outPutTxt;
     UIImage  * image1 = self.licencePic.imageArray[0];
     UIImage  * image2 = self.licencePic.imageArray[1];
-    guidModel.id_card_1 = [UIImageJPEGRepresentation(image1,0.5) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    guidModel.id_card_2 = [UIImageJPEGRepresentation(image2,0.5) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    guidModel.id_card_1 = [UIImageJPEGRepresentation(image1,0.1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    guidModel.id_card_2 = [UIImageJPEGRepresentation(image2,0.1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     UIImage  * image3 = self.guidPic1.imageArray[0];
-    guidModel.guide_card = [UIImageJPEGRepresentation(image3,0.5) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    guidModel.guide_card = [UIImageJPEGRepresentation(image3,0.1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     if (self.guidPic2.imageArray.count>0) {
         UIImage  * image4 = self.guidPic2.imageArray[0];
-        guidModel.education_card = [UIImageJPEGRepresentation(image4,0.5) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        guidModel.education_card = [UIImageJPEGRepresentation(image4,0.1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        
     }else
     {
         guidModel.education_card = @"";
     }
-//
-
-//    guidModel.id_card_1 = [self textStr];
-//    guidModel.id_card_2 = [self textStr];
-//    guidModel.education_card = [self textStr];
-//    guidModel.guide_card = @"";
     NSDictionary * paramsDic = [guidModel mj_keyValuesWithIgnoredKeys:@[@"statu",@"applydate",@"auditdate",@"fansnums",@"likenums",@"focusnums",@"collectnums"]];
-//    NSDictionary * paramsDic = @{@"id_type":guidModel.id_type,@"id_card_1":guidModel.id_card_1,@"id_num":guidModel.id_num,@"age":@(0),@"guide_card":guidModel.guide_card,@"sex":guidModel.sex,@"education_card":guidModel.education_card,@"id_card_2":guidModel.id_card_2,@"birthdate":guidModel.birthdate,@"education":guidModel.education,@"memberid":guidModel.memberid,@"membertype":guidModel.membertype,@"name":guidModel.name};
     NSDictionary * sysmodel = @{@"blresult":self.guidModel?@"true":@"false",@"para1":@"jpg",@"para2":@"jpg",@"para3":@"jpg",@"para4":@"jpg"};
-    NSLog(@"sysmodel===>%@",sysmodel);
     [SVProgressHUD showWithStatus:@"加载中"];
-//    NSLog(@"RequestStr==>%@",GETRequestStr(@[paramsDic], sysmodel, nil, nil, nil));
-    [DataProcess requestDataWithURL:Guide_ApplyGuide RequestStr: GETRequestStr(@[paramsDic], sysmodel, nil, nil, nil) Result:^(id obj, id erro) {
+    NSString  * requestStr = GETRequestStr(@[paramsDic], sysmodel, nil, nil, nil);
+    requestStr = [requestStr stringByReplacingOccurrencesOfString:@"rn" withString:@""];
+    [DataProcess requestDataWithURL:Guide_ApplyGuide RequestStr: requestStr Result:^(id obj, id erro) {
         [SVProgressHUD dismiss];
         NSLog(@"上传结果===>%@",obj);
         NSLog(@"wwwwerro===>%@",erro);
     }];
-//    [DataProcess requestDataWithURL:Guide_ApplyGuide RequestStr: [self textStr] Result:^(id obj, id erro) {
-//        [SVProgressHUD dismiss];
-//        NSLog(@"上传结果===>%@",obj);
-//        NSLog(@"wwwwerro===>%@",erro);
-//    }];
+
   
 }
 

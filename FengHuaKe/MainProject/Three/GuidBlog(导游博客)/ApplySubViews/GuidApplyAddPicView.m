@@ -38,7 +38,7 @@
     MJWeakSelf;
     [[DataProcess shareInstance] choosePhotoWithBlock:^(UIImage *image) {
         [sender setBackgroundImage:image forState:UIControlStateNormal];
-        UIImage * newImag = [self compressImageQuality:image toByte:1024*100];
+        UIImage * newImag = [self compressImageQuality:image toByte:1024*50];
         if (sender.tag == 1) {
             if (weakSelf.imageArray.count >= 1)
             {

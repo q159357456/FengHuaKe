@@ -36,6 +36,8 @@
 #import "FMDBUserTable.h"
 #import "FMDBGroupTable.h"
 #import "GuidBlogViewController.h"
+
+#import "MemberUpgradeController.h"
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate>
 @property(nonatomic,strong)UITableView *tableview;
 @property(nonatomic,strong)NSArray *unchangArray;
@@ -457,7 +459,10 @@
                     case 2:
                     {
                         //会员升级
-                        ZWHColleagueViewController *vc=[[ZWHColleagueViewController alloc]init];
+//                        ZWHColleagueViewController *vc=[[ZWHColleagueViewController alloc]init];
+//                        vc.title = @"会员升级";
+//                        [self.navigationController pushViewController:vc animated:YES];
+                        MemberUpgradeController *vc=[[MemberUpgradeController alloc]init];
                         vc.title = @"会员升级";
                         [self.navigationController pushViewController:vc animated:YES];
                         
