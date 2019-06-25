@@ -463,6 +463,9 @@
 		7FE5D0E622C0B5620032B1E7 /* AlradyApplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0E422C0B5620032B1E7 /* AlradyApplyCell.m */; };
 		7FE5D0E722C0B5620032B1E7 /* AlradyApplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE5D0E522C0B5620032B1E7 /* AlradyApplyCell.xib */; };
 		7FE5D0EB22C0C4660032B1E7 /* MemberUpgradeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0EA22C0C4660032B1E7 /* MemberUpgradeController.m */; };
+		7FE5D0EF22C200D70032B1E7 /* ServiceBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0EE22C200D70032B1E7 /* ServiceBaseModel.m */; };
+		7FE5D0F222C20FA30032B1E7 /* MemberUpgradeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0F122C20FA30032B1E7 /* MemberUpgradeDetailController.m */; };
+		7FE5D0F522C20FCD0032B1E7 /* MemberUpgradeTopUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0F422C20FCD0032B1E7 /* MemberUpgradeTopUpController.m */; };
 		7FE6083322641F35007A73A1 /* RentCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083222641F35007A73A1 /* RentCarViewController.m */; };
 		7FE6083622643133007A73A1 /* BaseModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083522643133007A73A1 /* BaseModelObject.m */; };
 		860CF2D92137DC4A00C68916 /* ZWHResonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */; };
@@ -1424,6 +1427,12 @@
 		7FE5D0E522C0B5620032B1E7 /* AlradyApplyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlradyApplyCell.xib; sourceTree = "<group>"; };
 		7FE5D0E922C0C4660032B1E7 /* MemberUpgradeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberUpgradeController.h; sourceTree = "<group>"; };
 		7FE5D0EA22C0C4660032B1E7 /* MemberUpgradeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberUpgradeController.m; sourceTree = "<group>"; };
+		7FE5D0ED22C200D70032B1E7 /* ServiceBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceBaseModel.h; sourceTree = "<group>"; };
+		7FE5D0EE22C200D70032B1E7 /* ServiceBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceBaseModel.m; sourceTree = "<group>"; };
+		7FE5D0F022C20FA30032B1E7 /* MemberUpgradeDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberUpgradeDetailController.h; sourceTree = "<group>"; };
+		7FE5D0F122C20FA30032B1E7 /* MemberUpgradeDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberUpgradeDetailController.m; sourceTree = "<group>"; };
+		7FE5D0F322C20FCD0032B1E7 /* MemberUpgradeTopUpController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberUpgradeTopUpController.h; sourceTree = "<group>"; };
+		7FE5D0F422C20FCD0032B1E7 /* MemberUpgradeTopUpController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberUpgradeTopUpController.m; sourceTree = "<group>"; };
 		7FE6083122641F35007A73A1 /* RentCarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RentCarViewController.h; sourceTree = "<group>"; };
 		7FE6083222641F35007A73A1 /* RentCarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RentCarViewController.m; sourceTree = "<group>"; };
 		7FE6083422643133007A73A1 /* BaseModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModelObject.h; sourceTree = "<group>"; };
@@ -1950,6 +1959,7 @@
 				869265DE2148F25C0091C131 /* UIColor+Extension.m */,
 				7FE6083422643133007A73A1 /* BaseModelObject.h */,
 				7FE6083522643133007A73A1 /* BaseModelObject.m */,
+				7FE5D0EC22C200B50032B1E7 /* ServiceBaseModel */,
 				7FB7FA5B22B396BA006B3484 /* UIDatePicker */,
 				7C716CD220DB489D00AE2BB1 /* SDCycleScrollView */,
 				7C84E52220AD8B8A00830B1E /* DicAndModel */,
@@ -3586,8 +3596,21 @@
 			children = (
 				7FE5D0E922C0C4660032B1E7 /* MemberUpgradeController.h */,
 				7FE5D0EA22C0C4660032B1E7 /* MemberUpgradeController.m */,
+				7FE5D0F022C20FA30032B1E7 /* MemberUpgradeDetailController.h */,
+				7FE5D0F122C20FA30032B1E7 /* MemberUpgradeDetailController.m */,
+				7FE5D0F322C20FCD0032B1E7 /* MemberUpgradeTopUpController.h */,
+				7FE5D0F422C20FCD0032B1E7 /* MemberUpgradeTopUpController.m */,
 			);
 			path = "会员升级(memberUpdate)";
+			sourceTree = "<group>";
+		};
+		7FE5D0EC22C200B50032B1E7 /* ServiceBaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				7FE5D0ED22C200D70032B1E7 /* ServiceBaseModel.h */,
+				7FE5D0EE22C200D70032B1E7 /* ServiceBaseModel.m */,
+			);
+			path = ServiceBaseModel;
 			sourceTree = "<group>";
 		};
 		860CF2DA2137E83800C68916 /* Aftersale(售后服务) */ = {
@@ -5320,6 +5343,7 @@
 				86F3E25E212FD67C0019FE72 /* WSDatePickerView.m in Sources */,
 				7C716CF620DB898300AE2BB1 /* TiketBaseTableViewCell.m in Sources */,
 				86EDCA3B210EF694002C0AC8 /* HttpHandler.m in Sources */,
+				7FE5D0EF22C200D70032B1E7 /* ServiceBaseModel.m in Sources */,
 				7C55091D20511DD4007FBC12 /* UIImage+Convert.m in Sources */,
 				86787553211C33D40061E875 /* ZWHSystemHomeViewController.m in Sources */,
 				7C2BD7E4207CC72000BFC76D /* PictureManagerCell.m in Sources */,
@@ -5356,6 +5380,7 @@
 				867875C5212BEAB30061E875 /* ZWHSecondDetailTableViewCell.m in Sources */,
 				7CB4790020DE2BFB000EAD16 /* InsuraceChooseBtn.m in Sources */,
 				7CCB166C206AA1CF00CF208A /* ConferenceViewController.m in Sources */,
+				7FE5D0F222C20FA30032B1E7 /* MemberUpgradeDetailController.m in Sources */,
 				8678758E212264B40061E875 /* UIButton+IndexPath.m in Sources */,
 				7C2B3120205BC06B00BA30AB /* AddFriendCell.m in Sources */,
 				7C0E405A206B938700A29079 /* CatageThreeCell.m in Sources */,
@@ -5477,6 +5502,7 @@
 				7FE5D0EB22C0C4660032B1E7 /* MemberUpgradeController.m in Sources */,
 				7CBCB727208872D400C144F4 /* UIViewController+KeyBoard.m in Sources */,
 				7CBCB779208C60C600C144F4 /* ClassifyModel.m in Sources */,
+				7FE5D0F522C20FCD0032B1E7 /* MemberUpgradeTopUpController.m in Sources */,
 				867875DB212D4C370061E875 /* ZWHHotelViewController.m in Sources */,
 				7C2BD7E8207D199A00BFC76D /* PictureManagerModel.m in Sources */,
 				7C60DB762084757A0048CF7E /* LMStyleSettingsController.m in Sources */,
