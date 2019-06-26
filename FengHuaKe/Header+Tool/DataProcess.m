@@ -303,15 +303,18 @@ NSString* dosome(){
     NSString *right1=@"]\"";
     NSString *substr2=[substr1 stringByReplacingOccurrencesOfString:left1 withString:@"["];
     NSString *substr3=[substr2 stringByReplacingOccurrencesOfString:right1 withString:@"]"];
-    NSMutableString *str=[NSMutableString stringWithString:substr3];
-    
-    NSString *character = nil;
-    for (int i = 0; i < str.length; i ++) {
-        character = [str substringWithRange:NSMakeRange(i, 1)];
-        if ([character isEqualToString:@"\\"])
-            [str deleteCharactersInRange:NSMakeRange(i, 1)];
-    }
-    return str;
+//    NSMutableString *str=[NSMutableString stringWithString:substr3];
+//    NSLog(@"str===>%@",str);
+//    NSString *character = nil;
+//    for (int i = 0; i < str.length; i ++) {
+//        character = [str substringWithRange:NSMakeRange(i, 1)];
+//        if ([character isEqualToString:@"\\"])
+//            [str deleteCharactersInRange:NSMakeRange(i, 1)];
+//    }
+//    NSMutableString *str=[NSMutableString stringWithString:parse];
+//    [str stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+    NSString * result = [substr3 stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+    return result;
     
     
 }
@@ -451,6 +454,8 @@ NSString* dosome(){
     }else{
         signStr=[DataProcess getSignWithEndindex:[end stringValue] querytype:type Startindex:[start stringValue] Timestamp:time];
     }
+//    NSLog(@"time===> %@",time);
+//    NSLog(@"signStr=> %@",signStr);
     NSArray *a = datalist==nil?@[]:datalist;
     NSDictionary *d = sysmode==nil?@{}:sysmode;
     NSString *jsonpara=[DataProcess getJsonStrWithObj:d];

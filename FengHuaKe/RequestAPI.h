@@ -27,4 +27,6 @@
 #define Guide_ApplyGuide @"Guide/ApplyGuide"
 //博客信息POST /api/Blogs/List
 #define Blogs_List @"Blogs/List"
+//POST /api/MemberLevel/Current会员等级
+#define MemberLevel_Current @"MemberLevel/Current"
 #endif /* RequestAPI_h */

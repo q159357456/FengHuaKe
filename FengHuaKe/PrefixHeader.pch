@@ -15,8 +15,9 @@
 
 #define EMOAppKEY @"1126171121115912#tourist"
 #define APNsCertName @"fengDis"//@"qingenFengHuaKe-devolop"
-#define PAPATH @"http://121.201.28.179:8866/api"
+//#define PAPATH @"http://121.201.28.179:8866/api"
 //#define PAPATH @"http://192.168.88.200:8866/api"
+#define PAPATH @"http://fhtx.onedft.cn/api"
 #define  PLACEHOLDER @"placeHolder"
 
 #define ICONPL @"EaseUIResource.bundle/user"
@@ -32,7 +33,7 @@
 #define userType  [userDefault objectForKey:@"usertype"]
 #define userCity  [userDefault objectForKey:@"usercity"]
 
-
+ 
 
 
 #define DEMO_CALL 1
@@ -67,7 +68,7 @@
 
 #define ErrorValue obj[@"sysmodel"][@"strresult"]
 
-#define ReturnState [obj[@"sysmodel"][@"blresult"] integerValue]
+#define ReturnState [obj[@"sysmodel"][@"intresult"] integerValue]
 
 #define ReturnResult obj[@"sysmodel"][@"strresult"]
 
@@ -200,6 +201,7 @@ object:nil];
 #import "NSString+RegexCategory.h"
 #import "NSString+Addition.h"
 #import "ZWHFMDBManager.h"
+#import "ServiceBaseModel.h"
 //#import "POP.h"
 #import "SGPagingView.h"
 //#import "EaseUI.h"

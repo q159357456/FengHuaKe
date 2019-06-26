@@ -438,6 +438,8 @@
 		7F580A17226F0CAE005AA644 /* FootPrintTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F580A15226F0CAE005AA644 /* FootPrintTableViewCell.xib */; };
 		7F580A1C226F1765005AA644 /* GBSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A1B226F1765005AA644 /* GBSegmentView.m */; };
 		7F580A2322701332005AA644 /* UIViewController+GBSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A2222701332005AA644 /* UIViewController+GBSearchBar.m */; };
+		7F6FCB9E22B896F600172FA9 /* base64Test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F6FCB9D22B896F500172FA9 /* base64Test.txt */; };
+		7F6FCBA622BA18FB00172FA9 /* jsonTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F6FCBA522BA18FB00172FA9 /* jsonTest.txt */; };
 		7F91F34A226075D900ABF47D /* RentCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91F348226075D900ABF47D /* RentCarCell.m */; };
 		7F91F34B226075D900ABF47D /* RentCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F91F349226075D900ABF47D /* RentCarCell.xib */; };
 		7FA50EEB225F1BE800262EE0 /* HotCityCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA50EE2225F1BE800262EE0 /* HotCityCollectionCell.xib */; };
@@ -456,6 +458,14 @@
 		7FB7FA5922B378B8006B3484 /* GuidApplyBoolChoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA5322B378B8006B3484 /* GuidApplyBoolChoiceView.m */; };
 		7FB7FA5A22B378B8006B3484 /* GuiApplyClickChoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA5522B378B8006B3484 /* GuiApplyClickChoiceView.m */; };
 		7FB7FA5E22B397CF006B3484 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7FA5D22B397CF006B3484 /* DatePickerView.m */; };
+		7FE5D0DF22C0ACDB0032B1E7 /* AlreadyApplyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0DE22C0ACDB0032B1E7 /* AlreadyApplyController.m */; };
+		7FE5D0E222C0AEA20032B1E7 /* AlreadyApplyHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0E122C0AEA20032B1E7 /* AlreadyApplyHeadView.m */; };
+		7FE5D0E622C0B5620032B1E7 /* AlradyApplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0E422C0B5620032B1E7 /* AlradyApplyCell.m */; };
+		7FE5D0E722C0B5620032B1E7 /* AlradyApplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE5D0E522C0B5620032B1E7 /* AlradyApplyCell.xib */; };
+		7FE5D0EB22C0C4660032B1E7 /* MemberUpgradeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0EA22C0C4660032B1E7 /* MemberUpgradeController.m */; };
+		7FE5D0EF22C200D70032B1E7 /* ServiceBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0EE22C200D70032B1E7 /* ServiceBaseModel.m */; };
+		7FE5D0F222C20FA30032B1E7 /* MemberUpgradeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0F122C20FA30032B1E7 /* MemberUpgradeDetailController.m */; };
+		7FE5D0F522C20FCD0032B1E7 /* MemberUpgradeTopUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0F422C20FCD0032B1E7 /* MemberUpgradeTopUpController.m */; };
 		7FE6083322641F35007A73A1 /* RentCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083222641F35007A73A1 /* RentCarViewController.m */; };
 		7FE6083622643133007A73A1 /* BaseModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083522643133007A73A1 /* BaseModelObject.m */; };
 		860CF2D92137DC4A00C68916 /* ZWHResonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */; };
@@ -1371,6 +1381,8 @@
 		7F580A1B226F1765005AA644 /* GBSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBSegmentView.m; sourceTree = "<group>"; };
 		7F580A2122701332005AA644 /* UIViewController+GBSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GBSearchBar.h"; sourceTree = "<group>"; };
 		7F580A2222701332005AA644 /* UIViewController+GBSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GBSearchBar.m"; sourceTree = "<group>"; };
+		7F6FCB9D22B896F500172FA9 /* base64Test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = base64Test.txt; sourceTree = "<group>"; };
+		7F6FCBA522BA18FB00172FA9 /* jsonTest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonTest.txt; sourceTree = "<group>"; };
 		7F91F347226075D900ABF47D /* RentCarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RentCarCell.h; sourceTree = "<group>"; };
 		7F91F348226075D900ABF47D /* RentCarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RentCarCell.m; sourceTree = "<group>"; };
 		7F91F349226075D900ABF47D /* RentCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RentCarCell.xib; sourceTree = "<group>"; };
@@ -1406,6 +1418,21 @@
 		7FB7FA5522B378B8006B3484 /* GuiApplyClickChoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuiApplyClickChoiceView.m; sourceTree = "<group>"; };
 		7FB7FA5C22B397CF006B3484 /* DatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
 		7FB7FA5D22B397CF006B3484 /* DatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
+		7FE5D0DD22C0ACDB0032B1E7 /* AlreadyApplyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlreadyApplyController.h; sourceTree = "<group>"; };
+		7FE5D0DE22C0ACDB0032B1E7 /* AlreadyApplyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlreadyApplyController.m; sourceTree = "<group>"; };
+		7FE5D0E022C0AEA20032B1E7 /* AlreadyApplyHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlreadyApplyHeadView.h; sourceTree = "<group>"; };
+		7FE5D0E122C0AEA20032B1E7 /* AlreadyApplyHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlreadyApplyHeadView.m; sourceTree = "<group>"; };
+		7FE5D0E322C0B5620032B1E7 /* AlradyApplyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlradyApplyCell.h; sourceTree = "<group>"; };
+		7FE5D0E422C0B5620032B1E7 /* AlradyApplyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlradyApplyCell.m; sourceTree = "<group>"; };
+		7FE5D0E522C0B5620032B1E7 /* AlradyApplyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlradyApplyCell.xib; sourceTree = "<group>"; };
+		7FE5D0E922C0C4660032B1E7 /* MemberUpgradeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberUpgradeController.h; sourceTree = "<group>"; };
+		7FE5D0EA22C0C4660032B1E7 /* MemberUpgradeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberUpgradeController.m; sourceTree = "<group>"; };
+		7FE5D0ED22C200D70032B1E7 /* ServiceBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceBaseModel.h; sourceTree = "<group>"; };
+		7FE5D0EE22C200D70032B1E7 /* ServiceBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceBaseModel.m; sourceTree = "<group>"; };
+		7FE5D0F022C20FA30032B1E7 /* MemberUpgradeDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberUpgradeDetailController.h; sourceTree = "<group>"; };
+		7FE5D0F122C20FA30032B1E7 /* MemberUpgradeDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberUpgradeDetailController.m; sourceTree = "<group>"; };
+		7FE5D0F322C20FCD0032B1E7 /* MemberUpgradeTopUpController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberUpgradeTopUpController.h; sourceTree = "<group>"; };
+		7FE5D0F422C20FCD0032B1E7 /* MemberUpgradeTopUpController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberUpgradeTopUpController.m; sourceTree = "<group>"; };
 		7FE6083122641F35007A73A1 /* RentCarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RentCarViewController.h; sourceTree = "<group>"; };
 		7FE6083222641F35007A73A1 /* RentCarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RentCarViewController.m; sourceTree = "<group>"; };
 		7FE6083422643133007A73A1 /* BaseModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModelObject.h; sourceTree = "<group>"; };
@@ -1848,6 +1875,8 @@
 		68658331204F7B68002EAAD5 /* FengHuaKe */ = {
 			isa = PBXGroup;
 			children = (
+				7F6FCBA522BA18FB00172FA9 /* jsonTest.txt */,
+				7F6FCB9D22B896F500172FA9 /* base64Test.txt */,
 				861307912223C4A00096FB60 /* normal */,
 				861307622223C2F30096FB60 /* share_ios_6.9.5 */,
 				7C55094A20522DBB007FBC12 /* FengHuaKe.entitlements */,
@@ -1930,6 +1959,7 @@
 				869265DE2148F25C0091C131 /* UIColor+Extension.m */,
 				7FE6083422643133007A73A1 /* BaseModelObject.h */,
 				7FE6083522643133007A73A1 /* BaseModelObject.m */,
+				7FE5D0EC22C200B50032B1E7 /* ServiceBaseModel */,
 				7FB7FA5B22B396BA006B3484 /* UIDatePicker */,
 				7C716CD220DB489D00AE2BB1 /* SDCycleScrollView */,
 				7C84E52220AD8B8A00830B1E /* DicAndModel */,
@@ -2230,6 +2260,7 @@
 		7C5509302051217A007FBC12 /* Four */ = {
 			isa = PBXGroup;
 			children = (
+				7FE5D0E822C0C15E0032B1E7 /* 会员升级(memberUpdate) */,
 				8613075B221FCFFC0096FB60 /* QRCode(个人二维码) */,
 				86A3E2022154CA090080F916 /* ScroViewText(微博主页) */,
 				869265CE2147A2360091C131 /* ZWHPhotoManager(相册部分界面) */,
@@ -3514,6 +3545,7 @@
 				7FB7FA3622B33A28006B3484 /* GuidBlogViewController.m */,
 				7FB7FA3822B3428D006B3484 /* GuidModel.h */,
 				7FB7FA3922B3428D006B3484 /* GuidModel.m */,
+				7FE5D0DC22C0ACA50032B1E7 /* AlreadyApply */,
 				7FB7FA4B22B378B8006B3484 /* ApplySubViews */,
 			);
 			path = "GuidBlog(导游博客)";
@@ -3543,6 +3575,42 @@
 				7FB7FA5D22B397CF006B3484 /* DatePickerView.m */,
 			);
 			path = UIDatePicker;
+			sourceTree = "<group>";
+		};
+		7FE5D0DC22C0ACA50032B1E7 /* AlreadyApply */ = {
+			isa = PBXGroup;
+			children = (
+				7FE5D0DD22C0ACDB0032B1E7 /* AlreadyApplyController.h */,
+				7FE5D0DE22C0ACDB0032B1E7 /* AlreadyApplyController.m */,
+				7FE5D0E022C0AEA20032B1E7 /* AlreadyApplyHeadView.h */,
+				7FE5D0E122C0AEA20032B1E7 /* AlreadyApplyHeadView.m */,
+				7FE5D0E322C0B5620032B1E7 /* AlradyApplyCell.h */,
+				7FE5D0E422C0B5620032B1E7 /* AlradyApplyCell.m */,
+				7FE5D0E522C0B5620032B1E7 /* AlradyApplyCell.xib */,
+			);
+			path = AlreadyApply;
+			sourceTree = "<group>";
+		};
+		7FE5D0E822C0C15E0032B1E7 /* 会员升级(memberUpdate) */ = {
+			isa = PBXGroup;
+			children = (
+				7FE5D0E922C0C4660032B1E7 /* MemberUpgradeController.h */,
+				7FE5D0EA22C0C4660032B1E7 /* MemberUpgradeController.m */,
+				7FE5D0F022C20FA30032B1E7 /* MemberUpgradeDetailController.h */,
+				7FE5D0F122C20FA30032B1E7 /* MemberUpgradeDetailController.m */,
+				7FE5D0F322C20FCD0032B1E7 /* MemberUpgradeTopUpController.h */,
+				7FE5D0F422C20FCD0032B1E7 /* MemberUpgradeTopUpController.m */,
+			);
+			path = "会员升级(memberUpdate)";
+			sourceTree = "<group>";
+		};
+		7FE5D0EC22C200B50032B1E7 /* ServiceBaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				7FE5D0ED22C200D70032B1E7 /* ServiceBaseModel.h */,
+				7FE5D0EE22C200D70032B1E7 /* ServiceBaseModel.m */,
+			);
+			path = ServiceBaseModel;
 			sourceTree = "<group>";
 		};
 		860CF2DA2137E83800C68916 /* Aftersale(售后服务) */ = {
@@ -4853,6 +4921,7 @@
 				7CCB167F206AA1CF00CF208A /* Button_Speaker.png in Resources */,
 				7C0E4089206CB96000A29079 /* MineThreeCell.xib in Resources */,
 				7CCB1674206AA1CF00CF208A /* Button_Speaker@3x.png in Resources */,
+				7F6FCBA622BA18FB00172FA9 /* jsonTest.txt in Resources */,
 				7CCB1671206AA1CF00CF208A /* Button_Speaker_active@2x.png in Resources */,
 				7CCB1672206AA1CF00CF208A /* conf_uncheck@3x.png in Resources */,
 				7CFC3979207B47FA00111EB1 /* PublishCollectionViewCell.xib in Resources */,
@@ -4877,6 +4946,7 @@
 				7CCB168E206AA1CF00CF208A /* Button_Stats.png in Resources */,
 				7CCB166F206AA1CF00CF208A /* default_avatar.png in Resources */,
 				7C0E4084206CB94A00A29079 /* MineTwoCell.xib in Resources */,
+				7F6FCB9E22B896F600172FA9 /* base64Test.txt in Resources */,
 				7C84E4FE20AD4E2F00830B1E /* PayTableViewCell.xib in Resources */,
 				7CCB16A0206AA1CF00CF208A /* Button_End@2x.png in Resources */,
 				7CCB1678206AA1CF00CF208A /* Button_Speaker_disabled@3x.png in Resources */,
@@ -4906,6 +4976,7 @@
 				6865833D204F7B68002EAAD5 /* Main.storyboard in Resources */,
 				7CCB16AB206AA1CF00CF208A /* Button_Camera_active.png in Resources */,
 				7FA50EEB225F1BE800262EE0 /* HotCityCollectionCell.xib in Resources */,
+				7FE5D0E722C0B5620032B1E7 /* AlradyApplyCell.xib in Resources */,
 				7CCB167A206AA1CF00CF208A /* Button_Speaker_active@3x.png in Resources */,
 				7CCB16A7206AA1CF00CF208A /* Button_Mute_disabled.png in Resources */,
 				7C59C5C4207F67E8005D0A68 /* CatageFiveCell.xib in Resources */,
@@ -5036,6 +5107,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE5D0DF22C0ACDB0032B1E7 /* AlreadyApplyController.m in Sources */,
 				7CB478F420DE1CF2000EAD16 /* InsuranceListCell.m in Sources */,
 				7C6076B120ABD0CB000EE248 /* ConfirmBillAdressCell.m in Sources */,
 				86787562211D79D10061E875 /* ZWHNewsTableViewCell.m in Sources */,
@@ -5048,6 +5120,7 @@
 				7C0E4088206CB96000A29079 /* MineThreeCell.m in Sources */,
 				7C716CD020DA4D8D00AE2BB1 /* TiketHotCollecCell.m in Sources */,
 				7C0E4083206CB94A00A29079 /* MineTwoCell.m in Sources */,
+				7FE5D0E622C0B5620032B1E7 /* AlradyApplyCell.m in Sources */,
 				86F3E26921313F7D0019FE72 /* ZWHHotelSearchListViewController.m in Sources */,
 				7C5508F12051171E007FBC12 /* UIView+BlockGesture.m in Sources */,
 				867874EC2112E26F0061E875 /* ZWHColleagueTableViewCell.m in Sources */,
@@ -5237,6 +5310,7 @@
 				7C9A0742207331CE0067A7E6 /* MLLinkLabel.m in Sources */,
 				7CBCB7212088729500C144F4 /* UIViewController+NavBarHidden.m in Sources */,
 				86EDCA22210EC098002C0AC8 /* FDSlideBar.m in Sources */,
+				7FE5D0E222C0AEA20032B1E7 /* AlreadyApplyHeadView.m in Sources */,
 				7C59C5D520808EBD005D0A68 /* CatageDetailWebVC.m in Sources */,
 				7C0ADD99206499CA006E895B /* GroupBaseCell.m in Sources */,
 				86F3E2752133884C0019FE72 /* ZWHVacationViewController.m in Sources */,
@@ -5269,6 +5343,7 @@
 				86F3E25E212FD67C0019FE72 /* WSDatePickerView.m in Sources */,
 				7C716CF620DB898300AE2BB1 /* TiketBaseTableViewCell.m in Sources */,
 				86EDCA3B210EF694002C0AC8 /* HttpHandler.m in Sources */,
+				7FE5D0EF22C200D70032B1E7 /* ServiceBaseModel.m in Sources */,
 				7C55091D20511DD4007FBC12 /* UIImage+Convert.m in Sources */,
 				86787553211C33D40061E875 /* ZWHSystemHomeViewController.m in Sources */,
 				7C2BD7E4207CC72000BFC76D /* PictureManagerCell.m in Sources */,
@@ -5305,6 +5380,7 @@
 				867875C5212BEAB30061E875 /* ZWHSecondDetailTableViewCell.m in Sources */,
 				7CB4790020DE2BFB000EAD16 /* InsuraceChooseBtn.m in Sources */,
 				7CCB166C206AA1CF00CF208A /* ConferenceViewController.m in Sources */,
+				7FE5D0F222C20FA30032B1E7 /* MemberUpgradeDetailController.m in Sources */,
 				8678758E212264B40061E875 /* UIButton+IndexPath.m in Sources */,
 				7C2B3120205BC06B00BA30AB /* AddFriendCell.m in Sources */,
 				7C0E405A206B938700A29079 /* CatageThreeCell.m in Sources */,
@@ -5423,8 +5499,10 @@
 				86EDCA3A210EF693002C0AC8 /* ZSHttpTool.m in Sources */,
 				7C72208B20D8B17D00805CAD /* RoomBillHeaderCell.m in Sources */,
 				7C716CE820DB489D00AE2BB1 /* TAAnimatedDotView.m in Sources */,
+				7FE5D0EB22C0C4660032B1E7 /* MemberUpgradeController.m in Sources */,
 				7CBCB727208872D400C144F4 /* UIViewController+KeyBoard.m in Sources */,
 				7CBCB779208C60C600C144F4 /* ClassifyModel.m in Sources */,
+				7FE5D0F522C20FCD0032B1E7 /* MemberUpgradeTopUpController.m in Sources */,
 				867875DB212D4C370061E875 /* ZWHHotelViewController.m in Sources */,
 				7C2BD7E8207D199A00BFC76D /* PictureManagerModel.m in Sources */,
 				7C60DB762084757A0048CF7E /* LMStyleSettingsController.m in Sources */,

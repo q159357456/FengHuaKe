@@ -11,4 +11,5 @@
 @interface NSString (Addition)
 -(NSString *)URLEncodedString;
 -(NSMutableAttributedString*)Color:(UIColor*)color ColorRange:(NSRange)range Font:(UIFont*)font FontRange:(NSRange)fontRange;
+- (NSDictionary *)toDictionary;
 @end

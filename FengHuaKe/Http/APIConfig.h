@@ -10,8 +10,8 @@
 
 @interface APIConfig : NSObject
 
-#define SERVER_HOST @"http://121.201.28.179:8866/api"
-
+//#define SERVER_HOST @"http://121.201.28.179:8866/api"
+#define SERVER_HOST @"http://fhtx.onedft.cn/api"
 
 
 #define SERVER_IMG @"http://img.fhtx.onedft.cn/"

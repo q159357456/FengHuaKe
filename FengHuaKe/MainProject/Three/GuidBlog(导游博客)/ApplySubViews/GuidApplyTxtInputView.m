@@ -15,6 +15,7 @@
     if (self = [super initWithFrame:frame]) {
         
         self.textfield = [[UITextField alloc]init];
+        self.textfield.font = [UIFont systemFontOfSize:WIDTH_PRO(14)];
         [self addSubview:self.textfield];
         [self.textfield mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(self);
@@ -26,4 +27,12 @@
     return self;
 }
 
+-(NSString *)outPutTxt
+{
+    if (!_outPutTxt) {
+        _outPutTxt = @"";
+    }
+    _outPutTxt = self.textfield.text;
+    return _outPutTxt;
+}
 @end
