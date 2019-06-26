@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MemberUpgradeDetailController : UIViewController
-
+@property(nonatomic,strong)DatalistBaseModel * model;
+@property(nonatomic,assign)NSInteger index;
 @end
 
 NS_ASSUME_NONNULL_END

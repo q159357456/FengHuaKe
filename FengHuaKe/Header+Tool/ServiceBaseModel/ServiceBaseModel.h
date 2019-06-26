@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class SysmodelBaseModel;
+@class DatalistBaseModel;
 @interface ServiceBaseModel : NSObject
 @property(nonatomic,strong)NSArray *  DataList;
 @property(nonatomic,copy)NSString * endindex;
@@ -30,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *  MG003;
 @property(nonatomic,copy)NSString *  MG004;
 @property(nonatomic,copy)NSString *  MG005;
+@property(nonatomic,copy)NSString *  MG007;
 @property(nonatomic,copy)NSString *  MG021;
 @end
 

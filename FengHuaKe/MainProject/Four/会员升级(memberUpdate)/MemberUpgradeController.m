@@ -7,10 +7,13 @@
 //
 
 #import "MemberUpgradeController.h"
+#import "MemberUpgradeDetailController.h"
 #define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String])
 @interface MemberUpgradeController ()
 @property(nonatomic,strong)NSArray * coverArray;
 @property(nonatomic,strong)ServiceBaseModel * baseModel;
+@property(nonatomic,strong)UILabel * label1;
+@property(nonatomic,strong)UILabel * label3;
 @end
 
 @implementation MemberUpgradeController
@@ -21,14 +24,17 @@
     NSDictionary *dic = @{@"para1":UniqUserID,@"para2":MEMBERTYPE};
     DefineWeakSelf;
     [DataProcess requestDataWithURL:MemberLevel_Current RequestStr:GETRequestStr(nil, dic, nil,nil, nil) Result:^(id obj, id erro) {
-//        NSLog(@"结果===>%@",obj);
-       
+
         if (!erro) {
+//            NSLog(@"obj===>%@",obj);
             weakSelf.baseModel =  [ServiceBaseModel mj_objectWithKeyValues:obj];
             NSDictionary * dic1 = [weakSelf.baseModel.sysmodel.para1 toDictionary];
             NSDictionary * dic2 = [weakSelf.baseModel.sysmodel.para2 toDictionary];
 //             NSLog(@"dic1===>%@",dic1);
 //             NSLog(@"dic2===>%@",dic2);
+//             NSLog(@"dic3===>%@",weakSelf.baseModel.sysmodel.strresult);
+            weakSelf.label1.text = [NSString stringWithFormat:@"下一个等级:   [%@]",dic1[@"MG002"]];
+            weakSelf.label3.text = @"可升级";
             
         }
     }];
@@ -89,7 +95,23 @@
         make.top.mas_equalTo(label2.mas_top);
         make.size.mas_equalTo(CGSizeMake(80*MULPITLE, 24*MULPITLE));
     }];
-
+    label1.textColor = [UIColor whiteColor];
+    label2.textColor = [UIColor whiteColor];
+    label3.textColor = ZWHCOLOR(@"#737373");
+    label1.font = ZWHFont(13*MULPITLE);
+    label2.font = ZWHFont(13*MULPITLE);
+    label3.font = ZWHFont(13*MULPITLE);
+    label2.text = @"状态:";
+    label3.textAlignment = NSTextAlignmentCenter;
+    label3.layer.cornerRadius = 6;
+    label3.layer.masksToBounds = YES;
+    label3.backgroundColor = ZWHCOLOR(@"#F9F9F9");
+    
+    ImageCacheDefine(userImageView, userIcon);
+    self.label1 = label1;
+    self.label3 = label3;
+    topview.backgroundColor = MainColor;
+    
     
     UIImageView * imageView = [[UIImageView alloc]init];
     [middleView addSubview:imageView];
@@ -113,10 +135,20 @@
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitle:titleArray[i] forState:UIControlStateNormal];
         [bottomView addSubview:button];
+        [button addTarget:self action:@selector(actionDetail:) forControlEvents:UIControlEventTouchUpInside];
+        button.tag = i+1;
     }
-    
-    
-    
+
+}
+-(void)actionDetail:(UIButton*)sender{
+    NSInteger index = sender.tag - 1;
+    if (self.baseModel.DataList.count < sender.tag) {
+        return;
+    }
+    MemberUpgradeDetailController * vc = [[MemberUpgradeDetailController alloc]init];
+    vc.model = self.baseModel.DataList[index];
+    vc.index = index;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 /*
 #pragma mark - Navigation

@@ -10,8 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MemberUpgradeTopUpController : UIViewController
-
+@interface MemberUpgradeTopUpController : QMUICommonViewController
+@property(nonatomic,assign)CGFloat value;
 @end
 
 NS_ASSUME_NONNULL_END
