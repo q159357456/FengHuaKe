@@ -217,8 +217,11 @@
         if (!erro) {
             ServiceBaseModel * model = [ServiceBaseModel mj_objectWithKeyValues:obj];
             if (model.DataList.count) {
-                [self preparePay:model];
+                DatalistBaseModel * datalist = model.DataList[0];
+                datalist.MG001 = self.value;
                 ZWHOrderPayViewController * vc = [[ZWHOrderPayViewController alloc]init];
+                vc.state = 7;
+                vc.baseModel = model;
                 [self.navigationController pushViewController:vc animated:YES];
                 
             }else
@@ -236,17 +239,6 @@
 }
 
 
-//预支付接口
--(void)preparePay:(ServiceBaseModel*)model{
-    DatalistBaseModel * datalist = model.DataList[0];
-    datalist.MG001 = self.value;
-    NSDictionary * sysmodel = @{@"para1":UniqUserID,@"para2":MEMBERTYPE,@"para3":datalist.MG001,@"para4":model.sysmodel.para1,@"para5":datalist.MBR000,@"para6":@"W"};
-    [DataProcess requestDataWithURL:Pay_MemberLevel RequestStr:GETRequestStr(nil, sysmodel, nil, nil, nil) Result:^(id obj, id erro) {
-        NSLog(@"上传结果===>%@",obj);
-        NSLog(@"wwwwerro===>%@",erro);
-        
-    }];
-}
 /*
 #pragma mark - Navigation
 

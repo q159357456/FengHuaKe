@@ -82,14 +82,22 @@
     lab.text = @"¥80.00";
     lab.font = HTFont(80);
     lab.textAlignment = NSTextAlignmentCenter;
-    if (_orderModelList.count>0) {
-        float sum=0;
-        for (NSInteger i=0; i<_orderModelList.count; i++) {
-            ZWHOrderModel *model = _orderModelList[i];
-            sum+=[model.totalamount floatValue];
+    if (self.state == 7) {
+        DatalistBaseModel * datalist = self.baseModel.DataList[0];
+        lab.text = [NSString stringWithFormat:@"¥%.3f",datalist.cash.floatValue];
+        
+    }else
+    {
+        if (_orderModelList.count>0) {
+            float sum=0;
+            for (NSInteger i=0; i<_orderModelList.count; i++) {
+                ZWHOrderModel *model = _orderModelList[i];
+                sum+=[model.totalamount floatValue];
+            }
+            lab.text = [NSString stringWithFormat:@"¥%.3f",sum];
         }
-        lab.text = [NSString stringWithFormat:@"¥%.3f",sum];
     }
+   
     
     
     [backview addSubview:lab];
@@ -126,42 +134,54 @@
             break;
     }
     
-    if (_orderModelList.count>0) {
-        
-        NSMutableArray *dataListArr = [NSMutableArray array];
-        for (NSInteger i=0; i<_orderModelList.count; i++) {
-            ZWHOrderModel *model = _orderModelList[i];
-            NSMutableDictionary *datalist = [NSMutableDictionary dictionary];
-//            [datalist setValue:UniqUserID forKey:@"memberid"];
-//            [datalist setValue:userType forKey:@"membertype"];
-//            [datalist setValue:paywayStr forKey:@"paytype"];
-            [datalist setValue:model.billno forKey:@"billno"];
-            [datalist setValue:model.shopid forKey:@"shopid"];
-            [datalist setValue:model.totalamount forKey:@"amout"];
-            [dataListArr addObject:datalist];
-        }
-        MJWeakSelf;
-        [HttpHandler getPayRequest:@{@"para1":userType,@"para2":UniqUserID,@"para3":paywayStr} DataList:dataListArr start:@(-1) end:@(-1) querytype:@"0" Success:^(id obj) {
-            if (ReturnValue == 1) {
-                NSLog(@"%@",obj);
-                if ([obj[@"sysmodel"][@"intresult"] integerValue] == 1) {
-                    [weakSelf aliPay:obj[@"sysmodel"][@"strresult"] urlScheme:@"Fenghuake"];
-                }else{
-                    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"金额变动！" message:[NSString stringWithFormat:@"一共为:¥%@",obj[@"sysmodel"][@"para1"]] preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"支付" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                        [weakSelf aliPay:obj[@"sysmodel"][@"strresult"] urlScheme:@"Fenghuake"];
-                    }];
-                    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    }];
-                    [vc addAction:sure];
-                    [vc addAction:cancel];
-                    [weakSelf presentViewController:vc animated:YES completion:nil];
-                }
-            }
-        } failed:^(id obj) {
-            NSLog(@"%@",obj);
+    if (self.state == 7) {
+        DatalistBaseModel * datalist = self.baseModel.DataList[0];
+        NSDictionary * sysmodel = @{@"para1":UniqUserID,@"para2":MEMBERTYPE,@"para3":datalist.MG001,@"para4":self.baseModel.sysmodel.para1,@"para5":datalist.MBR000,@"para6":@"W"};
+        [DataProcess requestDataWithURL:Pay_MemberLevel RequestStr:GETRequestStr(nil, sysmodel, nil, nil, nil) Result:^(id obj, id erro) {
+            NSLog(@"上传结果===>%@",obj);
+            NSLog(@"wwwwerro===>%@",erro);
+            
         }];
+    }else
+    {
+        if (_orderModelList.count>0) {
+            
+            NSMutableArray *dataListArr = [NSMutableArray array];
+            for (NSInteger i=0; i<_orderModelList.count; i++) {
+                ZWHOrderModel *model = _orderModelList[i];
+                NSMutableDictionary *datalist = [NSMutableDictionary dictionary];
+                //            [datalist setValue:UniqUserID forKey:@"memberid"];
+                //            [datalist setValue:userType forKey:@"membertype"];
+                //            [datalist setValue:paywayStr forKey:@"paytype"];
+                [datalist setValue:model.billno forKey:@"billno"];
+                [datalist setValue:model.shopid forKey:@"shopid"];
+                [datalist setValue:model.totalamount forKey:@"amout"];
+                [dataListArr addObject:datalist];
+            }
+            MJWeakSelf;
+            [HttpHandler getPayRequest:@{@"para1":userType,@"para2":UniqUserID,@"para3":paywayStr} DataList:dataListArr start:@(-1) end:@(-1) querytype:@"0" Success:^(id obj) {
+                if (ReturnValue == 1) {
+                    NSLog(@"%@",obj);
+                    if ([obj[@"sysmodel"][@"intresult"] integerValue] == 1) {
+                        [weakSelf aliPay:obj[@"sysmodel"][@"strresult"] urlScheme:@"Fenghuake"];
+                    }else{
+                        UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"金额变动！" message:[NSString stringWithFormat:@"一共为:¥%@",obj[@"sysmodel"][@"para1"]] preferredStyle:UIAlertControllerStyleAlert];
+                        UIAlertAction *sure = [UIAlertAction actionWithTitle:@"支付" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                            [weakSelf aliPay:obj[@"sysmodel"][@"strresult"] urlScheme:@"Fenghuake"];
+                        }];
+                        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        }];
+                        [vc addAction:sure];
+                        [vc addAction:cancel];
+                        [weakSelf presentViewController:vc animated:YES completion:nil];
+                    }
+                }
+            } failed:^(id obj) {
+                NSLog(@"%@",obj);
+            }];
+        }
     }
+    
     
     
 }
