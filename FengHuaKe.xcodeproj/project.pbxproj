@@ -468,6 +468,8 @@
 		7FE5D0F522C20FCD0032B1E7 /* MemberUpgradeTopUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0F422C20FCD0032B1E7 /* MemberUpgradeTopUpController.m */; };
 		7FE6083322641F35007A73A1 /* RentCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083222641F35007A73A1 /* RentCarViewController.m */; };
 		7FE6083622643133007A73A1 /* BaseModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083522643133007A73A1 /* BaseModelObject.m */; };
+		7FED0DE222C46C5B009AB818 /* AdressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE122C46C5B009AB818 /* AdressModel.m */; };
+		7FED0DE622C47E51009AB818 /* FHTXPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */; };
 		860CF2D92137DC4A00C68916 /* ZWHResonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */; };
 		860CF2DE2137E86E00C68916 /* ZWHOrderServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2DD2137E86E00C68916 /* ZWHOrderServiceViewController.m */; };
 		860CF2E12137E88700C68916 /* ZWHAfterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2E02137E88700C68916 /* ZWHAfterListViewController.m */; };
@@ -1437,6 +1439,10 @@
 		7FE6083222641F35007A73A1 /* RentCarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RentCarViewController.m; sourceTree = "<group>"; };
 		7FE6083422643133007A73A1 /* BaseModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModelObject.h; sourceTree = "<group>"; };
 		7FE6083522643133007A73A1 /* BaseModelObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseModelObject.m; sourceTree = "<group>"; };
+		7FED0DE022C46C5B009AB818 /* AdressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdressModel.h; sourceTree = "<group>"; };
+		7FED0DE122C46C5B009AB818 /* AdressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdressModel.m; sourceTree = "<group>"; };
+		7FED0DE422C47E51009AB818 /* FHTXPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FHTXPayViewController.h; sourceTree = "<group>"; };
+		7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FHTXPayViewController.m; sourceTree = "<group>"; };
 		860CF2D72137DC4A00C68916 /* ZWHResonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWHResonTableViewCell.h; sourceTree = "<group>"; };
 		860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWHResonTableViewCell.m; sourceTree = "<group>"; };
 		860CF2DC2137E86E00C68916 /* ZWHOrderServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWHOrderServiceViewController.h; sourceTree = "<group>"; };
@@ -2260,6 +2266,7 @@
 		7C5509302051217A007FBC12 /* Four */ = {
 			isa = PBXGroup;
 			children = (
+				7FED0DE322C47DD4009AB818 /* pay(支付) */,
 				7FE5D0E822C0C15E0032B1E7 /* 会员升级(memberUpdate) */,
 				8613075B221FCFFC0096FB60 /* QRCode(个人二维码) */,
 				86A3E2022154CA090080F916 /* ScroViewText(微博主页) */,
@@ -3609,8 +3616,19 @@
 			children = (
 				7FE5D0ED22C200D70032B1E7 /* ServiceBaseModel.h */,
 				7FE5D0EE22C200D70032B1E7 /* ServiceBaseModel.m */,
+				7FED0DE022C46C5B009AB818 /* AdressModel.h */,
+				7FED0DE122C46C5B009AB818 /* AdressModel.m */,
 			);
 			path = ServiceBaseModel;
+			sourceTree = "<group>";
+		};
+		7FED0DE322C47DD4009AB818 /* pay(支付) */ = {
+			isa = PBXGroup;
+			children = (
+				7FED0DE422C47E51009AB818 /* FHTXPayViewController.h */,
+				7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */,
+			);
+			path = "pay(支付)";
 			sourceTree = "<group>";
 		};
 		860CF2DA2137E83800C68916 /* Aftersale(售后服务) */ = {
@@ -5109,6 +5127,7 @@
 			files = (
 				7FE5D0DF22C0ACDB0032B1E7 /* AlreadyApplyController.m in Sources */,
 				7CB478F420DE1CF2000EAD16 /* InsuranceListCell.m in Sources */,
+				7FED0DE622C47E51009AB818 /* FHTXPayViewController.m in Sources */,
 				7C6076B120ABD0CB000EE248 /* ConfirmBillAdressCell.m in Sources */,
 				86787562211D79D10061E875 /* ZWHNewsTableViewCell.m in Sources */,
 				86EDCA3D210EF694002C0AC8 /* HttpTool.m in Sources */,
@@ -5266,6 +5285,7 @@
 				7C2B3139205D07FC00BA30AB /* FMDBGroupTable.m in Sources */,
 				7FB7FA5A22B378B8006B3484 /* GuiApplyClickChoiceView.m in Sources */,
 				7C55092020511DD4007FBC12 /* UIImage+Rotate.m in Sources */,
+				7FED0DE222C46C5B009AB818 /* AdressModel.m in Sources */,
 				7C0E4045206B3CB000A29079 /* ContractDetailVC.m in Sources */,
 				861E14C121CB71BA00B31BB5 /* ZWHVisaCViewController.m in Sources */,
 				86EDCA3C210EF694002C0AC8 /* HttpAPIClient.m in Sources */,

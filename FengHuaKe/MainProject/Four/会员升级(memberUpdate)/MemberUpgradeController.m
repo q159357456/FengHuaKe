@@ -8,7 +8,6 @@
 
 #import "MemberUpgradeController.h"
 #import "MemberUpgradeDetailController.h"
-#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String])
 @interface MemberUpgradeController ()
 @property(nonatomic,strong)NSArray * coverArray;
 @property(nonatomic,strong)ServiceBaseModel * baseModel;
@@ -26,10 +25,10 @@
     [DataProcess requestDataWithURL:MemberLevel_Current RequestStr:GETRequestStr(nil, dic, nil,nil, nil) Result:^(id obj, id erro) {
 
         if (!erro) {
-//            NSLog(@"obj===>%@",obj);
+            NSLog(@"obj===>%@",obj);
             weakSelf.baseModel =  [ServiceBaseModel mj_objectWithKeyValues:obj];
             NSDictionary * dic1 = [weakSelf.baseModel.sysmodel.para1 toDictionary];
-            NSDictionary * dic2 = [weakSelf.baseModel.sysmodel.para2 toDictionary];
+//            NSDictionary * dic2 = [weakSelf.baseModel.sysmodel.para2 toDictionary];
 //             NSLog(@"dic1===>%@",dic1);
 //             NSLog(@"dic2===>%@",dic2);
 //             NSLog(@"dic3===>%@",weakSelf.baseModel.sysmodel.strresult);
@@ -141,6 +140,10 @@
 
 }
 -(void)actionDetail:(UIButton*)sender{
+    if (sender.tag == 1) {
+        [SVProgressHUD showErrorWithStatus:@"您已是会员"];
+        return;
+    }
     NSInteger index = sender.tag - 1;
     if (self.baseModel.DataList.count < sender.tag) {
         return;

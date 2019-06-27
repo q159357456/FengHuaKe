@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString *  MG005;
 @property(nonatomic,copy)NSString *  MG007;
 @property(nonatomic,copy)NSString *  MG021;
+@property(nonatomic,copy)NSString *  MBR000;
 @end
 
 @interface SysmodelBaseModel : NSObject

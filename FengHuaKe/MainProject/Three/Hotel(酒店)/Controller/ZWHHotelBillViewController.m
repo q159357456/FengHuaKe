@@ -297,7 +297,6 @@
 #pragma mark - 立即购买
 -(void)POCreate{
     [self.view endEditing:YES];
-    [self showHudInView:self.view hint:@""];
     if (!(self.manName.length>0&&self.manPhone.length>0)) {
         [self showHint:@"请完善信息"];
         return;
@@ -328,7 +327,7 @@
     
     [dict setObject:infodict forKey:@"other_info"];
     [dict setObject:productArr forKey:@"product"];
-    
+    [self showHudInView:self.view hint:@""];
     MJWeakSelf
     [HttpHandler getBillCreate:@{} DataList:@[dict] start:@(-1) end:@(-1) querytype:@"0" Success:^(id obj) {
         [weakSelf hideHud];

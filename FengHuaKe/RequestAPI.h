@@ -29,4 +29,8 @@
 #define Blogs_List @"Blogs/List"
 //POST /api/MemberLevel/Current会员等级
 #define MemberLevel_Current @"MemberLevel/Current"
+//POST /api/MemberLevel/Apply
+#define MemberLevel_Apply @"MemberLevel/Apply"
+//POST /api/Pay/MemberLevel
+#define Pay_MemberLevel @"Pay/MemberLevel"
 #endif /* RequestAPI_h */

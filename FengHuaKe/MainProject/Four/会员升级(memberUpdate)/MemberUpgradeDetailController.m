@@ -99,7 +99,7 @@
 }
 -(void)topUp{
     MemberUpgradeTopUpController * vc = [[MemberUpgradeTopUpController alloc]init];
-    vc.value = [self.model.MG007 floatValue];
+    vc.value = self.model.MG001 ;
     [self.navigationController pushViewController:vc animated:YES];
 }
 /*
