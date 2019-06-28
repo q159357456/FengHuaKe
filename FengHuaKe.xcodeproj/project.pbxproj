@@ -470,6 +470,8 @@
 		7FE6083622643133007A73A1 /* BaseModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083522643133007A73A1 /* BaseModelObject.m */; };
 		7FED0DE222C46C5B009AB818 /* AdressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE122C46C5B009AB818 /* AdressModel.m */; };
 		7FED0DE622C47E51009AB818 /* FHTXPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */; };
+		7FED0DEB22C5F958009AB818 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DEA22C5F958009AB818 /* AboutUsViewController.m */; };
+		7FED0DEF22C60377009AB818 /* UserDefineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DEE22C60377009AB818 /* UserDefineController.m */; };
 		860CF2D92137DC4A00C68916 /* ZWHResonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */; };
 		860CF2DE2137E86E00C68916 /* ZWHOrderServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2DD2137E86E00C68916 /* ZWHOrderServiceViewController.m */; };
 		860CF2E12137E88700C68916 /* ZWHAfterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2E02137E88700C68916 /* ZWHAfterListViewController.m */; };
@@ -1443,6 +1445,10 @@
 		7FED0DE122C46C5B009AB818 /* AdressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdressModel.m; sourceTree = "<group>"; };
 		7FED0DE422C47E51009AB818 /* FHTXPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FHTXPayViewController.h; sourceTree = "<group>"; };
 		7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FHTXPayViewController.m; sourceTree = "<group>"; };
+		7FED0DE922C5F958009AB818 /* AboutUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		7FED0DEA22C5F958009AB818 /* AboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		7FED0DED22C60377009AB818 /* UserDefineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefineController.h; sourceTree = "<group>"; };
+		7FED0DEE22C60377009AB818 /* UserDefineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefineController.m; sourceTree = "<group>"; };
 		860CF2D72137DC4A00C68916 /* ZWHResonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWHResonTableViewCell.h; sourceTree = "<group>"; };
 		860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWHResonTableViewCell.m; sourceTree = "<group>"; };
 		860CF2DC2137E86E00C68916 /* ZWHOrderServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWHOrderServiceViewController.h; sourceTree = "<group>"; };
@@ -2266,6 +2272,9 @@
 		7C5509302051217A007FBC12 /* Four */ = {
 			isa = PBXGroup;
 			children = (
+				7FED0DEC22C6035B009AB818 /* UserdDefined(自主连接) */,
+				7FED0DE822C5F8F7009AB818 /* AboutUs(关于我们) */,
+				7FED0DE722C5F8A2009AB818 /* BillTogether(拼单) */,
 				7FED0DE322C47DD4009AB818 /* pay(支付) */,
 				7FE5D0E822C0C15E0032B1E7 /* 会员升级(memberUpdate) */,
 				8613075B221FCFFC0096FB60 /* QRCode(个人二维码) */,
@@ -3629,6 +3638,31 @@
 				7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */,
 			);
 			path = "pay(支付)";
+			sourceTree = "<group>";
+		};
+		7FED0DE722C5F8A2009AB818 /* BillTogether(拼单) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "BillTogether(拼单)";
+			sourceTree = "<group>";
+		};
+		7FED0DE822C5F8F7009AB818 /* AboutUs(关于我们) */ = {
+			isa = PBXGroup;
+			children = (
+				7FED0DE922C5F958009AB818 /* AboutUsViewController.h */,
+				7FED0DEA22C5F958009AB818 /* AboutUsViewController.m */,
+			);
+			path = "AboutUs(关于我们)";
+			sourceTree = "<group>";
+		};
+		7FED0DEC22C6035B009AB818 /* UserdDefined(自主连接) */ = {
+			isa = PBXGroup;
+			children = (
+				7FED0DED22C60377009AB818 /* UserDefineController.h */,
+				7FED0DEE22C60377009AB818 /* UserDefineController.m */,
+			);
+			path = "UserdDefined(自主连接)";
 			sourceTree = "<group>";
 		};
 		860CF2DA2137E83800C68916 /* Aftersale(售后服务) */ = {
@@ -5161,6 +5195,7 @@
 				7C72208620D8B08700805CAD /* RoomBillPayWayCell.m in Sources */,
 				7C55091A20511DD4007FBC12 /* UIImage+Water.m in Sources */,
 				7C84E4EF20AD216100830B1E /* BillTopView.m in Sources */,
+				7FED0DEB22C5F958009AB818 /* AboutUsViewController.m in Sources */,
 				7C550CD420579C7E007FBC12 /* ConversationListController.m in Sources */,
 				7FACD377225C50110081033C /* GBBaseWebViewController.m in Sources */,
 				7CCB165F206AA1CF00CF208A /* CallSettingViewController.m in Sources */,
@@ -5338,6 +5373,7 @@
 				7C72207420D8A8D100805CAD /* RoomBillVC.m in Sources */,
 				7C550CF620592E6E007FBC12 /* DataProcess.m in Sources */,
 				86EDCA5C21115F3E002C0AC8 /* ZWHIntegralViewController.m in Sources */,
+				7FED0DEF22C60377009AB818 /* UserDefineController.m in Sources */,
 				86EDCA2F210EDD80002C0AC8 /* ZWHCashListTableViewCell.m in Sources */,
 				7C72206A20D4FC9C00805CAD /* RoomDetailVC.m in Sources */,
 				7C84E4DC20AC30F800830B1E /* BillModel.m in Sources */,

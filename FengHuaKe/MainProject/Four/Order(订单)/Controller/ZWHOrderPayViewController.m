@@ -84,7 +84,7 @@
     lab.textAlignment = NSTextAlignmentCenter;
     if (self.state == 7) {
         DatalistBaseModel * datalist = self.baseModel.DataList[0];
-        lab.text = [NSString stringWithFormat:@"¥%.3f",datalist.cash.floatValue];
+        lab.text = [NSString stringWithFormat:@"¥%.2f",datalist.cash.floatValue];
         
     }else
     {
@@ -94,7 +94,7 @@
                 ZWHOrderModel *model = _orderModelList[i];
                 sum+=[model.totalamount floatValue];
             }
-            lab.text = [NSString stringWithFormat:@"¥%.3f",sum];
+            lab.text = [NSString stringWithFormat:@"¥%.2f",sum];
         }
     }
    
@@ -137,9 +137,16 @@
     if (self.state == 7) {
         DatalistBaseModel * datalist = self.baseModel.DataList[0];
         NSDictionary * sysmodel = @{@"para1":UniqUserID,@"para2":MEMBERTYPE,@"para3":datalist.MG001,@"para4":self.baseModel.sysmodel.para1,@"para5":datalist.MBR000,@"para6":@"W"};
+        MJWeakSelf;
         [DataProcess requestDataWithURL:Pay_MemberLevel RequestStr:GETRequestStr(nil, sysmodel, nil, nil, nil) Result:^(id obj, id erro) {
-            NSLog(@"上传结果===>%@",obj);
+            NSLog(@"确认支付上传结果===>%@",obj);
             NSLog(@"wwwwerro===>%@",erro);
+            if ([obj[@"sysmodel"][@"intresult"] integerValue] == 1) {
+                [weakSelf aliPay:obj[@"sysmodel"][@"strresult"] urlScheme:@"Fenghuake"];
+            }else
+            {
+                [self showHint:obj[@"msg"]];
+            }
             
         }];
     }else

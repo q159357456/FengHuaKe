@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"升级会员";
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self initSubViews];
     // Do any additional setup after loading the view.
@@ -80,7 +81,15 @@
     label1.font = ZWHFont(14*MULPITLE);
     label2.font = ZWHFont(14*MULPITLE);
     label1.text = [NSString stringWithFormat:@"%@礼包",self.model.MG002];
-    label2.text = [NSString stringWithFormat:@"代理费%@/年",self.model.MG007];
+    if (self.model.MG007.integerValue != 0) {
+        if (self.index==1) {
+             label2.text = [NSString stringWithFormat:@"%@元会费/年",self.model.MG007];
+        }else
+        {
+             label2.text = [NSString stringWithFormat:@"代理费%@/年",self.model.MG007];
+        }
+       
+    }
     
     UILabel * label = [[UILabel alloc]init];
     label.text = @"  套餐详情";

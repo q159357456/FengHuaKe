@@ -33,4 +33,6 @@
 #define MemberLevel_Apply @"MemberLevel/Apply"
 //POST /api/Pay/MemberLevel
 #define Pay_MemberLevel @"Pay/MemberLevel"
+//POST /api/FolderLink/List
+#define FolderLink_List @"FolderLink/List"
 #endif /* RequestAPI_h */

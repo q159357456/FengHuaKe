@@ -36,7 +36,8 @@
 #import "FMDBUserTable.h"
 #import "FMDBGroupTable.h"
 #import "GuidBlogViewController.h"
-
+#import "AboutUsViewController.h"
+#import "UserDefineController.h"
 #import "MemberUpgradeController.h"
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate>
 @property(nonatomic,strong)UITableView *tableview;
@@ -490,6 +491,25 @@
                         
                     }
                         break;
+                    case 3:
+                    {
+                        //拼单
+                        ZWHInvoiceListViewController *vc=[[ZWHInvoiceListViewController alloc]init];
+                        [self.navigationController pushViewController:vc animated:YES];
+                        
+                    }
+                        break;
+                    case 4:
+                    {
+                        //关于我们
+//                        ZWHInvoiceListViewController *vc=[[ZWHInvoiceListViewController alloc]init];
+//                        [self.navigationController pushViewController:vc animated:YES];
+                        AboutUsViewController * vc = [[AboutUsViewController alloc]init];
+                        vc.title = @"关于我们";
+                        [self.navigationController pushViewController:vc animated:YES];
+                        
+                    }
+                        break;
                 }
             };
         }
@@ -516,6 +536,9 @@
     if (indexPath.row == 1) {
         //自主连接
         NSLog(@"自主连接");
+        UserDefineController * vc = [[UserDefineController alloc]init];
+        vc.title = @"自主程序链接";
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
     if (indexPath.row == 2) {

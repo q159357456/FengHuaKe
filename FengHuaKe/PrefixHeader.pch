@@ -49,8 +49,8 @@
 #define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 
 #define STATES_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
-
-#define NAV_HEIGHT 64.0f
+#define kStatusBarH     [UIApplication sharedApplication].statusBarFrame.size.height
+#define NAV_HEIGHT (44.f + kStatusBarH)
 #define TAB_HEIGHT 49.0f
 
 

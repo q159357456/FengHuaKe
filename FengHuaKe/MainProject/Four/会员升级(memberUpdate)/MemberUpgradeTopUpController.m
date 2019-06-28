@@ -15,7 +15,6 @@
 #import "AreaModel.h"
 #import "AdressModel.h"
 #import "ZWHOrderPayViewController.h"
-#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String])
 @interface MemberUpgradeTopUpController ()<AreaViewDelegate>
 @property(nonatomic,strong)AreaView * areaView;
 @property(nonatomic,strong)GuidApplyTxtInputView * name;
@@ -34,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"确认信息";
+    self.titleView.titleLabel.textColor = [UIColor whiteColor];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self initSubViews];
     
@@ -120,7 +120,6 @@
 //发送验证码
 -(void)sendCode:(UIButton*)sender{
     sender.enabled = NO;
-    NSLog(@"发送验证码");
     if (!(self.phoneNum.textfield.text.length>0&&[self.phoneNum.textfield.text isMobileNumberClassification]==YES)) {
         [self showHint:@"请输入正确的手机号"];
         return;
@@ -144,7 +143,6 @@
 
 //选择省市区
 -(void)chooseArea{
-    NSLog(@"选择省市区");
     [self.areaView showAreaView];
 }
 

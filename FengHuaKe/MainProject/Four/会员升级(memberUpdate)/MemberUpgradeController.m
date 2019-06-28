@@ -8,6 +8,7 @@
 
 #import "MemberUpgradeController.h"
 #import "MemberUpgradeDetailController.h"
+#import "UIViewController+HUD.h"
 @interface MemberUpgradeController ()
 @property(nonatomic,strong)NSArray * coverArray;
 @property(nonatomic,strong)ServiceBaseModel * baseModel;
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.title = @"会员升级";
     NSDictionary *dic = @{@"para1":UniqUserID,@"para2":MEMBERTYPE};
     DefineWeakSelf;
     [DataProcess requestDataWithURL:MemberLevel_Current RequestStr:GETRequestStr(nil, dic, nil,nil, nil) Result:^(id obj, id erro) {
@@ -57,7 +59,7 @@
     middleView.backgroundColor = [UIColor whiteColor];
     bottomView.backgroundColor = [UIColor whiteColor];
    
-    topview.frame = CGRectMake(0, 0, ScreenWidth, 100*MULPITLE);
+    topview.frame = CGRectMake(0,0, ScreenWidth, 100*MULPITLE);
     middleView.frame = CGRectMake(0, CGRectGetMaxY(topview.frame)+ 10, ScreenWidth, 93*MULPITLE);
     bottomView.frame = CGRectMake(0, CGRectGetMaxY(middleView.frame)+10, ScreenWidth, 240*MULPITLE);
     
@@ -114,7 +116,7 @@
     
     UIImageView * imageView = [[UIImageView alloc]init];
     [middleView addSubview:imageView];
-    imageView.image = [UIImage imageNamed:self.coverArray[0]];
+    imageView.image = [UIImage imageNamed:self.coverArray[1]];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(10, 10, 10, 10));
     }];
@@ -141,7 +143,7 @@
 }
 -(void)actionDetail:(UIButton*)sender{
     if (sender.tag == 1) {
-        [SVProgressHUD showErrorWithStatus:@"您已是会员"];
+        [self showHint:@"您已是会员"];
         return;
     }
     NSInteger index = sender.tag - 1;
