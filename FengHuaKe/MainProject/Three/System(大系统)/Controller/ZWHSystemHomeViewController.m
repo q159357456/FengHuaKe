@@ -434,22 +434,20 @@
         case 0:
         {
             //机票
-//            [self canshow];
-
-//                        ScroWeboViewController *vc = [[ScroWeboViewController alloc]init];
-//                        vc.hidesBottomBarWhenPushed = YES;
-//                        [self.navigationController pushViewController:vc animated:YES];
-            QMUIAlertAction *action1 = [QMUIAlertAction actionWithTitle:@"取消" style:QMUIAlertActionStyleCancel handler:NULL];
-            QMUIAlertAction *action2 = [QMUIAlertAction actionWithTitle:@"进入" style:QMUIAlertActionStyleDestructive handler:^(__kindof QMUIAlertController *aAlertController, QMUIAlertAction *action) {
-                GBAirTiketViewController *vc = [[GBAirTiketViewController alloc]init];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
-           
-            }];
-            QMUIAlertController *alertController = [QMUIAlertController alertControllerWithTitle:@"提示" message:@"智慧旅游APP推广活动期间,会员直接进入航空系统享受内部成本价,进入机票系统\n 账号:Opxiaoyin\n 密码:Op22010355" preferredStyle:QMUIAlertControllerStyleAlert];
-            [alertController addAction:action1];
-            [alertController addAction:action2];
-            [alertController showWithAnimated:YES];
+//            QMUIAlertAction *action1 = [QMUIAlertAction actionWithTitle:@"取消" style:QMUIAlertActionStyleCancel handler:NULL];
+//            QMUIAlertAction *action2 = [QMUIAlertAction actionWithTitle:@"进入" style:QMUIAlertActionStyleDestructive handler:^(__kindof QMUIAlertController *aAlertController, QMUIAlertAction *action) {
+//                GBAirTiketViewController *vc = [[GBAirTiketViewController alloc]init];
+//                vc.hidesBottomBarWhenPushed = YES;
+//                [self.navigationController pushViewController:vc animated:YES];
+//
+//            }];
+//            QMUIAlertController *alertController = [QMUIAlertController alertControllerWithTitle:@"提示" message:@"智慧旅游APP推广活动期间,会员直接进入航空系统享受内部成本价,进入机票系统\n 账号:Opxiaoyin\n 密码:Op22010355" preferredStyle:QMUIAlertControllerStyleAlert];
+//            [alertController addAction:action1];
+//            [alertController addAction:action2];
+//            [alertController showWithAnimated:YES];
+            GBAirTiketViewController *vc = [[GBAirTiketViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
          
         }
             break;
