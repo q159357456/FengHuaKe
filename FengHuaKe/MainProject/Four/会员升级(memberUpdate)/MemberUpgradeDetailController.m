@@ -102,6 +102,7 @@
     UITextView * textView = [[UITextView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(label.frame), ScreenWidth, bottomView.height-label.height)];
     self.model.MG021 = [self.model.MG021 stringByReplacingOccurrencesOfString:@"\\n" withString:@"\r\n"];
     textView.text = self.model.MG021;
+    textView.editable = NO;
     [bottomView addSubview:textView];
 
     

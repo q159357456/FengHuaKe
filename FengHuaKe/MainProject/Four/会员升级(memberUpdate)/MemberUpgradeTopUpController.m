@@ -119,23 +119,26 @@
 
 //发送验证码
 -(void)sendCode:(UIButton*)sender{
-    sender.enabled = NO;
+    
     if (!(self.phoneNum.textfield.text.length>0&&[self.phoneNum.textfield.text isMobileNumberClassification]==YES)) {
         [self showHint:@"请输入正确的手机号"];
         return;
     }
-
+    sender.enabled = NO;
 //    MJWeakSelf;
     [self showEmptyViewWithLoading];
     [HttpHandler getSendMobileCode:@{@"para1":@"X",@"para2":self.phoneNum.textfield.text} start:@(-1) end:@(-1) querytype:@"0" Success:^(id obj) {
         [self hideEmptyView];
         if (ReturnValue==1) {
+            sender.enabled = NO;
             [self showHint:@"发送成功"];
 //            [weakSelf startWaitTime];
         }else{
+            sender.enabled = YES;
             [self showHint:@"发送验证码失败"];
         }
     } failed:^(id obj) {
+        sender.enabled = YES;
         [self hideEmptyView];
         [self showHint:@"发送验证码失败"];
     }];

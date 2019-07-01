@@ -21,7 +21,11 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
+    if (self.navBarHidden)
+    {
+        [self.navigationController setNavigationBarHidden:YES];
+    }
+  
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -29,7 +33,11 @@
     self.webview.UIDelegate = nil;
     self.webview.navigationDelegate = nil;
     self.webview.scrollView.delegate = nil;
-     [self.navigationController setNavigationBarHidden:NO];
+    if (self.navBarHidden)
+    {
+       [self.navigationController setNavigationBarHidden:NO];
+    }
+    
    
 }
 

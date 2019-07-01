@@ -434,6 +434,9 @@
 		7CFC3973207B422400111EB1 /* PublishShowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC3971207B422400111EB1 /* PublishShowVC.xib */; };
 		7CFC3978207B47FA00111EB1 /* PublishCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC3976207B47FA00111EB1 /* PublishCollectionViewCell.m */; };
 		7CFC3979207B47FA00111EB1 /* PublishCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC3977207B47FA00111EB1 /* PublishCollectionViewCell.xib */; };
+		7CFFE71F22C761BA006C2859 /* UserDefineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE71E22C761BA006C2859 /* UserDefineCell.m */; };
+		7CFFE72222C764AC006C2859 /* UserDefineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE72122C764AC006C2859 /* UserDefineModel.m */; };
+		7CFFE72522C77196006C2859 /* UserDefineWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE72422C77196006C2859 /* UserDefineWebController.m */; };
 		7F580A16226F0CAE005AA644 /* FootPrintTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A14226F0CAE005AA644 /* FootPrintTableViewCell.m */; };
 		7F580A17226F0CAE005AA644 /* FootPrintTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F580A15226F0CAE005AA644 /* FootPrintTableViewCell.xib */; };
 		7F580A1C226F1765005AA644 /* GBSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A1B226F1765005AA644 /* GBSegmentView.m */; };
@@ -1378,6 +1381,12 @@
 		7CFC3975207B47FA00111EB1 /* PublishCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishCollectionViewCell.h; sourceTree = "<group>"; };
 		7CFC3976207B47FA00111EB1 /* PublishCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishCollectionViewCell.m; sourceTree = "<group>"; };
 		7CFC3977207B47FA00111EB1 /* PublishCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublishCollectionViewCell.xib; sourceTree = "<group>"; };
+		7CFFE71D22C761BA006C2859 /* UserDefineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefineCell.h; sourceTree = "<group>"; };
+		7CFFE71E22C761BA006C2859 /* UserDefineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefineCell.m; sourceTree = "<group>"; };
+		7CFFE72022C764AC006C2859 /* UserDefineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefineModel.h; sourceTree = "<group>"; };
+		7CFFE72122C764AC006C2859 /* UserDefineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefineModel.m; sourceTree = "<group>"; };
+		7CFFE72322C77196006C2859 /* UserDefineWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefineWebController.h; sourceTree = "<group>"; };
+		7CFFE72422C77196006C2859 /* UserDefineWebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefineWebController.m; sourceTree = "<group>"; };
 		7F580A13226F0CAE005AA644 /* FootPrintTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FootPrintTableViewCell.h; sourceTree = "<group>"; };
 		7F580A14226F0CAE005AA644 /* FootPrintTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FootPrintTableViewCell.m; sourceTree = "<group>"; };
 		7F580A15226F0CAE005AA644 /* FootPrintTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FootPrintTableViewCell.xib; sourceTree = "<group>"; };
@@ -3661,6 +3670,12 @@
 			children = (
 				7FED0DED22C60377009AB818 /* UserDefineController.h */,
 				7FED0DEE22C60377009AB818 /* UserDefineController.m */,
+				7CFFE71D22C761BA006C2859 /* UserDefineCell.h */,
+				7CFFE71E22C761BA006C2859 /* UserDefineCell.m */,
+				7CFFE72022C764AC006C2859 /* UserDefineModel.h */,
+				7CFFE72122C764AC006C2859 /* UserDefineModel.m */,
+				7CFFE72322C77196006C2859 /* UserDefineWebController.h */,
+				7CFFE72422C77196006C2859 /* UserDefineWebController.m */,
 			);
 			path = "UserdDefined(自主连接)";
 			sourceTree = "<group>";
@@ -5319,6 +5334,7 @@
 				7C9A0727207313730067A7E6 /* FriendsCommentView.m in Sources */,
 				7C2B3139205D07FC00BA30AB /* FMDBGroupTable.m in Sources */,
 				7FB7FA5A22B378B8006B3484 /* GuiApplyClickChoiceView.m in Sources */,
+				7CFFE72522C77196006C2859 /* UserDefineWebController.m in Sources */,
 				7C55092020511DD4007FBC12 /* UIImage+Rotate.m in Sources */,
 				7FED0DE222C46C5B009AB818 /* AdressModel.m in Sources */,
 				7C0E4045206B3CB000A29079 /* ContractDetailVC.m in Sources */,
@@ -5406,6 +5422,7 @@
 				8678757E212155B60061E875 /* ZWHProductDetailView.m in Sources */,
 				7FA50EED225F1BE800262EE0 /* ChooseCityVC_New.m in Sources */,
 				7C716CC120DA422500AE2BB1 /* TicketClassifyCell.m in Sources */,
+				7CFFE71F22C761BA006C2859 /* UserDefineCell.m in Sources */,
 				867874E82112DC410061E875 /* ZWHColleagueModel.m in Sources */,
 				7C60DB7E2084757A0048CF7E /* LMPhotoCollectionCell.m in Sources */,
 				7C9A073220731AF50067A7E6 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
@@ -5440,6 +5457,7 @@
 				8678758E212264B40061E875 /* UIButton+IndexPath.m in Sources */,
 				7C2B3120205BC06B00BA30AB /* AddFriendCell.m in Sources */,
 				7C0E405A206B938700A29079 /* CatageThreeCell.m in Sources */,
+				7CFFE72222C764AC006C2859 /* UserDefineModel.m in Sources */,
 				7CBCB7172088469900C144F4 /* ProductVM.m in Sources */,
 				7CBCB773208C520600C144F4 /* ClassifyProductCollectionView.m in Sources */,
 				7C73269D205F8678008021AC /* AddGruopChartVC.m in Sources */,
