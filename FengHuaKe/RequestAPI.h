@@ -35,4 +35,6 @@
 #define Pay_MemberLevel @"Pay/MemberLevel"
 //POST /api/FolderLink/List
 #define FolderLink_List @"FolderLink/List"
+//POST /api/GroupBuy/Me
+#define GroupBuy_Me @"GroupBuy/Me"
 #endif /* RequestAPI_h */
