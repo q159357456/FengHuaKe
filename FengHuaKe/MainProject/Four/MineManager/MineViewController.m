@@ -39,6 +39,7 @@
 #import "AboutUsViewController.h"
 #import "UserDefineController.h"
 #import "MemberUpgradeController.h"
+#import "BillTogetherController.h"
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate>
 @property(nonatomic,strong)UITableView *tableview;
 @property(nonatomic,strong)NSArray *unchangArray;
@@ -494,7 +495,10 @@
                     case 3:
                     {
                         //拼单
-                        ZWHInvoiceListViewController *vc=[[ZWHInvoiceListViewController alloc]init];
+//                        ZWHInvoiceListViewController *vc=[[ZWHInvoiceListViewController alloc]init];
+//                        [self.navigationController pushViewController:vc animated:YES];
+                        BillTogetherController *vc=[[BillTogetherController alloc]init];
+                        vc.title = @"拼单";
                         [self.navigationController pushViewController:vc animated:YES];
                         
                     }

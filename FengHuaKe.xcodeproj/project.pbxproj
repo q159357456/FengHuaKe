@@ -472,6 +472,10 @@
 		7FED0DE622C47E51009AB818 /* FHTXPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */; };
 		7FED0DEB22C5F958009AB818 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DEA22C5F958009AB818 /* AboutUsViewController.m */; };
 		7FED0DEF22C60377009AB818 /* UserDefineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DEE22C60377009AB818 /* UserDefineController.m */; };
+		7FED0DF222C995D2009AB818 /* BillTogetherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DF122C995D2009AB818 /* BillTogetherController.m */; };
+		7FED0DF622C9F791009AB818 /* BillTogetherTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DF422C9F791009AB818 /* BillTogetherTCell.m */; };
+		7FED0DF722C9F791009AB818 /* BillTogetherTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FED0DF522C9F791009AB818 /* BillTogetherTCell.xib */; };
+		7FED0DFA22C9F7A8009AB818 /* BillTogetherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DF922C9F7A8009AB818 /* BillTogetherModel.m */; };
 		860CF2D92137DC4A00C68916 /* ZWHResonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */; };
 		860CF2DE2137E86E00C68916 /* ZWHOrderServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2DD2137E86E00C68916 /* ZWHOrderServiceViewController.m */; };
 		860CF2E12137E88700C68916 /* ZWHAfterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CF2E02137E88700C68916 /* ZWHAfterListViewController.m */; };
@@ -1449,6 +1453,13 @@
 		7FED0DEA22C5F958009AB818 /* AboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		7FED0DED22C60377009AB818 /* UserDefineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefineController.h; sourceTree = "<group>"; };
 		7FED0DEE22C60377009AB818 /* UserDefineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefineController.m; sourceTree = "<group>"; };
+		7FED0DF022C995D2009AB818 /* BillTogetherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BillTogetherController.h; sourceTree = "<group>"; };
+		7FED0DF122C995D2009AB818 /* BillTogetherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillTogetherController.m; sourceTree = "<group>"; };
+		7FED0DF322C9F791009AB818 /* BillTogetherTCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BillTogetherTCell.h; sourceTree = "<group>"; };
+		7FED0DF422C9F791009AB818 /* BillTogetherTCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillTogetherTCell.m; sourceTree = "<group>"; };
+		7FED0DF522C9F791009AB818 /* BillTogetherTCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillTogetherTCell.xib; sourceTree = "<group>"; };
+		7FED0DF822C9F7A8009AB818 /* BillTogetherModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BillTogetherModel.h; sourceTree = "<group>"; };
+		7FED0DF922C9F7A8009AB818 /* BillTogetherModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillTogetherModel.m; sourceTree = "<group>"; };
 		860CF2D72137DC4A00C68916 /* ZWHResonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWHResonTableViewCell.h; sourceTree = "<group>"; };
 		860CF2D82137DC4A00C68916 /* ZWHResonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWHResonTableViewCell.m; sourceTree = "<group>"; };
 		860CF2DC2137E86E00C68916 /* ZWHOrderServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWHOrderServiceViewController.h; sourceTree = "<group>"; };
@@ -3643,6 +3654,13 @@
 		7FED0DE722C5F8A2009AB818 /* BillTogether(拼单) */ = {
 			isa = PBXGroup;
 			children = (
+				7FED0DF022C995D2009AB818 /* BillTogetherController.h */,
+				7FED0DF122C995D2009AB818 /* BillTogetherController.m */,
+				7FED0DF322C9F791009AB818 /* BillTogetherTCell.h */,
+				7FED0DF422C9F791009AB818 /* BillTogetherTCell.m */,
+				7FED0DF522C9F791009AB818 /* BillTogetherTCell.xib */,
+				7FED0DF822C9F7A8009AB818 /* BillTogetherModel.h */,
+				7FED0DF922C9F7A8009AB818 /* BillTogetherModel.m */,
 			);
 			path = "BillTogether(拼单)";
 			sourceTree = "<group>";
@@ -5034,6 +5052,7 @@
 				7C59C5C4207F67E8005D0A68 /* CatageFiveCell.xib in Resources */,
 				7CCB169E206AA1CF00CF208A /* Button_Mute_active.png in Resources */,
 				7C60769920AAACF9000EE248 /* AddressTableViewCell.xib in Resources */,
+				7FED0DF722C9F791009AB818 /* BillTogetherTCell.xib in Resources */,
 				7CCB1681206AA1CF00CF208A /* Button_Stats_disabled@2x.png in Resources */,
 				861307872223C2F30096FB60 /* WeiboSDK.bundle in Resources */,
 				7C7326B42060B1B6008021AC /* FriendInfoVC.xib in Resources */,
@@ -5331,6 +5350,7 @@
 				7CCB1665206AA1CF00CF208A /* EMConfUserSelectionViewController.m in Sources */,
 				7C716D0A20DC982000AE2BB1 /* NoticeTableViewCell.m in Sources */,
 				7CB4792320E22649000EAD16 /* InsuranceBillCell.m in Sources */,
+				7FED0DFA22C9F7A8009AB818 /* BillTogetherModel.m in Sources */,
 				7C0ADD902063B073006E895B /* GroupComonSetCell.m in Sources */,
 				7C59C5B2207F089A005D0A68 /* ChoosePhotoVC.m in Sources */,
 				8678752B211ABD2D0061E875 /* ZWHOrderListTableViewCell.m in Sources */,
@@ -5380,6 +5400,7 @@
 				86787502211817250061E875 /* ZWHHistoryCollectionViewCell.m in Sources */,
 				7C2B3121205BC06B00BA30AB /* InvitationManager.m in Sources */,
 				7C59C5C3207F67E8005D0A68 /* CatageFiveCell.m in Sources */,
+				7FED0DF622C9F791009AB818 /* BillTogetherTCell.m in Sources */,
 				86F3E28D2134E5140019FE72 /* ZWHVacationBillViewController.m in Sources */,
 				7C2BD7D6207CC2DA00BFC76D /* PhtoManagerCell.m in Sources */,
 				7C2B312F205C09E300BA30AB /* MyfriendModel.m in Sources */,
@@ -5537,6 +5558,7 @@
 				86130761221FD00C0096FB60 /* ZWHMyQRViewController.m in Sources */,
 				7C60DB732084757A0048CF7E /* LMTextStyle.m in Sources */,
 				861E14CA21CC824B00B31BB5 /* ZWHVisaDetailViewController.m in Sources */,
+				7FED0DF222C995D2009AB818 /* BillTogetherController.m in Sources */,
 				7C0ADDA02064CEBA006E895B /* GroupMemberCollectionCell.m in Sources */,
 				7C716CE520DB489D00AE2BB1 /* SDCollectionViewCell.m in Sources */,
 				86F3E24E212F96620019FE72 /* ZWHHotelBillViewController.m in Sources */,
