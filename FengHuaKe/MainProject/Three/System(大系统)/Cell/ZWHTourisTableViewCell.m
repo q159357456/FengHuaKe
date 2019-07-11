@@ -90,7 +90,7 @@
     _model = model;
     [_img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_IMG,_model.imgsrc]] placeholderImage:[UIImage imageNamed:PLACEHOLDER]];
     _titleL.text = _model.title;
-    _detailL.text = _model.content;
+    _detailL.text = _model.breviary;
     _numL.text = _model.looknum;
     NSDateFormatter *format = [[NSDateFormatter alloc]init];
     format.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS";

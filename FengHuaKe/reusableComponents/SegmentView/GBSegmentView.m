@@ -38,6 +38,10 @@
             [self style_2_Frame:frame DataSource:dataSource];
         }
         
+        if (segStyle == SegStyle_3) {
+            [self style_3_Frame:frame DataSource:dataSource];
+        }
+        
         
     }
     return self;
@@ -103,6 +107,41 @@
         }
     }
 }
+
+-(void)style_3_Frame:(CGRect)frame DataSource:(NSArray<NSString*>*)dataSource{
+    
+    CGFloat x = 8.0;
+    CGFloat rowSpace = 8;
+    UIScrollView * scroView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+    [self addSubview:scroView];
+    for (NSInteger i=0; i<dataSource.count; i++) {
+        NSString *title = dataSource[i];
+        UILabel *temp = [[UILabel alloc]init];
+        temp.text = title;
+        temp.font = ZWHFont(12);
+        CGSize size = [temp sizeThatFits:CGSizeZero];
+        CGFloat w = size.width+16;
+        CGFloat h =self.height-16;
+        CGFloat y = 8;
+        QMUIButton *button = [[QMUIButton alloc]initWithFrame:CGRectMake(x, y, w, h)];
+        x = x + w + rowSpace;
+        [scroView addSubview:button];
+        [button setTitle:title forState:UIControlStateNormal];
+        button.layer.cornerRadius = h/2;
+        [self addSubview:button];
+        [button addTarget:self action:@selector(pressBtn:) forControlEvents:UIControlEventTouchUpInside];
+        button.titleLabel.font = ZWHFont(12);
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        button.tag = i +1 ;
+        if (button.tag==1) {
+            [self pressBtn:button];
+        }
+        if (i == dataSource.count-1) {
+            [scroView setContentSize:CGSizeMake(CGRectGetMaxX(button.frame), frame.size.height)];
+        }
+    }
+}
+
 -(void)pressBtn:(UIButton*)btn{
     
     if (_index == btn.tag) {

@@ -157,7 +157,7 @@
     //旅游攻略
     [HttpHandler getNewGuides:@{} start:@(1) end:@(2) querytype:@"0" Success:^(id obj) {
         if (ReturnValue==1) {
-            NSLog(@"%@",obj);
+            NSLog(@"obj==>%@",obj);
             weakSelf.tourisArr = [CatageModel mj_objectArrayWithKeyValuesArray:obj[@"DataList"]];
             [weakSelf.systemTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
         }

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef enum : NSUInteger {
     SegStyle_1 =0,
     SegStyle_2,
+    SegStyle_3
 } SegStyle;
 @interface GBSegmentView : UIView
 +(instancetype)initialSegmentViewFrame:(CGRect)frame DataSource:(NSArray<NSString*>*)dataSource SegStyle:(NSInteger)segStyle CallBack:(void(^)(NSInteger index))callBack;
