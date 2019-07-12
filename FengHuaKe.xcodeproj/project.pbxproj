@@ -437,7 +437,6 @@
 		7CFFE71F22C761BA006C2859 /* UserDefineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE71E22C761BA006C2859 /* UserDefineCell.m */; };
 		7CFFE72222C764AC006C2859 /* UserDefineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE72122C764AC006C2859 /* UserDefineModel.m */; };
 		7CFFE72522C77196006C2859 /* UserDefineWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE72422C77196006C2859 /* UserDefineWebController.m */; };
-		7F4AD7EC22D7327700FADFA5 /* WechatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD7EB22D7327700FADFA5 /* WechatManager.m */; };
 		7CFFE72C22D788E1006C2859 /* BlogListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE72B22D788E1006C2859 /* BlogListViewController.m */; };
 		7CFFE72F22D7897B006C2859 /* BlogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE72E22D7897B006C2859 /* BlogDetailViewController.m */; };
 		7CFFE73522D78B8E006C2859 /* TouristTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE73422D78B8E006C2859 /* TouristTableViewCell.m */; };
