@@ -167,7 +167,7 @@
     //游记
     [HttpHandler getNewNotes:@{} start:@(1) end:@(2) querytype:@"0" Success:^(id obj) {
         if (ReturnValue==1) {
-            NSLog(@"%@",obj);
+            NSLog(@"游记===>%@",obj);
             weakSelf.travelsArr = [CatageModel mj_objectArrayWithKeyValuesArray:obj[@"DataList"]];
             [weakSelf.systemTable reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
         }

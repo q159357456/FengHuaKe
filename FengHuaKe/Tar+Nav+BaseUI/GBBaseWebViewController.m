@@ -77,7 +77,7 @@
 
 #pragma mark - webDelegate
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-   
+   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSLog(@"===didStartProvisionalNavigation=====");
 }
 // 当内容开始返回时调用
@@ -87,6 +87,7 @@
 }
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{//这里修改导航栏的标题，动态改变
+     [MBProgressHUD hideHUDForView:self.view animated:YES];
     NSLog(@"===加载完成=====");
 //    NSString *injectionJSString = @"var script = document.createElement('meta');"
 //    "script.name = 'viewport';"
@@ -99,6 +100,7 @@
 // 页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
     //    [MBProgressHUD hideHUDForView:self.webview];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     NSLog(@"===页面加载失败=====");
     
     

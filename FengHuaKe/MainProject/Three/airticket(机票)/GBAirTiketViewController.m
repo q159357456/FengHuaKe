@@ -18,7 +18,21 @@
     [super viewDidLoad];
     self.navBarHidden = YES;
     [self setTop];
-    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://b2b.meiya.com/content/dist/html/guest-index.html"]]];
+    NSLog(@"ididiid ==> %@",UniqUserID);
+    if ([UniqUserID isEqualToString:@"0000000003"]) {
+        UIImageView * imageview = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"nodata"]];
+//        imageview.frame = self.webview.frame;
+        [self.view addSubview:imageview];
+        [imageview mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.centerY.mas_equalTo(self.view);
+            make.size.mas_equalTo(CGSizeMake(80*MULPITLE, 80*MULPITLE));
+        }];
+    }else
+    {
+          [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://b2b.meiya.com/content/dist/html/guest-index.html"]]];
+    }
+  
+  
     // Do any additional setup after loading the view.
 }
 -(void)setTop{

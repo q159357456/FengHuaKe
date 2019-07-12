@@ -437,6 +437,7 @@
 		7CFFE71F22C761BA006C2859 /* UserDefineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE71E22C761BA006C2859 /* UserDefineCell.m */; };
 		7CFFE72222C764AC006C2859 /* UserDefineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE72122C764AC006C2859 /* UserDefineModel.m */; };
 		7CFFE72522C77196006C2859 /* UserDefineWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE72422C77196006C2859 /* UserDefineWebController.m */; };
+		7F4AD7EC22D7327700FADFA5 /* WechatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD7EB22D7327700FADFA5 /* WechatManager.m */; };
 		7F580A16226F0CAE005AA644 /* FootPrintTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A14226F0CAE005AA644 /* FootPrintTableViewCell.m */; };
 		7F580A17226F0CAE005AA644 /* FootPrintTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F580A15226F0CAE005AA644 /* FootPrintTableViewCell.xib */; };
 		7F580A1C226F1765005AA644 /* GBSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A1B226F1765005AA644 /* GBSegmentView.m */; };
@@ -1391,6 +1392,8 @@
 		7CFFE72122C764AC006C2859 /* UserDefineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefineModel.m; sourceTree = "<group>"; };
 		7CFFE72322C77196006C2859 /* UserDefineWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefineWebController.h; sourceTree = "<group>"; };
 		7CFFE72422C77196006C2859 /* UserDefineWebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefineWebController.m; sourceTree = "<group>"; };
+		7F4AD7EA22D7327700FADFA5 /* WechatManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WechatManager.h; sourceTree = "<group>"; };
+		7F4AD7EB22D7327700FADFA5 /* WechatManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WechatManager.m; sourceTree = "<group>"; };
 		7F580A13226F0CAE005AA644 /* FootPrintTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FootPrintTableViewCell.h; sourceTree = "<group>"; };
 		7F580A14226F0CAE005AA644 /* FootPrintTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FootPrintTableViewCell.m; sourceTree = "<group>"; };
 		7F580A15226F0CAE005AA644 /* FootPrintTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FootPrintTableViewCell.xib; sourceTree = "<group>"; };
@@ -2292,6 +2295,7 @@
 		7C5509302051217A007FBC12 /* Four */ = {
 			isa = PBXGroup;
 			children = (
+				7F4AD7E922D730AC00FADFA5 /* Wechat(微信管理) */,
 				7FED0DEC22C6035B009AB818 /* UserdDefined(自主连接) */,
 				7FED0DE822C5F8F7009AB818 /* AboutUs(关于我们) */,
 				7FED0DE722C5F8A2009AB818 /* BillTogether(拼单) */,
@@ -3505,6 +3509,15 @@
 				7CFC3977207B47FA00111EB1 /* PublishCollectionViewCell.xib */,
 			);
 			path = publishView;
+			sourceTree = "<group>";
+		};
+		7F4AD7E922D730AC00FADFA5 /* Wechat(微信管理) */ = {
+			isa = PBXGroup;
+			children = (
+				7F4AD7EA22D7327700FADFA5 /* WechatManager.h */,
+				7F4AD7EB22D7327700FADFA5 /* WechatManager.m */,
+			);
+			path = "Wechat(微信管理)";
 			sourceTree = "<group>";
 		};
 		7F580A19226F1733005AA644 /* SegmentView */ = {
@@ -5614,6 +5627,7 @@
 				86F3E2AB2136989A0019FE72 /* ZWHShowPViewController.m in Sources */,
 				7C55092320511DD4007FBC12 /* UIImage+Alpha.m in Sources */,
 				7C72207120D89EDE00805CAD /* RoomModel.m in Sources */,
+				7F4AD7EC22D7327700FADFA5 /* WechatManager.m in Sources */,
 				7C9A072A207313AD0067A7E6 /* OperationMenu.m in Sources */,
 				7C716D0220DB8B4A00AE2BB1 /* TiketDetailForthCell.m in Sources */,
 				8678751421193CA30061E875 /* ZWHAddInvoiceViewController.m in Sources */,
