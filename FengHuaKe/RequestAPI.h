@@ -37,4 +37,20 @@
 #define FolderLink_List @"FolderLink/List"
 //POST /api/GroupBuy/Me
 #define GroupBuy_Me @"GroupBuy/Me"
+//POST /api/Blogs/Hot
+#define Blogs_Hot @"Blogs/Hot"
+//POST /api/Case/CustomerService
+#define Case_CustomerService @"Case/CustomerService"
+//POST /api/Case/Class
+#define Case_Class @"Case/Class"
+//POST /api/Case/List
+#define Case_List @"Case/List"
+//POST /api/Case/Single
+#define Case_Single @"Case/Single"
+//POST /api/Blogs/Single
+#define Blogs_Single @"Blogs/Single"
+//POST /api/Blogs/CommentList
+#define Blogs_CommentList @"Blogs/CommentList"
+//api/Dynamic/CommentAdd
+#define Dynamic_CommentAdd @"Dynamic/CommentAdd"
 #endif /* RequestAPI_h */

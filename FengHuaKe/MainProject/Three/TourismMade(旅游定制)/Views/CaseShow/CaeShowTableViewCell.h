@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CashListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CaeShowTableViewCell : UITableViewCell
 @property(nonatomic,strong)UILabel * label1;
 @property(nonatomic,strong)UILabel * label2;
 @property(nonatomic,strong)UIImageView * contentimageView;
+-(void)loadData:(CashListModel*)model;
 +(CGFloat)rowHeight;
 @end
 

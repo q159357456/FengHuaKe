@@ -9,6 +9,8 @@
 #import "ZWHTourismMadeViewController.h"
 #import "TouristTableViewCell.h"
 #import "CaseShowViewController.h"
+#import "BlogListViewController.h"
+#import "RimViewController.h"
 @interface ZWHTourismMadeViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)SDCycleScrollView *topScrView;
 @property(nonatomic,strong)UITableView * tableView;
@@ -20,8 +22,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.blogArr = [NSMutableArray array];
     self.title = @"旅游定制";
     [self.view addSubview:self.tableView];
+    //
+    DefineWeakSelf;
+    [DataProcess requestDataWithURL:Blogs_Hot RequestStr:GETRequestStr(nil, nil, @1, @100, nil) Result:^(id obj, id erro) {
+        
+        [weakSelf.blogArr  addObjectsFromArray:[BlogsModel mj_objectArrayWithKeyValuesArray:obj[@"DataList"]]];
+        [weakSelf.tableView reloadData];
+        
+    }];
     
 }
 -(UITableView *)tableView
@@ -76,13 +87,8 @@
         [listView addSubview:btn];
         btn.tag = i+100;
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        
+ 
     }
-    
-    
-    
     UIView * sepraterView1 = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(listView.frame), SCREEN_WIDTH, WIDTH_PRO(10))];
     [headView addSubview:sepraterView1];
     
@@ -111,18 +117,20 @@
     switch (sender.tag-100) {
         case 0:
         {
-            
+            RimViewController * vc = [[RimViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 1:
         {
-            CaseShowViewController * vc = [[CaseShowViewController alloc]init];
+            BlogListViewController * vc = [[BlogListViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 2:
         {
-            
+            CaseShowViewController * vc = [[CaseShowViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
             
@@ -133,11 +141,13 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.blogArr.count;
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TouristTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TouristTableViewCell"];
+    BlogsModel * model = self.blogArr[indexPath.row];
+    [cell loadData:model];
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

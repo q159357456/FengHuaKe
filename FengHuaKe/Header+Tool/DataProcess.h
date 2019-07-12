@@ -135,4 +135,8 @@ typedef enum {
  sdimagecache封装
  */
 +(void)sd_imageCacheDefine:(UIView*)view ImageURL:(NSString*)imageurl;
+/**
+ 服务端返回时间转化
+ */
++(NSString*)resultTime:(NSString*)time;
 @end

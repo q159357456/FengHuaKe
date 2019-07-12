@@ -26,14 +26,19 @@
         [self.contentView addSubview:self.contentimageView];
         [self.contentView addSubview:self.label1];
         [self.contentView addSubview:self.label2];
+//        
+//        self.label1.backgroundColor = [UIColor redColor];
+//        self.label2.backgroundColor = [UIColor redColor];
+//        self.headimageView.backgroundColor = [UIColor redColor];
+//        self.contentimageView.backgroundColor = [UIColor redColor];
+        self.label1.textColor = [UIColor lightGrayColor];
+        self.label1.font = ZWHFont(13);
+        self.label2.font = ZWHFont(14);
         
-        self.label1.backgroundColor = [UIColor redColor];
-        self.label2.backgroundColor = [UIColor redColor];
-        self.headimageView.backgroundColor = [UIColor redColor];
-        self.contentimageView.backgroundColor = [UIColor redColor];
-        
+        self.headimageView.layer.cornerRadius = WIDTH_PRO(50)/2;
+        self.headimageView.layer.masksToBounds = YES;
         [self.headimageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(WIDTH_PRO(50), WIDTH_PRO(50)));
+            make.size.mas_equalTo(CGSizeMake(WIDTH_PRO(40), WIDTH_PRO(40)));
             make.left.mas_equalTo(self).offset(10);
             make.top.mas_equalTo(self).offset(10);
         }];
@@ -54,17 +59,24 @@
             
             make.top.mas_equalTo(self.label2.mas_bottom).offset(10);
             make.left.mas_equalTo(self).offset(10);
-            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH-20, WIDTH_PRO(120)));
+            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH-20, WIDTH_PRO(130)));
         }];
         
         
     }
     return self;
 }
-
+-(void)loadData:(BlogsModel *)model
+{
+    ImageCacheDefine(self.headimageView, model.logo);
+    self.label1.text = [DataProcess resultTime:model.createdate];
+    self.label2.text = model.title;
+    ImageCacheDefine(self.contentimageView, model.img);
+    
+}
 +(CGFloat)rowHeight{
     
-    return 10+WIDTH_PRO(50)+10+WIDTH_PRO(20)+10+ WIDTH_PRO(120);
+    return 10+WIDTH_PRO(40)+10+WIDTH_PRO(20)+10+ WIDTH_PRO(130);
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

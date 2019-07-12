@@ -1,8 +1,8 @@
 //
-//  BlogDetailViewController.h
+//  CaseDetailController.h
 //  FengHuaKe
 //
-//  Created by 秦根 on 2019/7/11.
+//  Created by chenheng on 2019/7/12.
 //  Copyright © 2019 gongbo. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BlogDetailViewController : UIViewController
+@interface CaseDetailController : UIViewController
 @property(nonatomic,copy)NSString * code;
 @end
 

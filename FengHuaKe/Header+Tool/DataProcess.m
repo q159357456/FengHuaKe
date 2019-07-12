@@ -512,4 +512,15 @@ NSString* dosome(){
     }
     
 }
+
++(NSString*)resultTime:(NSString*)time{
+    
+    NSArray * arr = [time componentsSeparatedByString:@"T"];
+    if (arr.count>=1) {
+        return arr[0];
+    }else
+    {
+        return nil;
+    }
+}
 @end

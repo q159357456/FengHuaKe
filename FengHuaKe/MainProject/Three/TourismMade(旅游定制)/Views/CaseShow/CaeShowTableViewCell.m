@@ -24,15 +24,18 @@
         [self.contentView addSubview:self.label1];
         [self.contentView addSubview:self.label2];
         
-        self.label1.backgroundColor = [UIColor redColor];
-        self.label2.backgroundColor = [UIColor redColor];
-        self.contentimageView.backgroundColor = [UIColor redColor];
+//        self.label1.backgroundColor = [UIColor redColor];
+//        self.label2.backgroundColor = [UIColor redColor];
+//        self.contentimageView.backgroundColor = [UIColor redColor];
+        self.label1.font = ZWHFont(WIDTH_PRO(14));
+        self.label2.font = ZWHFont(WIDTH_PRO(13));
+        self.label2.textColor = [UIColor lightGrayColor];
         
         [self.contentimageView mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.top.mas_equalTo(self.contentView.mas_bottom).offset(10);
+            make.top.mas_equalTo(self.contentView).offset(10);
             make.left.mas_equalTo(self).offset(10);
-            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH-20, WIDTH_PRO(120)));
+            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH-20, WIDTH_PRO(130)));
         }];
         
         [self.label1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -43,7 +46,7 @@
         
         [self.label2 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self).offset(10);
-            make.top.mas_equalTo(self.label1.mas_bottom).offset(10);
+            make.top.mas_equalTo(self.label1.mas_bottom).offset(3);
             make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH-20, WIDTH_PRO(20)));
         }];
         
@@ -53,7 +56,13 @@
 }
 +(CGFloat)rowHeight{
     
-    return 10+WIDTH_PRO(20)+10+ WIDTH_PRO(120)+WIDTH_PRO(20)+10;
+    return 10+WIDTH_PRO(20)+10+ WIDTH_PRO(130)+WIDTH_PRO(20)+10;
+}
+
+-(void)loadData:(CashListModel*)model{
+    ImageCacheDefine(self.contentimageView, model.imgsrc);
+    self.label1.text = model.title;
+    self.label2.text = model.tipsAll;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

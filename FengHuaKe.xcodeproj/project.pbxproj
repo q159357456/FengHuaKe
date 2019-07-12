@@ -443,6 +443,12 @@
 		7CFFE73C22D78C05006C2859 /* TouristModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE73B22D78C05006C2859 /* TouristModel.m */; };
 		7CFFE73F22D78C71006C2859 /* CaseShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE73E22D78C71006C2859 /* CaseShowViewController.m */; };
 		7CFFE74222D78C98006C2859 /* CaeShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE74122D78C98006C2859 /* CaeShowTableViewCell.m */; };
+		7F352AC322D87ACC004BBE61 /* CommentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC222D87ACC004BBE61 /* CommentListModel.m */; };
+		7F352AC722D8848A004BBE61 /* RimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC622D8848A004BBE61 /* RimViewController.m */; };
+		7F352ACA22D88B45004BBE61 /* CaseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC922D88B45004BBE61 /* CaseDetailController.m */; };
+		7F4AD7EF22D819C500FADFA5 /* BlogsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD7EE22D819C500FADFA5 /* BlogsModel.m */; };
+		7F4AD7F222D826AA00FADFA5 /* CashClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD7F122D826AA00FADFA5 /* CashClassModel.m */; };
+		7F4AD7F522D826B900FADFA5 /* CashListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD7F422D826B900FADFA5 /* CashListModel.m */; };
 		7F580A16226F0CAE005AA644 /* FootPrintTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A14226F0CAE005AA644 /* FootPrintTableViewCell.m */; };
 		7F580A17226F0CAE005AA644 /* FootPrintTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F580A15226F0CAE005AA644 /* FootPrintTableViewCell.xib */; };
 		7F580A1C226F1765005AA644 /* GBSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F580A1B226F1765005AA644 /* GBSegmentView.m */; };
@@ -1409,6 +1415,18 @@
 		7CFFE73E22D78C71006C2859 /* CaseShowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseShowViewController.m; sourceTree = "<group>"; };
 		7CFFE74022D78C98006C2859 /* CaeShowTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaeShowTableViewCell.h; sourceTree = "<group>"; };
 		7CFFE74122D78C98006C2859 /* CaeShowTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaeShowTableViewCell.m; sourceTree = "<group>"; };
+		7F352AC122D87ACC004BBE61 /* CommentListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentListModel.h; sourceTree = "<group>"; };
+		7F352AC222D87ACC004BBE61 /* CommentListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentListModel.m; sourceTree = "<group>"; };
+		7F352AC522D8848A004BBE61 /* RimViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RimViewController.h; sourceTree = "<group>"; };
+		7F352AC622D8848A004BBE61 /* RimViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RimViewController.m; sourceTree = "<group>"; };
+		7F352AC822D88B45004BBE61 /* CaseDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseDetailController.h; sourceTree = "<group>"; };
+		7F352AC922D88B45004BBE61 /* CaseDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseDetailController.m; sourceTree = "<group>"; };
+		7F4AD7ED22D819C500FADFA5 /* BlogsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlogsModel.h; sourceTree = "<group>"; };
+		7F4AD7EE22D819C500FADFA5 /* BlogsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlogsModel.m; sourceTree = "<group>"; };
+		7F4AD7F022D826AA00FADFA5 /* CashClassModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashClassModel.h; sourceTree = "<group>"; };
+		7F4AD7F122D826AA00FADFA5 /* CashClassModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashClassModel.m; sourceTree = "<group>"; };
+		7F4AD7F322D826B900FADFA5 /* CashListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashListModel.h; sourceTree = "<group>"; };
+		7F4AD7F422D826B900FADFA5 /* CashListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashListModel.m; sourceTree = "<group>"; };
 		7F580A13226F0CAE005AA644 /* FootPrintTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FootPrintTableViewCell.h; sourceTree = "<group>"; };
 		7F580A14226F0CAE005AA644 /* FootPrintTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FootPrintTableViewCell.m; sourceTree = "<group>"; };
 		7F580A15226F0CAE005AA644 /* FootPrintTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FootPrintTableViewCell.xib; sourceTree = "<group>"; };
@@ -2310,7 +2328,6 @@
 		7C5509302051217A007FBC12 /* Four */ = {
 			isa = PBXGroup;
 			children = (
-				7F4AD7E922D730AC00FADFA5 /* Wechat(微信管理) */,
 				7FED0DEC22C6035B009AB818 /* UserdDefined(自主连接) */,
 				7FED0DE822C5F8F7009AB818 /* AboutUs(关于我们) */,
 				7FED0DE722C5F8A2009AB818 /* BillTogether(拼单) */,
@@ -3549,6 +3566,8 @@
 			children = (
 				7CFFE73D22D78C71006C2859 /* CaseShowViewController.h */,
 				7CFFE73E22D78C71006C2859 /* CaseShowViewController.m */,
+				7F352AC822D88B45004BBE61 /* CaseDetailController.h */,
+				7F352AC922D88B45004BBE61 /* CaseDetailController.m */,
 			);
 			path = CaseShow;
 			sourceTree = "<group>";
@@ -3567,9 +3586,27 @@
 			children = (
 				7CFFE73A22D78C05006C2859 /* TouristModel.h */,
 				7CFFE73B22D78C05006C2859 /* TouristModel.m */,
+				7F4AD7ED22D819C500FADFA5 /* BlogsModel.h */,
+				7F4AD7EE22D819C500FADFA5 /* BlogsModel.m */,
+				7F4AD7F022D826AA00FADFA5 /* CashClassModel.h */,
+				7F4AD7F122D826AA00FADFA5 /* CashClassModel.m */,
+				7F4AD7F322D826B900FADFA5 /* CashListModel.h */,
+				7F4AD7F422D826B900FADFA5 /* CashListModel.m */,
+				7F352AC122D87ACC004BBE61 /* CommentListModel.h */,
+				7F352AC222D87ACC004BBE61 /* CommentListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
+		};
+		7F352AC422D88463004BBE61 /* Rim */ = {
+			isa = PBXGroup;
+			children = (
+				7F352AC522D8848A004BBE61 /* RimViewController.h */,
+				7F352AC622D8848A004BBE61 /* RimViewController.m */,
+			);
+			name = Rim;
+			path = "FengHuaKe/MainProject/Three/TourismMade(旅游定制)/Controller/Rim";
+			sourceTree = SOURCE_ROOT;
 		};
 		7F580A19226F1733005AA644 /* SegmentView */ = {
 			isa = PBXGroup;
@@ -4013,6 +4050,7 @@
 			children = (
 				861E14D021D0C39E00B31BB5 /* ZWHTourismMadeViewController.h */,
 				861E14D121D0C39E00B31BB5 /* ZWHTourismMadeViewController.m */,
+				7F352AC422D88463004BBE61 /* Rim */,
 				7CFFE73122D78AE5006C2859 /* CaseShow */,
 				7CFFE72922D788C5006C2859 /* BlogList */,
 			);
@@ -5286,6 +5324,7 @@
 				7C7326CC2060F4FE008021AC /* BaseTableViewCell.m in Sources */,
 				7C5508F520511752007FBC12 /* UITextView+PlaceHolder.m in Sources */,
 				7FE6083322641F35007A73A1 /* RentCarViewController.m in Sources */,
+				7F4AD7F522D826B900FADFA5 /* CashListModel.m in Sources */,
 				8678756B211E6FED0061E875 /* ZWHAdvertModel.m in Sources */,
 				869265B72140BF870091C131 /* ZWHAfterListTableViewCell.m in Sources */,
 				7FA50EEF225F1BE800262EE0 /* AllCityTableView.m in Sources */,
@@ -5323,6 +5362,7 @@
 				86787531211ACDAB0061E875 /* ZWHOrderListModel.m in Sources */,
 				7CB4792820E226EA000EAD16 /* InsurancePersonCell.m in Sources */,
 				86F3E2842133CF0D0019FE72 /* ZWHVacationListTableViewCell.m in Sources */,
+				7F4AD7F222D826AA00FADFA5 /* CashClassModel.m in Sources */,
 				7C2B311F205BC06B00BA30AB /* ApplyViewController.m in Sources */,
 				7C72207E20D8AE5000805CAD /* RoomBillCell.m in Sources */,
 				86787556211C3A690061E875 /* ZWHBaseViewController.m in Sources */,
@@ -5511,6 +5551,7 @@
 				7FA50EED225F1BE800262EE0 /* ChooseCityVC_New.m in Sources */,
 				7C716CC120DA422500AE2BB1 /* TicketClassifyCell.m in Sources */,
 				7CFFE71F22C761BA006C2859 /* UserDefineCell.m in Sources */,
+				7F352AC722D8848A004BBE61 /* RimViewController.m in Sources */,
 				867874E82112DC410061E875 /* ZWHColleagueModel.m in Sources */,
 				7C60DB7E2084757A0048CF7E /* LMPhotoCollectionCell.m in Sources */,
 				7C9A073220731AF50067A7E6 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
@@ -5653,6 +5694,7 @@
 				7CBCB7662089D8DE00C144F4 /* TypeView.m in Sources */,
 				7C84E50220AD673400830B1E /* PayVM.m in Sources */,
 				86F3E27E2133A3C20019FE72 /* ZWHClassiftRightCollectionViewCell.m in Sources */,
+				7F352ACA22D88B45004BBE61 /* CaseDetailController.m in Sources */,
 				7FB7FA3A22B3428D006B3484 /* GuidModel.m in Sources */,
 				7C716CFF20DB8B3000AE2BB1 /* TiketDetailThirdCell.m in Sources */,
 				7CB478DC20DCEE93000EAD16 /* BPPCalendarModel.m in Sources */,
@@ -5679,10 +5721,10 @@
 				7CB4790D20DE4454000EAD16 /* SingleHeaderCell.m in Sources */,
 				86F3E2BF21379A650019FE72 /* RegistrViewController.m in Sources */,
 				7CCB15F8206A9FA300CF208A /* ContactSelectionViewController.m in Sources */,
+				7F4AD7EF22D819C500FADFA5 /* BlogsModel.m in Sources */,
 				86F3E2AB2136989A0019FE72 /* ZWHShowPViewController.m in Sources */,
 				7C55092320511DD4007FBC12 /* UIImage+Alpha.m in Sources */,
 				7C72207120D89EDE00805CAD /* RoomModel.m in Sources */,
-				7F4AD7EC22D7327700FADFA5 /* WechatManager.m in Sources */,
 				7C9A072A207313AD0067A7E6 /* OperationMenu.m in Sources */,
 				7C716D0220DB8B4A00AE2BB1 /* TiketDetailForthCell.m in Sources */,
 				8678751421193CA30061E875 /* ZWHAddInvoiceViewController.m in Sources */,
@@ -5717,6 +5759,7 @@
 				86EDCA4B2110502D002C0AC8 /* ZWHCashViewController.m in Sources */,
 				7C55095620538171007FBC12 /* AppDelegate+EaseMobDebug.m in Sources */,
 				86926C012150CAF30091C131 /* ZWHProductPagingViewController.m in Sources */,
+				7F352AC322D87ACC004BBE61 /* CommentListModel.m in Sources */,
 				7C2B3140205D72CC00BA30AB /* GruopManageVC.m in Sources */,
 				7C716CFC20DB8B1D00AE2BB1 /* TiketDetailSecondCell.m in Sources */,
 				7CB4790320DE355B000EAD16 /* InsuranceSingleVC.m in Sources */,

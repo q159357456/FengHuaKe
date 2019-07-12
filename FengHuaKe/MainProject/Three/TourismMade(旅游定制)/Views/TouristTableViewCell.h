@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BlogsModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TouristTableViewCell : UITableViewCell
@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UILabel * label1;
 @property(nonatomic,strong)UILabel * label2;
 @property(nonatomic,strong)UIImageView * contentimageView;
+-(void)loadData:(BlogsModel*)model;
 +(CGFloat)rowHeight;
 @end
 
