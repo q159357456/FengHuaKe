@@ -32,5 +32,6 @@
 @property(nonatomic,copy)NSString *handle ;
 @property(nonatomic,copy)NSString *contact ;
 @property(nonatomic,copy)NSString *shopid ;
+@property(nonatomic,copy)NSString *breviary;
 +(NSMutableArray *)getDatawithdic:(NSDictionary *)dic;
 @end

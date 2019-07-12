@@ -70,7 +70,7 @@
                 break;
             case 2:
             {
-                //导游驳回
+                //导游驳回travelCustomization
                  [weakSelf initSubViews];
                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
                                                                 message:@"导游被驳回,请重新填写"
