@@ -43,6 +43,7 @@
         _tableView.dataSource = self;
         _tableView.tableHeaderView = [self headView];
         [_tableView registerClass:[TouristTableViewCell class] forCellReuseIdentifier:@"TouristTableViewCell"];
+        _tableView.tableFooterView = [UIView new];
         
     }
     return _tableView;
@@ -75,7 +76,7 @@
     
     UIView * listView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(sepraterView.frame), SCREEN_WIDTH, WIDTH_PRO(100))];
     [headView addSubview:listView];
-    NSArray * imageArray = @[@"1",@"2",@"3"];
+    NSArray * imageArray = @[@"customization_1",@"customization_2",@"customization_3"];
     NSArray * titleArray = @[@"周边门店",@"导游博客",@"案例展示"];
     for (NSInteger i=0; i<titleArray.count; i++) {
         
@@ -83,9 +84,13 @@
         CGFloat h = WIDTH_PRO(100);
         CGFloat x = i*w;
         QMUIButton * btn = [[QMUIButton alloc]qmui_initWithImage:[UIImage imageNamed:imageArray[i]] title:titleArray[i]];
+        btn.imagePosition =  QMUIButtonImagePositionTop;
+        btn.spacingBetweenImageAndTitle = WIDTH_PRO(10);
         btn.frame = CGRectMake(x, 0, w, h);
         [listView addSubview:btn];
         btn.tag = i+100;
+        btn.titleLabel.font = ZWHFont(14*MULPITLE);
+        
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
  
     }
@@ -98,9 +103,14 @@
     hotView.qmui_borderPosition =  QMUIViewBorderPositionBottom;
     [headView addSubview:hotView];
     
-    UILabel * label = [[UILabel alloc]initWithFrame:hotView.bounds];
+   
+    UIImageView * hotimg = [[UIImageView alloc]initWithFrame:CGRectMake(10, WIDTH_PRO(2), WIDTH_PRO(26), WIDTH_PRO(26))];
+    hotimg.image = [UIImage imageNamed:@"customization_4"];
+    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(hotimg.frame)+3, 0, 100, hotView.height)];
     [hotView addSubview:label];
+    [hotView addSubview:hotimg];
     label.text = @"热门博客";
+    label.font = ZWHFont(14*MULPITLE);
     
     sepraterView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     sepraterView1.backgroundColor = [UIColor groupTableViewBackgroundColor];

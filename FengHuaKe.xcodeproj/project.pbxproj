@@ -443,6 +443,7 @@
 		7CFFE73C22D78C05006C2859 /* TouristModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE73B22D78C05006C2859 /* TouristModel.m */; };
 		7CFFE73F22D78C71006C2859 /* CaseShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE73E22D78C71006C2859 /* CaseShowViewController.m */; };
 		7CFFE74222D78C98006C2859 /* CaeShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE74122D78C98006C2859 /* CaeShowTableViewCell.m */; };
+		7CFFE74522D98C04006C2859 /* BlogCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE74422D98C04006C2859 /* BlogCommentCell.m */; };
 		7F352AC322D87ACC004BBE61 /* CommentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC222D87ACC004BBE61 /* CommentListModel.m */; };
 		7F352AC722D8848A004BBE61 /* RimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC622D8848A004BBE61 /* RimViewController.m */; };
 		7F352ACA22D88B45004BBE61 /* CaseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC922D88B45004BBE61 /* CaseDetailController.m */; };
@@ -1415,6 +1416,8 @@
 		7CFFE73E22D78C71006C2859 /* CaseShowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseShowViewController.m; sourceTree = "<group>"; };
 		7CFFE74022D78C98006C2859 /* CaeShowTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaeShowTableViewCell.h; sourceTree = "<group>"; };
 		7CFFE74122D78C98006C2859 /* CaeShowTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaeShowTableViewCell.m; sourceTree = "<group>"; };
+		7CFFE74322D98C04006C2859 /* BlogCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlogCommentCell.h; sourceTree = "<group>"; };
+		7CFFE74422D98C04006C2859 /* BlogCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlogCommentCell.m; sourceTree = "<group>"; };
 		7F352AC122D87ACC004BBE61 /* CommentListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentListModel.h; sourceTree = "<group>"; };
 		7F352AC222D87ACC004BBE61 /* CommentListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentListModel.m; sourceTree = "<group>"; };
 		7F352AC522D8848A004BBE61 /* RimViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RimViewController.h; sourceTree = "<group>"; };
@@ -3557,6 +3560,8 @@
 		7CFFE73022D789D8006C2859 /* BlogList */ = {
 			isa = PBXGroup;
 			children = (
+				7CFFE74322D98C04006C2859 /* BlogCommentCell.h */,
+				7CFFE74422D98C04006C2859 /* BlogCommentCell.m */,
 			);
 			path = BlogList;
 			sourceTree = "<group>";
@@ -5337,6 +5342,7 @@
 				7C550CD420579C7E007FBC12 /* ConversationListController.m in Sources */,
 				7FACD377225C50110081033C /* GBBaseWebViewController.m in Sources */,
 				7CCB165F206AA1CF00CF208A /* CallSettingViewController.m in Sources */,
+				7CFFE74522D98C04006C2859 /* BlogCommentCell.m in Sources */,
 				7C2B3117205BAB4F00BA30AB /* AddFriendVC.m in Sources */,
 				8678754C211C29200061E875 /* ZWHProductListCollectionViewCell.m in Sources */,
 				8678750E2118474A0061E875 /* ZWHInvoiceListViewController.m in Sources */,

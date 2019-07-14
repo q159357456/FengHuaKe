@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString * parenttype;
 @property(nonatomic,assign)NSInteger publicif;
 @property(nonatomic,assign)NSInteger status;
+@property(nonatomic,assign)CGFloat height;
 @end
 
 @interface ReplyModel : CommentListModel

@@ -77,7 +77,9 @@
 
 #pragma mark - webDelegate
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    if (self.showActivity) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
     NSLog(@"===didStartProvisionalNavigation=====");
 }
 // 当内容开始返回时调用
@@ -100,7 +102,9 @@
 // 页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
     //    [MBProgressHUD hideHUDForView:self.webview];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    if (self.showActivity) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }
     NSLog(@"===页面加载失败=====");
     
     

@@ -38,6 +38,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [_tableView registerClass:[TouristTableViewCell class] forCellReuseIdentifier:@"TouristTableViewCell"];
+         _tableView.tableFooterView = [UIView new];
         
     }
     return _tableView;

@@ -17,12 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    NSDictionary * param1 =  @{@"para1":@"B001",@"para2":self.code?self.code:@"",@"para3":@""};
+    NSDictionary * param1 =  @{@"para2":@"B001",@"para1":self.code?self.code:@"",@"para3":@""};
     DefineWeakSelf;
-    [DataProcess requestDataWithURL:Case_Single RequestStr:GETRequestStr(nil, nil, @1, @100, nil) Result:^(id obj, id erro) {
+    [DataProcess requestDataWithURL:Case_Single RequestStr:GETRequestStr(nil,param1, nil, nil, nil) Result:^(id obj, id erro) {
         
-        [weakSelf.blogArr  addObjectsFromArray:[BlogsModel mj_objectArrayWithKeyValuesArray:obj[@"DataList"]]];
-        [weakSelf.tableView reloadData];
+        NSLog(@"obj===>%@",obj);
+        if (obj[@"DataList"]) {
+            [weakSelf.webview loadHTMLString:obj[@"DataList"][0][@"content"] baseURL:nil];
+        }
+       
         
     }];
     // Do any additional setup after loading the view.

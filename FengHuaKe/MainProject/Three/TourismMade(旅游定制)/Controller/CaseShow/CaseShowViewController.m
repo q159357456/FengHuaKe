@@ -11,6 +11,7 @@
 #import "CaeShowTableViewCell.h"
 #import "CashClassModel.h"
 #import "CashListModel.h"
+#import "CaseDetailController.h"
 @interface CaseShowViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * classArr;
@@ -47,7 +48,7 @@
     }
     DefineWeakSelf;
     GBSegmentView * seg = [GBSegmentView initialSegmentViewFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50) DataSource:title SegStyle:SegStyle_3 CallBack:^(NSInteger index) {
-        CashClassModel * model = weakSelf.classArr[index];
+        CashClassModel * model = weakSelf.classArr[index-1];
         [weakSelf getListData:model];
         
     }];
@@ -72,6 +73,7 @@
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
         [_tableView registerClass:[CaeShowTableViewCell class] forCellReuseIdentifier:@"CaeShowTableViewCell"];
+        _tableView.tableFooterView = [UIView new];
     }
     return _tableView;
 }
@@ -92,6 +94,10 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CaseDetailController * vc = [[CaseDetailController alloc]init];
+    CashListModel * model = self.listArr[indexPath.row];
+    vc.code = model.code;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 /*
 #pragma mark - Navigation

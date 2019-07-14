@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString * tipsAll;
 @property(nonatomic,copy)NSString * title;
 @property(nonatomic,copy)NSString * className;
+@property(nonatomic,copy)NSString * code;
 @end
 
 NS_ASSUME_NONNULL_END

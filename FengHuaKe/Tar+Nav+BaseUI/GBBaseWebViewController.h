@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GBBaseWebViewController : ZWHBaseViewController<WKUIDelegate,WKNavigationDelegate,UIScrollViewDelegate,WKScriptMessageHandler>
 @property(nonatomic,strong)WKWebView *webview;
 @property(nonatomic,assign)BOOL navBarHidden;
+@property(nonatomic,assign)BOOL showActivity;
 @end
 
 NS_ASSUME_NONNULL_END

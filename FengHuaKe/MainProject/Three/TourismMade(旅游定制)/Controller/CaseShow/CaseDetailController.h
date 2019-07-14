@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CaseDetailController : UIViewController
+@interface CaseDetailController : GBBaseWebViewController
 @property(nonatomic,copy)NSString * code;
 @end
 
