@@ -447,6 +447,10 @@
 		7F352AC322D87ACC004BBE61 /* CommentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC222D87ACC004BBE61 /* CommentListModel.m */; };
 		7F352AC722D8848A004BBE61 /* RimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC622D8848A004BBE61 /* RimViewController.m */; };
 		7F352ACA22D88B45004BBE61 /* CaseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC922D88B45004BBE61 /* CaseDetailController.m */; };
+		7F352ACE22DC2933004BBE61 /* CookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352ACD22DC2933004BBE61 /* CookingViewController.m */; };
+		7F352AD122DC2BB0004BBE61 /* CookingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AD022DC2BB0004BBE61 /* CookingTableViewCell.m */; };
+		7F352AD522DC4ED4004BBE61 /* FilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AD422DC4ED4004BBE61 /* FilterView.m */; };
+		7F352ADB22DC6466004BBE61 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352ADA22DC6466004BBE61 /* ShopModel.m */; };
 		7F4AD7EF22D819C500FADFA5 /* BlogsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD7EE22D819C500FADFA5 /* BlogsModel.m */; };
 		7F4AD7F222D826AA00FADFA5 /* CashClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD7F122D826AA00FADFA5 /* CashClassModel.m */; };
 		7F4AD7F522D826B900FADFA5 /* CashListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD7F422D826B900FADFA5 /* CashListModel.m */; };
@@ -1424,6 +1428,14 @@
 		7F352AC622D8848A004BBE61 /* RimViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RimViewController.m; sourceTree = "<group>"; };
 		7F352AC822D88B45004BBE61 /* CaseDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseDetailController.h; sourceTree = "<group>"; };
 		7F352AC922D88B45004BBE61 /* CaseDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseDetailController.m; sourceTree = "<group>"; };
+		7F352ACC22DC2933004BBE61 /* CookingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingViewController.h; sourceTree = "<group>"; };
+		7F352ACD22DC2933004BBE61 /* CookingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingViewController.m; sourceTree = "<group>"; };
+		7F352ACF22DC2BB0004BBE61 /* CookingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingTableViewCell.h; sourceTree = "<group>"; };
+		7F352AD022DC2BB0004BBE61 /* CookingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingTableViewCell.m; sourceTree = "<group>"; };
+		7F352AD322DC4ED4004BBE61 /* FilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterView.h; sourceTree = "<group>"; };
+		7F352AD422DC4ED4004BBE61 /* FilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterView.m; sourceTree = "<group>"; };
+		7F352AD922DC6466004BBE61 /* ShopModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopModel.h; sourceTree = "<group>"; };
+		7F352ADA22DC6466004BBE61 /* ShopModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopModel.m; sourceTree = "<group>"; };
 		7F4AD7ED22D819C500FADFA5 /* BlogsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlogsModel.h; sourceTree = "<group>"; };
 		7F4AD7EE22D819C500FADFA5 /* BlogsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlogsModel.m; sourceTree = "<group>"; };
 		7F4AD7F022D826AA00FADFA5 /* CashClassModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashClassModel.h; sourceTree = "<group>"; };
@@ -2030,6 +2042,7 @@
 				869265DE2148F25C0091C131 /* UIColor+Extension.m */,
 				7FE6083422643133007A73A1 /* BaseModelObject.h */,
 				7FE6083522643133007A73A1 /* BaseModelObject.m */,
+				7F352AD222DC4E3E004BBE61 /* Filtrate */,
 				7FE5D0EC22C200B50032B1E7 /* ServiceBaseModel */,
 				7FB7FA5B22B396BA006B3484 /* UIDatePicker */,
 				7C716CD220DB489D00AE2BB1 /* SDCycleScrollView */,
@@ -2364,6 +2377,7 @@
 		7C5509312051217A007FBC12 /* Three */ = {
 			isa = PBXGroup;
 			children = (
+				7F352ACB22DC28F4004BBE61 /* Cate(美食美味) */,
 				7FB7FA3422B33A0D006B3484 /* GuidBlog(导游博客) */,
 				7F91F3432260756600ABF47D /* RentCar(租车) */,
 				7FACD371225C4CCB0081033C /* airticket(机票) */,
@@ -3612,6 +3626,28 @@
 			name = Rim;
 			path = "FengHuaKe/MainProject/Three/TourismMade(旅游定制)/Controller/Rim";
 			sourceTree = SOURCE_ROOT;
+		};
+		7F352ACB22DC28F4004BBE61 /* Cate(美食美味) */ = {
+			isa = PBXGroup;
+			children = (
+				7F352ACC22DC2933004BBE61 /* CookingViewController.h */,
+				7F352ACD22DC2933004BBE61 /* CookingViewController.m */,
+				7F352ACF22DC2BB0004BBE61 /* CookingTableViewCell.h */,
+				7F352AD022DC2BB0004BBE61 /* CookingTableViewCell.m */,
+				7F352AD922DC6466004BBE61 /* ShopModel.h */,
+				7F352ADA22DC6466004BBE61 /* ShopModel.m */,
+			);
+			path = "Cate(美食美味)";
+			sourceTree = "<group>";
+		};
+		7F352AD222DC4E3E004BBE61 /* Filtrate */ = {
+			isa = PBXGroup;
+			children = (
+				7F352AD322DC4ED4004BBE61 /* FilterView.h */,
+				7F352AD422DC4ED4004BBE61 /* FilterView.m */,
+			);
+			path = Filtrate;
+			sourceTree = "<group>";
 		};
 		7F580A19226F1733005AA644 /* SegmentView */ = {
 			isa = PBXGroup;
@@ -5385,6 +5421,7 @@
 				867875B0212A5AD50061E875 /* ZWHTicketTableViewCell.m in Sources */,
 				7C60768D20A97D0E000EE248 /* AdressManagerTextCell.m in Sources */,
 				7C5508F22051171E007FBC12 /* UIView+Shake.m in Sources */,
+				7F352ACE22DC2933004BBE61 /* CookingViewController.m in Sources */,
 				86787568211D96EA0061E875 /* ZWHTourTarNewsListViewController.m in Sources */,
 				860CF2DE2137E86E00C68916 /* ZWHOrderServiceViewController.m in Sources */,
 				869265BD214207820091C131 /* ZWHMyinsuranceViewController.m in Sources */,
@@ -5403,6 +5440,7 @@
 				867875D1212D04190061E875 /* ZWHTicketListViewController.m in Sources */,
 				7C72205220D4BD1C00805CAD /* HotelViewModel.m in Sources */,
 				867875BF212BDF540061E875 /* ZWHTicketThirdTableViewCell.m in Sources */,
+				7F352ADB22DC6466004BBE61 /* ShopModel.m in Sources */,
 				7CCB1663206AA1CF00CF208A /* EMVideoInfoViewController.m in Sources */,
 				867874F62117D9A80061E875 /* ZWHCollectTableViewCell.m in Sources */,
 				86EDCA46210FF3E5002C0AC8 /* ZSBaseModel.m in Sources */,
@@ -5685,6 +5723,7 @@
 				7C2BD7CB207CB6A200BFC76D /* SeverPhotoManagerVC.m in Sources */,
 				7C84E4E620AC39C900830B1E /* BillFooterCell.m in Sources */,
 				7C2B3133205CFFCD00BA30AB /* FMDBhleper.m in Sources */,
+				7F352AD522DC4ED4004BBE61 /* FilterView.m in Sources */,
 				7C0ADDA520653D83006E895B /* ContractSlectedVC.m in Sources */,
 				867875A9212663370061E875 /* ZWHTiketStoreViewController.m in Sources */,
 				7C60DB7A2084757A0048CF7E /* HTMLViewController.m in Sources */,
@@ -5706,6 +5745,7 @@
 				7CB478DC20DCEE93000EAD16 /* BPPCalendarModel.m in Sources */,
 				7C0E407E206CB92F00A29079 /* MineOneCell.m in Sources */,
 				7C72205F20D4E9F700805CAD /* HotelRoomListVC.m in Sources */,
+				7F352AD122DC2BB0004BBE61 /* CookingTableViewCell.m in Sources */,
 				7C2BD7DF207CC64200BFC76D /* SeverPictureManagerVC.m in Sources */,
 				7CCB15F3206A9EF100CF208A /* ContactListSelectViewController.m in Sources */,
 				86EDCA3A210EF693002C0AC8 /* ZSHttpTool.m in Sources */,

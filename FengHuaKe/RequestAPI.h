@@ -53,4 +53,8 @@
 #define Blogs_CommentList @"Blogs/CommentList"
 //api/Dynamic/CommentAdd
 #define Dynamic_CommentAdd @"Dynamic/CommentAdd"
+//POST /api/Cate/Store
+#define Cate_Store @"Cate/Store"
+//POST /api/Classify/List
+#define Classify_List @"Classify/List"
 #endif /* RequestAPI_h */

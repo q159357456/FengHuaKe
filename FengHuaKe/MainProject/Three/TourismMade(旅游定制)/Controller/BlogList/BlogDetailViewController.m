@@ -60,8 +60,8 @@
     [DataProcess requestDataWithURL:Blogs_CommentList RequestStr:GETRequestStr(nil, param1, @1, @100, nil) Result:^(id obj, id erro) {
         
         NSLog(@"obj2===>%@",obj);
-        weakSelf.commentListArr = [CommentListModel mj_objectArrayWithKeyValuesArray:obj[@"DataList"]];
-//        NSLog(@"obj===>%@",weakSelf.commentListArr);
+        [weakSelf.commentListArr removeAllObjects];
+        [weakSelf.commentListArr  addObjectsFromArray:[CommentListModel mj_objectArrayWithKeyValuesArray:obj[@"DataList"]]];
         [weakSelf.tableView reloadData];
     }];
 }
@@ -175,10 +175,16 @@
 -(void)comment:(NSString*)detail Code:(NSString*)code Type:(NSString*)type{
     DefineWeakSelf;
     NSArray * dataList = @[@{@"parenttype":type,@"parentid":code,@"memberid":UniqUserID,@"details":detail}];
-    
+    NSLog(@"===>%@",GETRequestStr(dataList, nil, nil, nil, nil));
     [DataProcess requestDataWithURL:Dynamic_CommentAdd RequestStr:GETRequestStr(dataList, nil, nil, nil, nil) Result:^(id obj, id erro) {
         
         NSLog(@"commentobj===>%@",obj);
+        if (ReturnValue) {
+            [weakSelf getCommentData];
+        }else
+        {
+            [SVProgressHUD showErrorWithStatus:obj[@"msg"]];
+        }
         
     }];
 }
@@ -197,7 +203,7 @@
     cell.rePlyCallBack = ^(NSString * _Nonnull code) {
         if ([weakSelf.textField becomeFirstResponder]) {
              weakSelf.paramCode = code;
-             weakSelf.type = @"B";
+             weakSelf.type = @"C";
            
         }
        
@@ -211,7 +217,9 @@
 }
 
 -(void)comment:(UIButton*)btn{
-    
+    self.paramCode = self.code;
+    self.type = @"B";
+    [_textField becomeFirstResponder];
 }
 
 - (void)keyboardNotification:(NSNotification *)notification

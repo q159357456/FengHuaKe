@@ -81,9 +81,7 @@
     self.index = 1;
     _ticketTable = [[UITableView alloc] initWithFrame:CGRectMake(0,NavigationBarHeight, SCREEN_WIDTH, SCREEN_HEIGHT-HEIGHT_PRO(50)) style:UITableViewStylePlain];
     [self.view addSubview:_ticketTable];
-//    [_ticketTable mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.top.bottom.right.equalTo(self.view);
-//    }];
+
     _ticketTable.delegate = self;
     _ticketTable.dataSource = self;
     _ticketTable.separatorStyle = 0;
@@ -236,9 +234,9 @@
     midLine.backgroundColor = LINECOLOR;
     [_headerView addSubview:midLine];
     [midLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(btn.mas_bottom).offset(HEIGHT_PRO(3));
+        make.top.equalTo(btn.mas_bottom).offset(3*MULPITLE);
         make.left.right.equalTo(_headerView);
-        make.height.mas_equalTo(HEIGHT_PRO(10));
+        make.height.mas_equalTo(10*MULPITLE);
     }];
     
     QMUIButton *huobtn = [[QMUIButton alloc]init];
@@ -259,7 +257,7 @@
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(_headerView);
         make.top.equalTo(huobtn.mas_bottom).offset(HEIGHT_PRO(3));
-        make.height.mas_equalTo(HEIGHT_PRO(135));
+        make.height.mas_equalTo(HEIGHT_PRO(0));
     }];
     [self.collectionView layoutIfNeeded];
     
@@ -442,7 +440,7 @@
 #pragma mark - uitabledelegate
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return HEIGHT_PRO(40);
+    return WIDTH_PRO(40);
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

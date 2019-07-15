@@ -136,7 +136,7 @@
     
     if (self.state == 7) {
         DatalistBaseModel * datalist = self.baseModel.DataList[0];
-        NSDictionary * sysmodel = @{@"para1":UniqUserID,@"para2":MEMBERTYPE,@"para3":datalist.MG001,@"para4":self.baseModel.sysmodel.para1,@"para5":datalist.MBR000,@"para6":@"W"};
+        NSDictionary * sysmodel = @{@"para1":UniqUserID,@"para2":MEMBERTYPE,@"para3":datalist.MG001,@"para4":self.baseModel.sysmodel.para1,@"para5":datalist.MBR000,@"para6":paywayStr};
         MJWeakSelf;
         [DataProcess requestDataWithURL:Pay_MemberLevel RequestStr:GETRequestStr(nil, sysmodel, nil, nil, nil) Result:^(id obj, id erro) {
             NSLog(@"确认支付上传结果===>%@",obj);

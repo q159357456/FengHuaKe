@@ -11,6 +11,7 @@
 #import "CaseShowViewController.h"
 #import "BlogListViewController.h"
 #import "RimViewController.h"
+#import "BlogDetailViewController.h"
 @interface ZWHTourismMadeViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)SDCycleScrollView *topScrView;
 @property(nonatomic,strong)UITableView * tableView;
@@ -86,6 +87,7 @@
         QMUIButton * btn = [[QMUIButton alloc]qmui_initWithImage:[UIImage imageNamed:imageArray[i]] title:titleArray[i]];
         btn.imagePosition =  QMUIButtonImagePositionTop;
         btn.spacingBetweenImageAndTitle = WIDTH_PRO(10);
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         btn.frame = CGRectMake(x, 0, w, h);
         [listView addSubview:btn];
         btn.tag = i+100;
@@ -166,6 +168,9 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    BlogsModel * model = self.blogArr[indexPath.row];
+    BlogDetailViewController * vc = [[BlogDetailViewController  alloc]init];
+    vc.code = model.code;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

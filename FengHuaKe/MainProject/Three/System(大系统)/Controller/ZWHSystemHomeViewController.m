@@ -34,6 +34,7 @@
 #import "ZWHTourismMadeViewController.h"
 #import "ZWHMeFootViewController.h"
 #import "GBAirTiketViewController.h"
+#import "CookingViewController.h"
 
 #import "RentCarViewController.h"
 @interface ZWHSystemHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -464,7 +465,11 @@
             break;
         case 2:
         {
-            [self canshow];
+            //美食美味
+            CookingViewController *vc = [[CookingViewController alloc]init];
+            [vc setHidesBottomBarWhenPushed:YES];
+            [self.navigationController pushViewController:vc animated:YES];
+
         }
             break;
         case 3:

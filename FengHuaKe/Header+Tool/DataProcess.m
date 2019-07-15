@@ -502,7 +502,7 @@ NSString* dosome(){
         UIImageView *imageview = (UIImageView*)view;
         [imageview  sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:PLACEHOLDER]];
         
-    }else if ([view.class isEqual:[UIButton class]]){
+    }else if ([view.class isEqual:[UIButton class]] || [view.class isEqual:[QMUIButton class]]){
         
         UIButton *btn = (UIButton*)view;
         [btn sd_setImageWithURL:[NSURL URLWithString:url] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:PLACEHOLDER]];

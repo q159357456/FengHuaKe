@@ -12,6 +12,7 @@
 @property(nonatomic,strong)UILabel * label1;
 @property(nonatomic,strong)UIButton * btn;
 @property(nonatomic,strong)UILabel * label2;
+@property(nonatomic,strong)UIView * bgView;
 @property(nonatomic,copy)NSString * code;
 
 @end
@@ -50,43 +51,52 @@
         
         self.logo.frame = CGRectMake(10, 10, 30*MULPITLE, 30*MULPITLE);
         bgView.frame = CGRectMake(CGRectGetMaxX(self.logo.frame)+2, self.logo.y, SCREEN_WIDTH-CGRectGetMaxX(self.logo.frame)-10, self.logo.height);
-        self.label1.frame = CGRectMake(bgView.x+3, 0, 100*MULPITLE, bgView.height);
+        self.bgView = bgView;
+        self.label1.frame = CGRectMake(3, 0, 100*MULPITLE, bgView.height);
         self.btn.frame = CGRectMake(bgView.width-50*MULPITLE-10, 5*MULPITLE, 40*MULPITLE, 20*MULPITLE);
         self.label2.frame = CGRectMake(bgView.x,CGRectGetMaxY(bgView.frame)+10, bgView.width, 40);
-        
-        [self.contentView addSubview:self.logo];
-        [self.contentView addSubview:bgView];
-        [self.contentView addSubview:self.label2];
-        [bgView addSubview:self.label1];
-        [bgView addSubview:self.btn];
     }
     return self;
 }
 
 -(void)loadData:(CommentListModel *)model
 {
-
-    self.code = model.code;
-    ImageCacheDefine(self.logo, model.logo);
-    self.label1.text = model.nickname;
-    self.label2.text = model.details;
-    [self.label2 sizeToFit];
-    NSLog(@"load data");
-    UILabel * lastLabel = self.label2;
-    for (NSInteger i = 0; i<model.CommentList.count; i++) {
-        ReplyModel * rmodel = model.CommentList[i];
-        UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(lastLabel.x, i==0?CGRectGetMaxY(lastLabel.frame)+10:CGRectGetMaxY(lastLabel.frame), lastLabel.width, 0)];
-        NSString * content = [NSString stringWithFormat:@"%@: %@",rmodel.nickname,rmodel.details];
-        NSMutableAttributedString * attrbute = [[NSMutableAttributedString alloc]initWithString:content];
-        NSRange range = [content rangeOfString:[NSString stringWithFormat:@"%@:",rmodel.nickname]];
-        [attrbute addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:range];
-        label.attributedText = attrbute;
-        label.font = ZWHFont(12*MULPITLE);
-        label.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        [label sizeToFit];
-        [self.contentView addSubview:label];
-        lastLabel = label;
+    if (!model) {
+        return;
     }
+    for(UIView *view in [self.contentView subviews]){
+        [view removeFromSuperview];
+    }
+    [self.contentView addSubview:self.logo];
+    [self.contentView addSubview:self.bgView];
+    [self.contentView addSubview:self.label2];
+    [self.bgView addSubview:self.label1];
+    [self.bgView addSubview:self.btn];
+    if (model) {
+        self.code = model.code;
+        ImageCacheDefine(self.logo, model.logo);
+        self.label1.text = model.nickname;
+        self.label2.text = model.details;
+        CGSize tempSize =  [self.label2 sizeThatFits:CGSizeMake(self.label2.width, MAXFLOAT)];
+        self.label2.frame = CGRectMake(self.label2.x, self.label2.y, self.label2.width, tempSize.height);
+        
+        UILabel * lastLabel = self.label2;
+        for (NSInteger i = 0; i<model.CommentList.count; i++) {
+            ReplyModel * rmodel = model.CommentList[i];
+            UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(lastLabel.x, i==0?CGRectGetMaxY(lastLabel.frame)+10:CGRectGetMaxY(lastLabel.frame), lastLabel.width, 0)];
+            NSString * content = [NSString stringWithFormat:@"%@: %@",rmodel.nickname,rmodel.details];
+            NSMutableAttributedString * attrbute = [[NSMutableAttributedString alloc]initWithString:content];
+            NSRange range = [content rangeOfString:[NSString stringWithFormat:@"%@:",rmodel.nickname]];
+            [attrbute addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:range];
+            label.attributedText = attrbute;
+            label.font = ZWHFont(12*MULPITLE);
+            label.backgroundColor = [UIColor groupTableViewBackgroundColor];
+            [label sizeToFit];
+            [self.contentView addSubview:label];
+            lastLabel = label;
+        }
+    }
+   
 }
 
 
