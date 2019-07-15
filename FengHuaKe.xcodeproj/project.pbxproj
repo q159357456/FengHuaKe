@@ -15,6 +15,7 @@
 		68658342204F7B68002EAAD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68658340204F7B68002EAAD5 /* LaunchScreen.storyboard */; };
 		6865834D204F7B69002EAAD5 /* FengHuaKeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6865834C204F7B69002EAAD5 /* FengHuaKeTests.m */; };
 		68658358204F7B69002EAAD5 /* FengHuaKeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68658357204F7B69002EAAD5 /* FengHuaKeUITests.m */; };
+		7C0677EA22DCCE1E002C9D27 /* CookingDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0677E922DCCE1E002C9D27 /* CookingDetailController.m */; };
 		7C0ADD8120639958006E895B /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0ADD8020639958006E895B /* UserModel.m */; };
 		7C0ADD862063B005006E895B /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0ADD842063B005006E895B /* HeaderView.m */; };
 		7C0ADD872063B005006E895B /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C0ADD852063B005006E895B /* HeaderView.xib */; };
@@ -702,6 +703,8 @@
 		68658357204F7B69002EAAD5 /* FengHuaKeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FengHuaKeUITests.m; sourceTree = "<group>"; };
 		68658359204F7B69002EAAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68658366204F80AA002EAAD5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7C0677E822DCCE1E002C9D27 /* CookingDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingDetailController.h; sourceTree = "<group>"; };
+		7C0677E922DCCE1E002C9D27 /* CookingDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingDetailController.m; sourceTree = "<group>"; };
 		7C0ADD7F20639958006E895B /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		7C0ADD8020639958006E895B /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		7C0ADD832063B005006E895B /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
@@ -3634,6 +3637,8 @@
 				7F352ACD22DC2933004BBE61 /* CookingViewController.m */,
 				7F352ACF22DC2BB0004BBE61 /* CookingTableViewCell.h */,
 				7F352AD022DC2BB0004BBE61 /* CookingTableViewCell.m */,
+				7C0677E822DCCE1E002C9D27 /* CookingDetailController.h */,
+				7C0677E922DCCE1E002C9D27 /* CookingDetailController.m */,
 				7F352AD922DC6466004BBE61 /* ShopModel.h */,
 				7F352ADA22DC6466004BBE61 /* ShopModel.m */,
 			);
@@ -5484,6 +5489,7 @@
 				7C55092B2051206F007FBC12 /* MainTabBarController.m in Sources */,
 				7C0ADD8B2063B045006E895B /* GroupMemberCell.m in Sources */,
 				7CBCB72F208885A600C144F4 /* ProductCollectionViewCell.m in Sources */,
+				7C0677EA22DCCE1E002C9D27 /* CookingDetailController.m in Sources */,
 				7C60DB752084757A0048CF7E /* LMStyleFontStyleCell.m in Sources */,
 				7C72204A20D4AE1D00805CAD /* HotelDestinationVC.m in Sources */,
 				86EDCA23210EC098002C0AC8 /* FDSlideContentView.m in Sources */,
