@@ -26,5 +26,8 @@
 @property(nonatomic,copy)NSString *sellnums;
 @property(nonatomic,copy)NSString *shopid;
 @property(nonatomic,copy)NSString *url;
+@property(nonatomic,copy)NSString *minPrice;
+@property(nonatomic,copy)NSString *maxPrice;
+@property(nonatomic,copy)NSString *remark;
 +(NSMutableArray *)getDatawithdic:(NSDictionary *)dic;
 @end

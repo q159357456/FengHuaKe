@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CookingDetailController : UIViewController
-
+@property(nonatomic,copy)NSString * proId;
 @end
 
 NS_ASSUME_NONNULL_END

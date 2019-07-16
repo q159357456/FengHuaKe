@@ -12,6 +12,7 @@
 #import "ClassifyModel.h"
 #import "ShopModel.h"
 #import "ImageLabel.h"
+#import "CookingProListController.h"
 @interface CookingViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * dataArr;
@@ -24,6 +25,7 @@
 -(UIImage *)navigationBarBackgroundImage{
     return [UIImage new];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.title = @"美食美味";
@@ -51,7 +53,7 @@
     NSLog(@"%@",sysmodel2);
     DefineWeakSelf;
     [DataProcess requestDataWithURL:Cate_Store RequestStr:GETRequestStr(nil, sysmodel2, @1, @100, nil) Result:^(id obj, id erro) {
-        NSLog(@"obj==>%@",obj);
+        NSLog(@"sysmodel2obj==>%@",obj);
         NSLog(@"erro==>%@",erro);
         if (obj) {
             NSArray * array = (NSArray*) [HttpTool getDictWithData:obj[@"sysmodel"][@"strresult"]];
@@ -170,10 +172,10 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    BlogsModel * model = self.blogArr[indexPath.row];
-//    BlogDetailViewController * vc = [[BlogDetailViewController  alloc]init];
-//    vc.code = model.code;
-//    [self.navigationController pushViewController:vc animated:YES];
+    ShopModel * model = self.dataArr[indexPath.row];
+    CookingProListController * vc = [[CookingProListController  alloc]init];
+    vc.shopid = model.SHOPID;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 /*
 #pragma mark - Navigation

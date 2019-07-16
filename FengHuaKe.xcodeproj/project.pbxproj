@@ -489,6 +489,9 @@
 		7FE5D0F522C20FCD0032B1E7 /* MemberUpgradeTopUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5D0F422C20FCD0032B1E7 /* MemberUpgradeTopUpController.m */; };
 		7FE6083322641F35007A73A1 /* RentCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083222641F35007A73A1 /* RentCarViewController.m */; };
 		7FE6083622643133007A73A1 /* BaseModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6083522643133007A73A1 /* BaseModelObject.m */; };
+		7FE92BF522DD696D00F899F5 /* CookingProListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92BF422DD696D00F899F5 /* CookingProListController.m */; };
+		7FE92BFB22DD6A4B00F899F5 /* CookingProListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92BFA22DD6A4B00F899F5 /* CookingProListCell.m */; };
+		7FE92C0122DDA5A700F899F5 /* CookingDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C0022DDA5A700F899F5 /* CookingDetailModel.m */; };
 		7FED0DE222C46C5B009AB818 /* AdressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE122C46C5B009AB818 /* AdressModel.m */; };
 		7FED0DE622C47E51009AB818 /* FHTXPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */; };
 		7FED0DEB22C5F958009AB818 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DEA22C5F958009AB818 /* AboutUsViewController.m */; };
@@ -1508,6 +1511,12 @@
 		7FE6083222641F35007A73A1 /* RentCarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RentCarViewController.m; sourceTree = "<group>"; };
 		7FE6083422643133007A73A1 /* BaseModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModelObject.h; sourceTree = "<group>"; };
 		7FE6083522643133007A73A1 /* BaseModelObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseModelObject.m; sourceTree = "<group>"; };
+		7FE92BF322DD696D00F899F5 /* CookingProListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingProListController.h; sourceTree = "<group>"; };
+		7FE92BF422DD696D00F899F5 /* CookingProListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingProListController.m; sourceTree = "<group>"; };
+		7FE92BF922DD6A4B00F899F5 /* CookingProListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingProListCell.h; sourceTree = "<group>"; };
+		7FE92BFA22DD6A4B00F899F5 /* CookingProListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingProListCell.m; sourceTree = "<group>"; };
+		7FE92BFF22DDA5A700F899F5 /* CookingDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingDetailModel.h; sourceTree = "<group>"; };
+		7FE92C0022DDA5A700F899F5 /* CookingDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingDetailModel.m; sourceTree = "<group>"; };
 		7FED0DE022C46C5B009AB818 /* AdressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdressModel.h; sourceTree = "<group>"; };
 		7FED0DE122C46C5B009AB818 /* AdressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdressModel.m; sourceTree = "<group>"; };
 		7FED0DE422C47E51009AB818 /* FHTXPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FHTXPayViewController.h; sourceTree = "<group>"; };
@@ -3635,10 +3644,16 @@
 			children = (
 				7F352ACC22DC2933004BBE61 /* CookingViewController.h */,
 				7F352ACD22DC2933004BBE61 /* CookingViewController.m */,
-				7F352ACF22DC2BB0004BBE61 /* CookingTableViewCell.h */,
-				7F352AD022DC2BB0004BBE61 /* CookingTableViewCell.m */,
 				7C0677E822DCCE1E002C9D27 /* CookingDetailController.h */,
 				7C0677E922DCCE1E002C9D27 /* CookingDetailController.m */,
+				7FE92BF322DD696D00F899F5 /* CookingProListController.h */,
+				7FE92BF422DD696D00F899F5 /* CookingProListController.m */,
+				7F352ACF22DC2BB0004BBE61 /* CookingTableViewCell.h */,
+				7F352AD022DC2BB0004BBE61 /* CookingTableViewCell.m */,
+				7FE92BF922DD6A4B00F899F5 /* CookingProListCell.h */,
+				7FE92BFA22DD6A4B00F899F5 /* CookingProListCell.m */,
+				7FE92BFF22DDA5A700F899F5 /* CookingDetailModel.h */,
+				7FE92C0022DDA5A700F899F5 /* CookingDetailModel.m */,
 				7F352AD922DC6466004BBE61 /* ShopModel.h */,
 				7F352ADA22DC6466004BBE61 /* ShopModel.m */,
 			);
@@ -5499,6 +5514,7 @@
 				7CB478FC20DE26ED000EAD16 /* InsuranceTopListCollCell.m in Sources */,
 				86F3E27B21339B490019FE72 /* ZWHClassifyListLeftTableViewCell.m in Sources */,
 				7C60DB742084757A0048CF7E /* LMColorPickerView.m in Sources */,
+				7FE92BFB22DD6A4B00F899F5 /* CookingProListCell.m in Sources */,
 				7CBCB7602088E48800C144F4 /* ProductBottomView.m in Sources */,
 				7CB478DB20DCEE93000EAD16 /* BPPCalendarCell.m in Sources */,
 				7C72206220D4EEC400805CAD /* HotelRoomListModel.m in Sources */,
@@ -5638,6 +5654,7 @@
 				7C0E405A206B938700A29079 /* CatageThreeCell.m in Sources */,
 				7CFFE72222C764AC006C2859 /* UserDefineModel.m in Sources */,
 				7CBCB7172088469900C144F4 /* ProductVM.m in Sources */,
+				7FE92BF522DD696D00F899F5 /* CookingProListController.m in Sources */,
 				7CBCB773208C520600C144F4 /* ClassifyProductCollectionView.m in Sources */,
 				7C73269D205F8678008021AC /* AddGruopChartVC.m in Sources */,
 				7C60DB8D208481280048CF7E /* TableViewCell.m in Sources */,
@@ -5655,6 +5672,7 @@
 				7C60DB7C2084757A0048CF7E /* LMTextHTMLParser.m in Sources */,
 				7C7326B32060B1B6008021AC /* FriendInfoVC.m in Sources */,
 				86EDCA2A210EC9D4002C0AC8 /* ZSColor.m in Sources */,
+				7FE92C0122DDA5A700F899F5 /* CookingDetailModel.m in Sources */,
 				86F3E248212E93AB0019FE72 /* ZWHHotelRoomTableViewCell.m in Sources */,
 				7C5D165E20C6665D005401D0 /* NSString+Addition.m in Sources */,
 				86F3E2C321379A6C0019FE72 /* LoginManagerVM.m in Sources */,

@@ -57,4 +57,8 @@
 #define Cate_Store @"Cate/Store"
 //POST /api/Classify/List
 #define Classify_List @"Classify/List"
+//POST /api/Cate/SinglePro
+#define Cate_SinglePro @"Cate/SinglePro"
+//POST /api/Cate/ProList
+#define Cate_ProList @"Cate/ProList"
 #endif /* RequestAPI_h */
