@@ -14,6 +14,7 @@
 @property(nonatomic,strong)CookingDetailModel * cmodel;
 @property(nonatomic,strong)SDCycleScrollView *topScrView;
 @property(nonatomic,strong)NSMutableArray * imgArr;
+@property(nonatomic,strong)UILabel * countLabel;
 @end
 
 @implementation CookingDetailController
@@ -216,6 +217,7 @@
 
 -(void)bottomView{
     UIView * bottom = [[UIView alloc]init];
+    bottom.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bottom];
     UIView * view1 = [[UIView alloc]init];
     UIView * view2 = [[UIView alloc]init];
@@ -225,8 +227,8 @@
     [bottom addSubview:view3];
     
     view1.backgroundColor = [UIColor whiteColor];
-    view2.backgroundColor = MainColor;
-    view3.backgroundColor = [UIColor redColor];
+    view2.backgroundColor = A_COLOR_STRING(0x4BA4FF, 0.9);
+    view3.backgroundColor = MainColor;
     
     [bottom mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, 50*MULPITLE));
@@ -256,9 +258,54 @@
         make.top.mas_equalTo(bottom);
     }];
     
-    UIButton *btn1 = [[UIButton alloc]init];
-    [view2 addSubview:btn1];
-
+    UIButton *v1_btn = [[UIButton alloc]init];
+    v1_btn.backgroundColor = [UIColor redColor];
+    [view1 addSubview:v1_btn];
+    [v1_btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(view1);
+        make.left.mas_equalTo(view1).offset(10*MULPITLE);
+        make.size.mas_equalTo(CGSizeMake(30*MULPITLE, 30*MULPITLE));
+    }];
+    
+    UIButton *v2_btn = [[UIButton alloc]init];
+    [v2_btn setTitle:@"下单" forState:UIControlStateNormal];
+    [view2 addSubview:v2_btn];
+    [v2_btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0 ));
+    }];
+    
+    UIButton *v3_btn = [[UIButton alloc]init];
+    [v3_btn setTitle:@"去支付" forState:UIControlStateNormal];
+    [view3 addSubview:v3_btn];
+    [v3_btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0 ));
+    }];
+    
+    [v1_btn addTarget:self action:@selector(collet:) forControlEvents:UIControlEventTouchUpInside];
+    [v2_btn addTarget:self action:@selector(bill:) forControlEvents:UIControlEventTouchUpInside];
+    [v3_btn addTarget:self action:@selector(pay:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.countLabel = [[UILabel alloc]init];
+    self.countLabel.font = ZWHFont(8*MULPITLE);
+    self.countLabel.textColor = [UIColor whiteColor];
+    self.countLabel.layer.cornerRadius = 9*MULPITLE;
+    self.countLabel.layer.masksToBounds = YES;
+    self.countLabel.text = @"1";
+    self.countLabel.backgroundColor = [UIColor redColor];
+    self.countLabel.textAlignment = NSTextAlignmentCenter;
+    [view2 addSubview:self.countLabel];
+    [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(18*MULPITLE, 18*MULPITLE));
+        make.top.mas_equalTo(view2).offset(15*MULPITLE);
+        make.left.mas_equalTo(view2).offset(SCREEN_WIDTH/6+20*MULPITLE);
+    }];
+    
+}
+-(void)collet:(UIButton*)btn{
+}
+-(void)bill:(UIButton*)btn{
+}
+-(void)pay:(UIButton*)btn{
 }
 -(UIView*)tagView:(NSString*)title Color:(UIColor*)color Frame:(CGRect)frame{
     

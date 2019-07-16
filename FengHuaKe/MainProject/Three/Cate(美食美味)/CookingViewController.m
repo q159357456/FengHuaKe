@@ -13,6 +13,7 @@
 #import "ShopModel.h"
 #import "ImageLabel.h"
 #import "CookingProListController.h"
+#import "CookingSearchController.h"
 @interface CookingViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * dataArr;
@@ -147,13 +148,7 @@
     [searBtn sizeToFit];
     self.navigationItem.titleView = searBtn;
 }
--(void)traClick:(UITapGestureRecognizer*)sender{
-    
-}
 
--(void)searchBtnWith:(UIButton*)sender{
-    
-}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataArr.count;
@@ -175,6 +170,17 @@
     ShopModel * model = self.dataArr[indexPath.row];
     CookingProListController * vc = [[CookingProListController  alloc]init];
     vc.shopid = model.SHOPID;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+-(void)traClick:(UITapGestureRecognizer*)sender{
+    CookingSearchController * vc = [[CookingSearchController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)searchBtnWith:(UIButton*)sender{
+    CookingSearchController * vc = [[CookingSearchController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 /*

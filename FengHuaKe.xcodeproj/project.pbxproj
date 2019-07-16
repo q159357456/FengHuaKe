@@ -16,6 +16,8 @@
 		6865834D204F7B69002EAAD5 /* FengHuaKeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6865834C204F7B69002EAAD5 /* FengHuaKeTests.m */; };
 		68658358204F7B69002EAAD5 /* FengHuaKeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68658357204F7B69002EAAD5 /* FengHuaKeUITests.m */; };
 		7C0677EA22DCCE1E002C9D27 /* CookingDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0677E922DCCE1E002C9D27 /* CookingDetailController.m */; };
+		7C0677F022DE1CCC002C9D27 /* CookingSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0677EF22DE1CCC002C9D27 /* CookingSearchController.m */; };
+		7C0677F322DE1EA4002C9D27 /* CookingOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0677F222DE1EA4002C9D27 /* CookingOrderController.m */; };
 		7C0ADD8120639958006E895B /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0ADD8020639958006E895B /* UserModel.m */; };
 		7C0ADD862063B005006E895B /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0ADD842063B005006E895B /* HeaderView.m */; };
 		7C0ADD872063B005006E895B /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C0ADD852063B005006E895B /* HeaderView.xib */; };
@@ -708,6 +710,10 @@
 		68658366204F80AA002EAAD5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7C0677E822DCCE1E002C9D27 /* CookingDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingDetailController.h; sourceTree = "<group>"; };
 		7C0677E922DCCE1E002C9D27 /* CookingDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingDetailController.m; sourceTree = "<group>"; };
+		7C0677EE22DE1CCC002C9D27 /* CookingSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingSearchController.h; sourceTree = "<group>"; };
+		7C0677EF22DE1CCC002C9D27 /* CookingSearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingSearchController.m; sourceTree = "<group>"; };
+		7C0677F122DE1EA4002C9D27 /* CookingOrderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingOrderController.h; sourceTree = "<group>"; };
+		7C0677F222DE1EA4002C9D27 /* CookingOrderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingOrderController.m; sourceTree = "<group>"; };
 		7C0ADD7F20639958006E895B /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		7C0ADD8020639958006E895B /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		7C0ADD832063B005006E895B /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
@@ -3648,6 +3654,10 @@
 				7C0677E922DCCE1E002C9D27 /* CookingDetailController.m */,
 				7FE92BF322DD696D00F899F5 /* CookingProListController.h */,
 				7FE92BF422DD696D00F899F5 /* CookingProListController.m */,
+				7C0677EE22DE1CCC002C9D27 /* CookingSearchController.h */,
+				7C0677EF22DE1CCC002C9D27 /* CookingSearchController.m */,
+				7C0677F122DE1EA4002C9D27 /* CookingOrderController.h */,
+				7C0677F222DE1EA4002C9D27 /* CookingOrderController.m */,
 				7F352ACF22DC2BB0004BBE61 /* CookingTableViewCell.h */,
 				7F352AD022DC2BB0004BBE61 /* CookingTableViewCell.m */,
 				7FE92BF922DD6A4B00F899F5 /* CookingProListCell.h */,
@@ -5387,6 +5397,7 @@
 				7FE6083322641F35007A73A1 /* RentCarViewController.m in Sources */,
 				7F4AD7F522D826B900FADFA5 /* CashListModel.m in Sources */,
 				8678756B211E6FED0061E875 /* ZWHAdvertModel.m in Sources */,
+				7C0677F022DE1CCC002C9D27 /* CookingSearchController.m in Sources */,
 				869265B72140BF870091C131 /* ZWHAfterListTableViewCell.m in Sources */,
 				7FA50EEF225F1BE800262EE0 /* AllCityTableView.m in Sources */,
 				7C716CC420DA423900AE2BB1 /* TicketHotCell.m in Sources */,
@@ -5527,6 +5538,7 @@
 				7FB7FA5A22B378B8006B3484 /* GuiApplyClickChoiceView.m in Sources */,
 				7CFFE72522C77196006C2859 /* UserDefineWebController.m in Sources */,
 				7C55092020511DD4007FBC12 /* UIImage+Rotate.m in Sources */,
+				7C0677F322DE1EA4002C9D27 /* CookingOrderController.m in Sources */,
 				7FED0DE222C46C5B009AB818 /* AdressModel.m in Sources */,
 				7C0E4045206B3CB000A29079 /* ContractDetailVC.m in Sources */,
 				861E14C121CB71BA00B31BB5 /* ZWHVisaCViewController.m in Sources */,
