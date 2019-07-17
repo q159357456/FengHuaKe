@@ -34,7 +34,7 @@
 {
     if (!_tableView) {
         
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, NAV_HEIGHT, self.view.width, SCREEN_WIDTH-NAV_HEIGHT) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = 71;

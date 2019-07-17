@@ -128,7 +128,7 @@
 {
     if (!_tableview) {
         
-        _tableview=[[UITableView alloc]initWithFrame:CGRectMake(0,0, ScreenWidth, self.view.height-64) style:UITableViewStylePlain];
+        _tableview=[[UITableView alloc]initWithFrame:CGRectMake(0,0, NAV_HEIGHT, SCREEN_HEIGHT-NAV_HEIGHT) style:UITableViewStylePlain];
         _tableview.tableFooterView=[UIView new];
         _tableview.rowHeight=UITableViewAutomaticDimension;
         [_tableview registerNib:[UINib nibWithNibName:@"InsuranceBillCell" bundle:nil] forCellReuseIdentifier:@"InsuranceBillCell"];

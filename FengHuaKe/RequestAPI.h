@@ -61,4 +61,8 @@
 #define Cate_SinglePro @"Cate/SinglePro"
 //POST /api/Cate/ProList
 #define Cate_ProList @"Cate/ProList"
+//POST /api/PO/Create
+#define PO_Create @"PO/Create"
+//POST /api/GroupBuy/List
+#define GroupBuy_List @"GroupBuy/List"
 #endif /* RequestAPI_h */

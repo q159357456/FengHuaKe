@@ -1,8 +1,8 @@
 //
-//  CookingSearchController.h
+//  FollowGroupController.h
 //  FengHuaKe
 //
-//  Created by 秦根 on 2019/7/16.
+//  Created by chenheng on 2019/7/17.
 //  Copyright © 2019 gongbo. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CookingSearchController : ZWHBaseViewController
+@interface FollowGroupController : UIViewController
 
 @end
 

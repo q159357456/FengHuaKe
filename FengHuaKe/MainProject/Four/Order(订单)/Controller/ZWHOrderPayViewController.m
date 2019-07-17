@@ -273,6 +273,16 @@
                 }
             }
                 break;
+            case 7://会员升级
+            {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+                break;
+            case 8://美食美味
+            {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+                break;
             default:
                 break;
         }
@@ -311,6 +321,14 @@
             }
                 break;
             case 6://旅游进入
+            {
+            }
+                break;
+            case 7://会员升级
+            {
+            }
+                break;
+            case 8://美食美味
             {
             }
                 break;

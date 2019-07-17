@@ -9,6 +9,7 @@
 #import "CookingDetailController.h"
 #import "ProductModel.h"
 #import "CookingDetailModel.h"
+#import "CookingOrderController.h"
 @interface CookingDetailController ()<SDCycleScrollViewDelegate>
 @property(nonatomic,strong)ProductModel * pmodel;
 @property(nonatomic,strong)CookingDetailModel * cmodel;
@@ -259,13 +260,15 @@
     }];
     
     UIButton *v1_btn = [[UIButton alloc]init];
-    v1_btn.backgroundColor = [UIColor redColor];
+//    v1_btn.backgroundColor = [UIColor redColor];
     [view1 addSubview:v1_btn];
     [v1_btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(view1);
         make.left.mas_equalTo(view1).offset(10*MULPITLE);
         make.size.mas_equalTo(CGSizeMake(30*MULPITLE, 30*MULPITLE));
     }];
+    [v1_btn setImage:[UIImage imageNamed:@"cooking_1"] forState:UIControlStateNormal];
+    [v1_btn setImage:[UIImage imageNamed:@"cooking_2"] forState:UIControlStateSelected];
     
     UIButton *v2_btn = [[UIButton alloc]init];
     [v2_btn setTitle:@"下单" forState:UIControlStateNormal];
@@ -296,16 +299,28 @@
     [view2 addSubview:self.countLabel];
     [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(18*MULPITLE, 18*MULPITLE));
-        make.top.mas_equalTo(view2).offset(15*MULPITLE);
+        make.top.mas_equalTo(view2).offset(10*MULPITLE);
         make.left.mas_equalTo(view2).offset(SCREEN_WIDTH/6+20*MULPITLE);
     }];
-    
+    self.countLabel.hidden = YES;
 }
 -(void)collet:(UIButton*)btn{
+    btn.selected = !btn.selected;
+    if (btn.selected) {
+        [self showHint:@"收藏成功!"];
+    }else
+    {
+        [self showHint:@"取消收藏成功!"];
+    }
 }
 -(void)bill:(UIButton*)btn{
+    self.countLabel.hidden = NO;
 }
 -(void)pay:(UIButton*)btn{
+    CookingOrderController * order = [[CookingOrderController alloc]init];
+    order.pmodel = self.pmodel;
+    order.cmodel = self.cmodel;
+    [self.navigationController pushViewController:order animated:YES];
 }
 -(UIView*)tagView:(NSString*)title Color:(UIColor*)color Frame:(CGRect)frame{
     

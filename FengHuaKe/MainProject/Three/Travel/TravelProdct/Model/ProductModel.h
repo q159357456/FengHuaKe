@@ -29,5 +29,6 @@
 @property(nonatomic,copy)NSString *minPrice;
 @property(nonatomic,copy)NSString *maxPrice;
 @property(nonatomic,copy)NSString *remark;
+@property(nonatomic,copy)NSString *code;
 +(NSMutableArray *)getDatawithdic:(NSDictionary *)dic;
 @end

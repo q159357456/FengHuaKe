@@ -494,6 +494,11 @@
 		7FE92BF522DD696D00F899F5 /* CookingProListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92BF422DD696D00F899F5 /* CookingProListController.m */; };
 		7FE92BFB22DD6A4B00F899F5 /* CookingProListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92BFA22DD6A4B00F899F5 /* CookingProListCell.m */; };
 		7FE92C0122DDA5A700F899F5 /* CookingDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C0022DDA5A700F899F5 /* CookingDetailModel.m */; };
+		7FE92C0522DF0DF500F899F5 /* StartTogetherBillController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C0422DF0DF500F899F5 /* StartTogetherBillController.m */; };
+		7FE92C0A22DF211F00F899F5 /* FollowGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C0922DF211F00F899F5 /* FollowGroupController.m */; };
+		7FE92C0D22DF213B00F899F5 /* TogetherFreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C0C22DF213B00F899F5 /* TogetherFreeController.m */; };
+		7FE92C1022DF283800F899F5 /* TogetherListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C0F22DF283800F899F5 /* TogetherListCell.m */; };
+		7FE92C1322DF2A3400F899F5 /* GroupBillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C1222DF2A3400F899F5 /* GroupBillModel.m */; };
 		7FED0DE222C46C5B009AB818 /* AdressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE122C46C5B009AB818 /* AdressModel.m */; };
 		7FED0DE622C47E51009AB818 /* FHTXPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */; };
 		7FED0DEB22C5F958009AB818 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DEA22C5F958009AB818 /* AboutUsViewController.m */; };
@@ -1523,6 +1528,16 @@
 		7FE92BFA22DD6A4B00F899F5 /* CookingProListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingProListCell.m; sourceTree = "<group>"; };
 		7FE92BFF22DDA5A700F899F5 /* CookingDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingDetailModel.h; sourceTree = "<group>"; };
 		7FE92C0022DDA5A700F899F5 /* CookingDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingDetailModel.m; sourceTree = "<group>"; };
+		7FE92C0322DF0DF500F899F5 /* StartTogetherBillController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartTogetherBillController.h; sourceTree = "<group>"; };
+		7FE92C0422DF0DF500F899F5 /* StartTogetherBillController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartTogetherBillController.m; sourceTree = "<group>"; };
+		7FE92C0822DF211F00F899F5 /* FollowGroupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowGroupController.h; sourceTree = "<group>"; };
+		7FE92C0922DF211F00F899F5 /* FollowGroupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowGroupController.m; sourceTree = "<group>"; };
+		7FE92C0B22DF213B00F899F5 /* TogetherFreeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TogetherFreeController.h; sourceTree = "<group>"; };
+		7FE92C0C22DF213B00F899F5 /* TogetherFreeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TogetherFreeController.m; sourceTree = "<group>"; };
+		7FE92C0E22DF283800F899F5 /* TogetherListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TogetherListCell.h; sourceTree = "<group>"; };
+		7FE92C0F22DF283800F899F5 /* TogetherListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TogetherListCell.m; sourceTree = "<group>"; };
+		7FE92C1122DF2A3400F899F5 /* GroupBillModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupBillModel.h; sourceTree = "<group>"; };
+		7FE92C1222DF2A3400F899F5 /* GroupBillModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupBillModel.m; sourceTree = "<group>"; };
 		7FED0DE022C46C5B009AB818 /* AdressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdressModel.h; sourceTree = "<group>"; };
 		7FED0DE122C46C5B009AB818 /* AdressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdressModel.m; sourceTree = "<group>"; };
 		7FED0DE422C47E51009AB818 /* FHTXPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FHTXPayViewController.h; sourceTree = "<group>"; };
@@ -2395,6 +2410,7 @@
 		7C5509312051217A007FBC12 /* Three */ = {
 			isa = PBXGroup;
 			children = (
+				7FE92C0222DF0D9A00F899F5 /* StartBill(发起拼单) */,
 				7F352ACB22DC28F4004BBE61 /* Cate(美食美味) */,
 				7FB7FA3422B33A0D006B3484 /* GuidBlog(导游博客) */,
 				7F91F3432260756600ABF47D /* RentCar(租车) */,
@@ -3821,6 +3837,39 @@
 				7FED0DE122C46C5B009AB818 /* AdressModel.m */,
 			);
 			path = ServiceBaseModel;
+			sourceTree = "<group>";
+		};
+		7FE92C0222DF0D9A00F899F5 /* StartBill(发起拼单) */ = {
+			isa = PBXGroup;
+			children = (
+				7FE92C0322DF0DF500F899F5 /* StartTogetherBillController.h */,
+				7FE92C0422DF0DF500F899F5 /* StartTogetherBillController.m */,
+				7FE92C0622DF1B7500F899F5 /* FollowGruop(跟团游 ) */,
+				7FE92C0722DF1B7500F899F5 /* TogetherFree(拼单自由行) */,
+			);
+			path = "StartBill(发起拼单)";
+			sourceTree = "<group>";
+		};
+		7FE92C0622DF1B7500F899F5 /* FollowGruop(跟团游 ) */ = {
+			isa = PBXGroup;
+			children = (
+				7FE92C0822DF211F00F899F5 /* FollowGroupController.h */,
+				7FE92C0922DF211F00F899F5 /* FollowGroupController.m */,
+			);
+			path = "FollowGruop(跟团游 )";
+			sourceTree = "<group>";
+		};
+		7FE92C0722DF1B7500F899F5 /* TogetherFree(拼单自由行) */ = {
+			isa = PBXGroup;
+			children = (
+				7FE92C0B22DF213B00F899F5 /* TogetherFreeController.h */,
+				7FE92C0C22DF213B00F899F5 /* TogetherFreeController.m */,
+				7FE92C0E22DF283800F899F5 /* TogetherListCell.h */,
+				7FE92C0F22DF283800F899F5 /* TogetherListCell.m */,
+				7FE92C1122DF2A3400F899F5 /* GroupBillModel.h */,
+				7FE92C1222DF2A3400F899F5 /* GroupBillModel.m */,
+			);
+			path = "TogetherFree(拼单自由行)";
 			sourceTree = "<group>";
 		};
 		7FED0DE322C47DD4009AB818 /* pay(支付) */ = {
@@ -5654,6 +5703,7 @@
 				7C72205B20D4E0A300805CAD /* HotelListCell.m in Sources */,
 				869265DF2148F25C0091C131 /* UIColor+Extension.m in Sources */,
 				7CBCB7432088993600C144F4 /* ProductDetailVC.m in Sources */,
+				7FE92C0D22DF213B00F899F5 /* TogetherFreeController.m in Sources */,
 				86787525211A79FD0061E875 /* ZWHOrderViewController.m in Sources */,
 				86787559211C453A0061E875 /* ZWHClassifyModel.m in Sources */,
 				869265D32147A25E0091C131 /* ZWHUploadPictureViewController.m in Sources */,
@@ -5663,6 +5713,7 @@
 				7FE5D0F222C20FA30032B1E7 /* MemberUpgradeDetailController.m in Sources */,
 				8678758E212264B40061E875 /* UIButton+IndexPath.m in Sources */,
 				7C2B3120205BC06B00BA30AB /* AddFriendCell.m in Sources */,
+				7FE92C0522DF0DF500F899F5 /* StartTogetherBillController.m in Sources */,
 				7C0E405A206B938700A29079 /* CatageThreeCell.m in Sources */,
 				7CFFE72222C764AC006C2859 /* UserDefineModel.m in Sources */,
 				7CBCB7172088469900C144F4 /* ProductVM.m in Sources */,
@@ -5676,12 +5727,14 @@
 				867875B6212A99600061E875 /* ZWHCityModel.m in Sources */,
 				7C550CE9205905CF007FBC12 /* JsonTools.m in Sources */,
 				7C9A074E20734F3C0067A7E6 /* FriendsShowTBVC.m in Sources */,
+				7FE92C1022DF283800F899F5 /* TogetherListCell.m in Sources */,
 				7CCB165D206AA1CF00CF208A /* EMCallOptions+NSCoding.m in Sources */,
 				7C55091B20511DD4007FBC12 /* UIImage+Blur.m in Sources */,
 				867874F3211306C80061E875 /* ZWHCollectionViewController.m in Sources */,
 				86F3E254212FAE0A0019FE72 /* ZWHPickView.m in Sources */,
 				86787528211A7F430061E875 /* ZWHOrderListViewController.m in Sources */,
 				7C60DB7C2084757A0048CF7E /* LMTextHTMLParser.m in Sources */,
+				7FE92C0A22DF211F00F899F5 /* FollowGroupController.m in Sources */,
 				7C7326B32060B1B6008021AC /* FriendInfoVC.m in Sources */,
 				86EDCA2A210EC9D4002C0AC8 /* ZSColor.m in Sources */,
 				7FE92C0122DDA5A700F899F5 /* CookingDetailModel.m in Sources */,
@@ -5747,6 +5800,7 @@
 				86787511211848A00061E875 /* ZWHInvoiceTableViewCell.m in Sources */,
 				7F91F34A226075D900ABF47D /* RentCarCell.m in Sources */,
 				860E219C21C4A6B70052643E /* ZWHSearchBar.m in Sources */,
+				7FE92C1322DF2A3400F899F5 /* GroupBillModel.m in Sources */,
 				867875D4212D39820061E875 /* ZWHMapViewController.m in Sources */,
 				7C59C5D1208056CA005D0A68 /* CatageModel.m in Sources */,
 				7C6076AC20ABCD91000EE248 /* AllUnCompleteBillVC.m in Sources */,

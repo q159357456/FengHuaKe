@@ -98,7 +98,7 @@
         
         
         if (button.tag==1) {
-            _lineView = [[UIView alloc]initWithFrame:CGRectMake(0, self.height-1, button.width, 1)];
+            _lineView = [[UIView alloc]initWithFrame:CGRectMake(0, self.height-2, button.width, 1)];
             _lineView.backgroundColor = MainColor;
             [self addSubview:_lineView];
             [button setTitleColor:MainColor forState:UIControlStateNormal];

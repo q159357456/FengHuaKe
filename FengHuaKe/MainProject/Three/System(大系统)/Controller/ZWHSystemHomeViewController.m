@@ -35,6 +35,7 @@
 #import "ZWHMeFootViewController.h"
 #import "GBAirTiketViewController.h"
 #import "CookingViewController.h"
+#import "StartTogetherBillController.h"
 
 #import "RentCarViewController.h"
 @interface ZWHSystemHomeViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -528,12 +529,14 @@
         case 0:
         {
             NSLog(@"拼团跟团");
-            ZWHVacationViewController *vc = [[ZWHVacationViewController alloc]init];
-            ZWHClassifyModel *model = _midClassifyArr[btn.tag];
-            ZWHClassifyModel *insurmodel = _midClassifyArr[btn.tag+1];
-            vc.code = model.code;
-            vc.InsuranceCode = insurmodel.code;
-            [vc setHidesBottomBarWhenPushed:YES];
+//            ZWHVacationViewController *vc = [[ZWHVacationViewController alloc]init];
+//            ZWHClassifyModel *model = _midClassifyArr[btn.tag];
+//            ZWHClassifyModel *insurmodel = _midClassifyArr[btn.tag+1];
+//            vc.code = model.code;
+//            vc.InsuranceCode = insurmodel.code;
+//            [vc setHidesBottomBarWhenPushed:YES];
+//            [self.navigationController pushViewController:vc animated:YES];
+            StartTogetherBillController *vc = [[StartTogetherBillController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
