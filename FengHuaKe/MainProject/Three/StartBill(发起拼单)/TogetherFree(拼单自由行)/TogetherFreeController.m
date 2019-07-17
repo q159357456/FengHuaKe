@@ -25,8 +25,23 @@
         NSLog(@"obj==>%@",obj);
         if (obj) {
             weakSelf.dataArr = [GroupBillModel mj_objectArrayWithKeyValuesArray:obj[@"DataList"]];
-            [weakSelf.view addSubview:weakSelf.tableView];
+            [weakSelf.tableView reloadData];
+            
         }
+    }];
+    
+    [self.view addSubview:self.tableView];
+    UIButton * btn = [[UIButton alloc]init];
+    btn.backgroundColor = MainColor;
+    [btn setTitle:@"去拼单" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(groupBuy:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    [self.view bringSubviewToFront:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+         make.bottom.mas_equalTo(self.view);
+         make.left.mas_equalTo(self.view);
+         make.right.mas_equalTo(self.view);
+         make.height.mas_equalTo(50*MULPITLE);
     }];
     // Do any additional setup after loading the view.
 }
@@ -43,7 +58,9 @@
     }
     return _tableView;
 }
-
+-(void)groupBuy:(UIButton*)btn{
+    
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

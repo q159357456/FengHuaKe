@@ -34,7 +34,7 @@
     seg.qmui_borderPosition = QMUIViewBorderPositionBottom;
     [self.view addSubview:seg];
     
-    UIScrollView * scro = [[UIScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(seg.frame), SCREEN_WIDTH, self.view.height-50)];
+    UIScrollView * scro = [[UIScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(seg.frame), SCREEN_WIDTH, SCREEN_HEIGHT-NAV_HEIGHT-50)];
     [self.view addSubview:scro];
     
     self.togetherFreeController = [[TogetherFreeController alloc]init];
