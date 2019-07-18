@@ -1,19 +1,20 @@
 //
-//  GuidApplyTxtInputView.h
+//  GuidApplyTextView.h
 //  FengHuaKe
 //
-//  Created by chenheng on 2019/6/14.
+//  Created by chenheng on 2019/7/18.
 //  Copyright © 2019 gongbo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "GuidApplyBaseView.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GuidApplyTxtInputView : GuidApplyBaseView
+@interface GuidApplyTextView : UIView
 @property(nonatomic,copy)NSString *outPutTxt;
-@property(nonatomic,strong)UITextField * textfield;
+@property(nonatomic,strong)UITextView * textview;
 @property(nonatomic,assign)BOOL not_edit_avilble;
+@property(nonatomic,strong)UILabel * label;
 @end
 
 NS_ASSUME_NONNULL_END

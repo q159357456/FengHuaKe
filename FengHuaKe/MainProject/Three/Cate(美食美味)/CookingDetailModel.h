@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString * unit;
 @property(nonatomic,copy)NSString * url;
 @property(nonatomic,copy)NSString * pcs;
+@property(nonatomic,copy)NSString * modelnum;
 @end
 
 NS_ASSUME_NONNULL_END

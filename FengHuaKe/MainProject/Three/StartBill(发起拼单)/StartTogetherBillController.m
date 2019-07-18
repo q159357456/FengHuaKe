@@ -44,6 +44,8 @@
     
     
     self.followGroupController = [[FollowGroupController alloc]init];
+    self.followGroupController.code = self.code;
+    self.followGroupController.InsuranceCode = self.InsuranceCode;
     self.followGroupController.view.frame = CGRectMake(SCREEN_WIDTH, 0, scro.width, scro.height);
     [scro addSubview:self.followGroupController.view];
     [self addChildViewController:self.followGroupController];

@@ -107,9 +107,10 @@
     
     
     UIView * view2 = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(view1.frame), SCREEN_WIDTH, 40*MULPITLE)];
-    UILabel * v2_label = [[UILabel alloc]initWithFrame:CGRectMake(space, space, 100, 20*MULPITLE)];
+    UILabel * v2_label = [[UILabel alloc]initWithFrame:CGRectMake(space, space, 80*MULPITLE, 20*MULPITLE)];
     UIButton * v2_btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    v2_btn.frame = CGRectMake(CGRectGetMaxX(v2_label.frame), space, 100, 20*MULPITLE);
+    v2_btn.frame = CGRectMake(CGRectGetMaxX(v2_label.frame),12*MULPITLE, 80, 18*MULPITLE);
+    
     [view2 addSubview:v2_label];
     [view2 addSubview:v2_btn];
     [scroview addSubview:view2];
@@ -117,13 +118,13 @@
     v2_label.font = ZWHFont(14);
     v2_btn.titleLabel.font = ZWHFont(14);
     
-    
-    
-    
     v2_btn.backgroundColor = MainColor;
     v2_label.text = @"选择套餐";
     [v2_btn setTitle:self.cmodel.spec forState:UIControlStateNormal];
-    
+    v2_btn.layer.cornerRadius = 9*MULPITLE;
+    v2_btn.layer.masksToBounds = YES;
+    CGSize v2_b_size = [v2_btn sizeThatFits:CGSizeZero];
+    v2_btn.frame = CGRectMake(CGRectGetMaxX(v2_label.frame),12*MULPITLE, v2_b_size.width+10, 18*MULPITLE);
     
     
     UIView * view3 = [[UIView alloc]init];
@@ -133,9 +134,9 @@
     [scroview addSubview:view3];
     [self setBorder:view3];
     v3_label.font = ZWHFont(13*MULPITLE);
-    NSString * str1 = [NSString stringWithFormat:@"茶位费:%@",self.cmodel.pcs];
+    NSString * str1 = [NSString stringWithFormat:@"茶位费:%@",self.cmodel.modelnum];
     NSString * str2 = [NSString stringWithFormat:@"建议人数:%@",self.cmodel.saleweightunit];
-    NSString * str3 = [NSString stringWithFormat:@"包间可用:%@",self.cmodel.spec];
+    NSString * str3 = [NSString stringWithFormat:@"包间可用:%@",self.cmodel.saleunit?@"可用":@"不可用"];
     NSString * str4 = [NSString stringWithFormat:@"纸巾:%@",self.cmodel.color];
     NSString * total = [NSString stringWithFormat:@"%@\n%@\n%@\n%@",str1,str2,str3,str4];
     NSMutableAttributedString * att1 = [[NSMutableAttributedString alloc]initWithString:total];
@@ -158,11 +159,17 @@
     [view4 addSubview:v4_label];
     [scroview addSubview:view4];
     [self setBorder:view4];
-    v4_label.text = self.cmodel.property;
+    v4_label.text = self.cmodel.property?self.cmodel.property:@"无";
     v4_label.font = ZWHFont(15*MULPITLE);
+    v4_label.attributedText  = [self richTxt:self.cmodel.property];
     CGSize v4_size = [v4_label sizeThatFits:CGSizeMake(SCREEN_WIDTH-2*space, MAXFLOAT)];
     v4_label.frame = CGRectMake(space, space, SCREEN_WIDTH-2*space, v4_size.height);
+//    view5.frame = CGRectMake(view5.x, view5.y, SCREEN_WIDTH, v5_label.height+2*space);
+    //            [scroview layoutIfNeeded];
+//    CGSize v4_size = [v4_label sizeThatFits:CGSizeMake(SCREEN_WIDTH-2*space, MAXFLOAT)];
+//    v4_label.frame = CGRectMake(space, space, SCREEN_WIDTH-2*space, v4_size.height);
     view4.frame = CGRectMake(0, CGRectGetMaxY(tag1.frame), SCREEN_WIDTH, v4_label.height+2*space);
+    
     
     
     
@@ -183,18 +190,10 @@
     v5_label.numberOfLines = 0;
 //    v5_label.text = self.pmodel.remark;
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSDictionary *options = @{ NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute :@(NSUTF8StringEncoding) };
-        NSData *data = [self.pmodel.remark dataUsingEncoding:NSUTF8StringEncoding];
-        //设置富文本
-        NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithData:data options:options documentAttributes:nil error:nil];
-        //设置段落格式
-        NSMutableParagraphStyle *para = [[NSMutableParagraphStyle alloc] init];
-        para.lineSpacing = 7;
-        para.paragraphSpacing = 10;
-        [attStr addAttribute:NSParagraphStyleAttributeName value:para range:NSMakeRange(0, attStr.length)];
-        
+    
+  
 //        dispatch_async(dispatch_get_main_queue(), ^{
-            v5_label.attributedText = attStr;
+    v5_label.attributedText = [self richTxt:self.pmodel.remark?self.pmodel.remark:@"无"];
             CGSize v5_size = [v5_label sizeThatFits:CGSizeMake(SCREEN_WIDTH-2*space, MAXFLOAT)];
             v5_label.frame = CGRectMake(space, space, SCREEN_WIDTH-2*space, v5_size.height);
             view5.frame = CGRectMake(view5.x, view5.y, SCREEN_WIDTH, v5_label.height+2*space);
@@ -344,6 +343,18 @@
     view.qmui_borderColor = [UIColor groupTableViewBackgroundColor];
     view.qmui_borderWidth = 1;
     view.qmui_borderPosition = QMUIViewBorderPositionBottom;
+}
+-(NSMutableAttributedString*)richTxt:(NSString*)str{
+    NSDictionary *options = @{ NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute :@(NSUTF8StringEncoding) };
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    //设置富文本
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithData:data options:options documentAttributes:nil error:nil];
+    //设置段落格式
+    NSMutableParagraphStyle *para = [[NSMutableParagraphStyle alloc] init];
+    para.lineSpacing = 7;
+    para.paragraphSpacing = 10;
+    [attStr addAttribute:NSParagraphStyleAttributeName value:para range:NSMakeRange(0, attStr.length)];
+    return attStr;
 }
 /*
 #pragma mark - Navigation

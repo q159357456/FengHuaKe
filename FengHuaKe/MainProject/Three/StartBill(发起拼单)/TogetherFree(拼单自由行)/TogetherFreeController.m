@@ -8,6 +8,8 @@
 
 #import "TogetherFreeController.h"
 #import "TogetherListCell.h"
+#import "GroupByOrderController.h"
+#import "DoGroupBuyController.h"
 @interface TogetherFreeController () <UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * dataArr;
@@ -22,7 +24,7 @@
     DefineWeakSelf;
     NSDictionary * sysmodel1 = @{@"para1":UniqUserID,@"para2":MEMBERTYPE,@"para3":@""};
     [DataProcess requestDataWithURL:GroupBuy_List RequestStr:GETRequestStr(nil, sysmodel1, @1, @100, nil) Result:^(id obj, id erro) {
-        NSLog(@"obj==>%@",obj);
+        NSLog(@"GroupBuy_List==>%@",obj);
         if (obj) {
             weakSelf.dataArr = [GroupBillModel mj_objectArrayWithKeyValuesArray:obj[@"DataList"]];
             [weakSelf.tableView reloadData];
@@ -59,7 +61,9 @@
     return _tableView;
 }
 -(void)groupBuy:(UIButton*)btn{
-    
+    DoGroupBuyController * vc = [[DoGroupBuyController alloc]init];
+    vc.title = @"拼单";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -81,10 +85,10 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    ShopModel * model = self.dataArr[indexPath.row];
-//    CookingProListController * vc = [[CookingProListController  alloc]init];
-//    vc.shopid = model.SHOPID;
-//    [self.navigationController pushViewController:vc animated:YES];
+    GroupBillModel * model = self.dataArr[indexPath.row];
+    GroupByOrderController * vc = [[GroupByOrderController  alloc]init];
+    vc.bmodel = model;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 /*
 #pragma mark - Navigation

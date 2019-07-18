@@ -65,4 +65,6 @@
 #define PO_Create @"PO/Create"
 //POST /api/GroupBuy/List
 #define GroupBuy_List @"GroupBuy/List"
+//POST /api/Pro/HotList
+#define Pro_HotList @"Pro/HotList"
 #endif /* RequestAPI_h */

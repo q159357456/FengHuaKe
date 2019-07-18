@@ -499,6 +499,11 @@
 		7FE92C0D22DF213B00F899F5 /* TogetherFreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C0C22DF213B00F899F5 /* TogetherFreeController.m */; };
 		7FE92C1022DF283800F899F5 /* TogetherListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C0F22DF283800F899F5 /* TogetherListCell.m */; };
 		7FE92C1322DF2A3400F899F5 /* GroupBillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C1222DF2A3400F899F5 /* GroupBillModel.m */; };
+		7FE92C1622E007FB00F899F5 /* FollowGroupClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C1522E007FB00F899F5 /* FollowGroupClassCell.m */; };
+		7FE92C1922E0081800F899F5 /* FollowGroupSingleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C1822E0081800F899F5 /* FollowGroupSingleCell.m */; };
+		7FE92C1D22E03DF300F899F5 /* GroupByOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C1C22E03DF300F899F5 /* GroupByOrderController.m */; };
+		7FE92C2022E05D4500F899F5 /* GuidApplyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C1F22E05D4500F899F5 /* GuidApplyTextView.m */; };
+		7FE92C2322E062A300F899F5 /* DoGroupBuyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE92C2222E062A300F899F5 /* DoGroupBuyController.m */; };
 		7FED0DE222C46C5B009AB818 /* AdressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE122C46C5B009AB818 /* AdressModel.m */; };
 		7FED0DE622C47E51009AB818 /* FHTXPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DE522C47E51009AB818 /* FHTXPayViewController.m */; };
 		7FED0DEB22C5F958009AB818 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FED0DEA22C5F958009AB818 /* AboutUsViewController.m */; };
@@ -1538,6 +1543,16 @@
 		7FE92C0F22DF283800F899F5 /* TogetherListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TogetherListCell.m; sourceTree = "<group>"; };
 		7FE92C1122DF2A3400F899F5 /* GroupBillModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupBillModel.h; sourceTree = "<group>"; };
 		7FE92C1222DF2A3400F899F5 /* GroupBillModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupBillModel.m; sourceTree = "<group>"; };
+		7FE92C1422E007FB00F899F5 /* FollowGroupClassCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowGroupClassCell.h; sourceTree = "<group>"; };
+		7FE92C1522E007FB00F899F5 /* FollowGroupClassCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowGroupClassCell.m; sourceTree = "<group>"; };
+		7FE92C1722E0081800F899F5 /* FollowGroupSingleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowGroupSingleCell.h; sourceTree = "<group>"; };
+		7FE92C1822E0081800F899F5 /* FollowGroupSingleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowGroupSingleCell.m; sourceTree = "<group>"; };
+		7FE92C1B22E03DF300F899F5 /* GroupByOrderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupByOrderController.h; sourceTree = "<group>"; };
+		7FE92C1C22E03DF300F899F5 /* GroupByOrderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupByOrderController.m; sourceTree = "<group>"; };
+		7FE92C1E22E05D4500F899F5 /* GuidApplyTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidApplyTextView.h; sourceTree = "<group>"; };
+		7FE92C1F22E05D4500F899F5 /* GuidApplyTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidApplyTextView.m; sourceTree = "<group>"; };
+		7FE92C2122E062A300F899F5 /* DoGroupBuyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoGroupBuyController.h; sourceTree = "<group>"; };
+		7FE92C2222E062A300F899F5 /* DoGroupBuyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoGroupBuyController.m; sourceTree = "<group>"; };
 		7FED0DE022C46C5B009AB818 /* AdressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdressModel.h; sourceTree = "<group>"; };
 		7FED0DE122C46C5B009AB818 /* AdressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdressModel.m; sourceTree = "<group>"; };
 		7FED0DE422C47E51009AB818 /* FHTXPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FHTXPayViewController.h; sourceTree = "<group>"; };
@@ -3788,6 +3803,8 @@
 				7FB7FA5322B378B8006B3484 /* GuidApplyBoolChoiceView.m */,
 				7FB7FA4C22B378B8006B3484 /* GuidApplyTxtInputView.h */,
 				7FB7FA5122B378B8006B3484 /* GuidApplyTxtInputView.m */,
+				7FE92C1E22E05D4500F899F5 /* GuidApplyTextView.h */,
+				7FE92C1F22E05D4500F899F5 /* GuidApplyTextView.m */,
 			);
 			path = ApplySubViews;
 			sourceTree = "<group>";
@@ -3844,6 +3861,7 @@
 			children = (
 				7FE92C0322DF0DF500F899F5 /* StartTogetherBillController.h */,
 				7FE92C0422DF0DF500F899F5 /* StartTogetherBillController.m */,
+				7FE92C1A22E03DA400F899F5 /* 拼单详情 */,
 				7FE92C0622DF1B7500F899F5 /* FollowGruop(跟团游 ) */,
 				7FE92C0722DF1B7500F899F5 /* TogetherFree(拼单自由行) */,
 			);
@@ -3855,6 +3873,10 @@
 			children = (
 				7FE92C0822DF211F00F899F5 /* FollowGroupController.h */,
 				7FE92C0922DF211F00F899F5 /* FollowGroupController.m */,
+				7FE92C1422E007FB00F899F5 /* FollowGroupClassCell.h */,
+				7FE92C1522E007FB00F899F5 /* FollowGroupClassCell.m */,
+				7FE92C1722E0081800F899F5 /* FollowGroupSingleCell.h */,
+				7FE92C1822E0081800F899F5 /* FollowGroupSingleCell.m */,
 			);
 			path = "FollowGruop(跟团游 )";
 			sourceTree = "<group>";
@@ -3870,6 +3892,17 @@
 				7FE92C1222DF2A3400F899F5 /* GroupBillModel.m */,
 			);
 			path = "TogetherFree(拼单自由行)";
+			sourceTree = "<group>";
+		};
+		7FE92C1A22E03DA400F899F5 /* 拼单详情 */ = {
+			isa = PBXGroup;
+			children = (
+				7FE92C1B22E03DF300F899F5 /* GroupByOrderController.h */,
+				7FE92C1C22E03DF300F899F5 /* GroupByOrderController.m */,
+				7FE92C2122E062A300F899F5 /* DoGroupBuyController.h */,
+				7FE92C2222E062A300F899F5 /* DoGroupBuyController.m */,
+			);
+			path = "拼单详情";
 			sourceTree = "<group>";
 		};
 		7FED0DE322C47DD4009AB818 /* pay(支付) */ = {
@@ -5523,6 +5556,7 @@
 				7F352ADB22DC6466004BBE61 /* ShopModel.m in Sources */,
 				7CCB1663206AA1CF00CF208A /* EMVideoInfoViewController.m in Sources */,
 				867874F62117D9A80061E875 /* ZWHCollectTableViewCell.m in Sources */,
+				7FE92C2322E062A300F899F5 /* DoGroupBuyController.m in Sources */,
 				86EDCA46210FF3E5002C0AC8 /* ZSBaseModel.m in Sources */,
 				7CBCB776208C531B00C144F4 /* AllClassifyProductVC.m in Sources */,
 				86F3E2B1213788610019FE72 /* ZWHBaseNavigationViewController.m in Sources */,
@@ -5803,6 +5837,7 @@
 				7FE92C1322DF2A3400F899F5 /* GroupBillModel.m in Sources */,
 				867875D4212D39820061E875 /* ZWHMapViewController.m in Sources */,
 				7C59C5D1208056CA005D0A68 /* CatageModel.m in Sources */,
+				7FE92C1922E0081800F899F5 /* FollowGroupSingleCell.m in Sources */,
 				7C6076AC20ABCD91000EE248 /* AllUnCompleteBillVC.m in Sources */,
 				7C0ADD9C2064CB8C006E895B /* GroupMember.m in Sources */,
 				867875C8212BFE9C0061E875 /* ZWHTicketBillViewController.m in Sources */,
@@ -5814,6 +5849,7 @@
 				7C84E4E620AC39C900830B1E /* BillFooterCell.m in Sources */,
 				7C2B3133205CFFCD00BA30AB /* FMDBhleper.m in Sources */,
 				7F352AD522DC4ED4004BBE61 /* FilterView.m in Sources */,
+				7FE92C1D22E03DF300F899F5 /* GroupByOrderController.m in Sources */,
 				7C0ADDA520653D83006E895B /* ContractSlectedVC.m in Sources */,
 				867875A9212663370061E875 /* ZWHTiketStoreViewController.m in Sources */,
 				7C60DB7A2084757A0048CF7E /* HTMLViewController.m in Sources */,
@@ -5844,6 +5880,7 @@
 				7FE5D0EB22C0C4660032B1E7 /* MemberUpgradeController.m in Sources */,
 				7CBCB727208872D400C144F4 /* UIViewController+KeyBoard.m in Sources */,
 				7CBCB779208C60C600C144F4 /* ClassifyModel.m in Sources */,
+				7FE92C2022E05D4500F899F5 /* GuidApplyTextView.m in Sources */,
 				7FE5D0F522C20FCD0032B1E7 /* MemberUpgradeTopUpController.m in Sources */,
 				867875DB212D4C370061E875 /* ZWHHotelViewController.m in Sources */,
 				7C2BD7E8207D199A00BFC76D /* PictureManagerModel.m in Sources */,
@@ -5853,6 +5890,7 @@
 				7C5508FF20511C0A007FBC12 /* UIDevice+Hardware.m in Sources */,
 				7CBCB7632089C39600C144F4 /* ProductDetailModel.m in Sources */,
 				7C550CDF20579E4E007FBC12 /* MineViewController.m in Sources */,
+				7FE92C1622E007FB00F899F5 /* FollowGroupClassCell.m in Sources */,
 				7CCB16B4206AA69B00CF208A /* UIViewController+SearchController.m in Sources */,
 				7CB4790D20DE4454000EAD16 /* SingleHeaderCell.m in Sources */,
 				86F3E2BF21379A650019FE72 /* RegistrViewController.m in Sources */,

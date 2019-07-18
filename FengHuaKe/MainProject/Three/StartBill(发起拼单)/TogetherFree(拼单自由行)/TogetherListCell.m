@@ -67,6 +67,7 @@
 }
 -(void)loadData:(GroupBillModel *)model
 {
+    
     ImageCacheDefine(self.logo, model.url);
     self.label1.text = model.proname;
     self.label2.text = [NSString stringWithFormat:@"已报名:%@名",model.used_nums];

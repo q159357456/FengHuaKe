@@ -23,10 +23,17 @@
             make.height.mas_equalTo(30);
             make.right.mas_equalTo(self.mas_right).offset(-15);
         }];
+       
     }
     return self;
 }
-
+-(void)setNot_edit_avilble:(BOOL)not_edit_avilble
+{
+    _not_edit_avilble = not_edit_avilble;
+    if (_not_edit_avilble) {
+        self.textfield.userInteractionEnabled = NO;
+    }
+}
 -(NSString *)outPutTxt
 {
     if (!_outPutTxt) {

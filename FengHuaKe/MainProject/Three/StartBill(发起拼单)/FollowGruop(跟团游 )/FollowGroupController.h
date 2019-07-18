@@ -10,8 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FollowGroupController : UIViewController
-
+@interface FollowGroupController : ZWHBaseViewController
+@property(nonatomic,copy)NSString *code;
+@property(nonatomic,copy)NSString *InsuranceCode;
 @end
 
 NS_ASSUME_NONNULL_END
