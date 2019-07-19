@@ -23,7 +23,7 @@
             make.height.mas_equalTo(30);
             make.right.mas_equalTo(self.mas_right).offset(-15);
         }];
-       
+       self.textfield.textColor = [UIColor darkGrayColor];
     }
     return self;
 }

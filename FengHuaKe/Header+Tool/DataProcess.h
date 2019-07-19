@@ -139,4 +139,8 @@ typedef enum {
  服务端返回时间转化
  */
 +(NSString*)resultTime:(NSString*)time;
+/**
+ 当前控制器
+ */
+- (UIViewController *)getCurrentVC;
 @end

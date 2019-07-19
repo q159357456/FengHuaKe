@@ -20,5 +20,5 @@
 @property(nonatomic,copy)NSString *property;
 @property(nonatomic,copy)NSString *sortnum;
 @property(nonatomic,copy)NSString *state;
-
+@property(nonatomic,copy)NSString *module;
 @end

@@ -468,6 +468,8 @@
         {
             //美食美味
             CookingViewController *vc = [[CookingViewController alloc]init];
+            ZWHClassifyModel *model = _topClassifyArr[btn.tag];
+            vc.code=model.code;
             [vc setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:vc animated:YES];
 
@@ -478,6 +480,7 @@
             //门票
             ZWHTiketStoreViewController *vc = [[ZWHTiketStoreViewController alloc]init];
             ZWHClassifyModel *model = _topClassifyArr[btn.tag];
+//            NSLog(@"model.code==>%@",model.code);
             vc.code=model.code;
             [vc setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:vc animated:YES];

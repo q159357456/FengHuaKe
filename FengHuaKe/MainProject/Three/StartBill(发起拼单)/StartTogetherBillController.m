@@ -17,7 +17,11 @@
 @end
 
 @implementation StartTogetherBillController
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [GroupBuyMananger singleton].isGroupStyle = NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];

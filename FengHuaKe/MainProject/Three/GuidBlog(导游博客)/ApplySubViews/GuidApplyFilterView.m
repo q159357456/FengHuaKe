@@ -20,7 +20,7 @@
         [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self).offset(10);
             make.left.mas_equalTo(self.mas_left).offset(10);
-            make.size.mas_equalTo(CGSizeMake(WIDTH_PRO(100), WIDTH_PRO(20)));
+            make.size.mas_equalTo(CGSizeMake(WIDTH_PRO(130), WIDTH_PRO(20)));
         }];
 
         self.qmui_borderColor = [UIColor groupTableViewBackgroundColor];
@@ -34,25 +34,25 @@
 -(void)setFilerTitles:(NSArray *)filerTitles
 {
     _filerTitles = filerTitles;
-    for (NSInteger i= 0; i<_filerTitles.count; i++) {
+    NSArray * reverseA = [[filerTitles reverseObjectEnumerator] allObjects];
+    for (NSInteger i= 0; i<reverseA.count; i++) {
         QMUIButton * btn = [QMUIButton buttonWithType:UIButtonTypeCustom];
         [self addSubview:btn];
-        btn.frame = CGRectMake(i*SCREEN_WIDTH/3, 0, SCREEN_WIDTH/3, v_7.height);
-        [btn setTitle:_filerTitles[i] forState:UIControlStateNormal];
+        [btn setTitle:reverseA[i] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@"slected_1"] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@"slected_2"] forState:UIControlStateSelected];
         [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        btn.tag = i+100;
-        if (i == self.selctIndex) {
+        btn.tag = 100+(reverseA.count-i-1);
+        if (btn.tag-100 == self.selctIndex) {
             btn.selected = YES;
-//            self.selctIndex = btn.tag;
         }
         
         btn.imagePosition =  QMUIButtonImagePositionLeft;
         CGFloat temp = 10 + (40+20)*i;
+
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(40,30));
-            make.centerX.mas_equalTo(self);
+            make.centerY.mas_equalTo(self);
             make.right.mas_equalTo(self).offset(-temp);
         }];
        
@@ -66,7 +66,7 @@
     }
     btn.selected = YES;
 //    UIView * view = [self.view viewWithTag:7];
-    UIButton *  old = [self viewWithTag:self.selctIndex];
+    UIButton *  old = [self viewWithTag:self.selctIndex+100];
     old.selected = NO;
     self.selctIndex = btn.tag-100;
 }

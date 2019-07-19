@@ -202,7 +202,7 @@ object:nil];
 #import "NSString+Addition.h"
 #import "ZWHFMDBManager.h"
 #import "ServiceBaseModel.h"
-//#import "POP.h"
+#import "GroupBuyMananger.h"
 #import "SGPagingView.h"
 //#import "EaseUI.h"
 #endif /* PrefixHeader_pch */

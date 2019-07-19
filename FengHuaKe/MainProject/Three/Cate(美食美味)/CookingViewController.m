@@ -37,7 +37,7 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     DefineWeakSelf;
-    NSDictionary * sysmodel1 = @{@"para1":@"008",@"blresult":@"true"};
+    NSDictionary * sysmodel1 = @{@"para1":self.code?self.code:@"",@"blresult":@"true"};
     [DataProcess requestDataWithURL:Classify_List RequestStr:GETRequestStr(nil, sysmodel1, nil, nil, nil) Result:^(id obj, id erro) {
         NSLog(@"obj==>%@",obj);
         if (obj) {

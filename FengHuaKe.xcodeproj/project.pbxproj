@@ -449,6 +449,7 @@
 		7CFFE73F22D78C71006C2859 /* CaseShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE73E22D78C71006C2859 /* CaseShowViewController.m */; };
 		7CFFE74222D78C98006C2859 /* CaeShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE74122D78C98006C2859 /* CaeShowTableViewCell.m */; };
 		7CFFE74522D98C04006C2859 /* BlogCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFE74422D98C04006C2859 /* BlogCommentCell.m */; };
+		7F2F7A1322E19B23005CF6E9 /* GroupBuyMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F7A1222E19B23005CF6E9 /* GroupBuyMananger.m */; };
 		7F352AC322D87ACC004BBE61 /* CommentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC222D87ACC004BBE61 /* CommentListModel.m */; };
 		7F352AC722D8848A004BBE61 /* RimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC622D8848A004BBE61 /* RimViewController.m */; };
 		7F352ACA22D88B45004BBE61 /* CaseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F352AC922D88B45004BBE61 /* CaseDetailController.m */; };
@@ -1450,6 +1451,8 @@
 		7CFFE74122D78C98006C2859 /* CaeShowTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaeShowTableViewCell.m; sourceTree = "<group>"; };
 		7CFFE74322D98C04006C2859 /* BlogCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlogCommentCell.h; sourceTree = "<group>"; };
 		7CFFE74422D98C04006C2859 /* BlogCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlogCommentCell.m; sourceTree = "<group>"; };
+		7F2F7A1122E19B23005CF6E9 /* GroupBuyMananger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupBuyMananger.h; sourceTree = "<group>"; };
+		7F2F7A1222E19B23005CF6E9 /* GroupBuyMananger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupBuyMananger.m; sourceTree = "<group>"; };
 		7F352AC122D87ACC004BBE61 /* CommentListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentListModel.h; sourceTree = "<group>"; };
 		7F352AC222D87ACC004BBE61 /* CommentListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentListModel.m; sourceTree = "<group>"; };
 		7F352AC522D8848A004BBE61 /* RimViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RimViewController.h; sourceTree = "<group>"; };
@@ -3919,6 +3922,8 @@
 				7FE92C1C22E03DF300F899F5 /* GroupByOrderController.m */,
 				7FE92C2122E062A300F899F5 /* DoGroupBuyController.h */,
 				7FE92C2222E062A300F899F5 /* DoGroupBuyController.m */,
+				7F2F7A1122E19B23005CF6E9 /* GroupBuyMananger.h */,
+				7F2F7A1222E19B23005CF6E9 /* GroupBuyMananger.m */,
 			);
 			path = "拼单详情";
 			sourceTree = "<group>";
@@ -5911,6 +5916,7 @@
 				7CBCB7632089C39600C144F4 /* ProductDetailModel.m in Sources */,
 				7C550CDF20579E4E007FBC12 /* MineViewController.m in Sources */,
 				7FE92C1622E007FB00F899F5 /* FollowGroupClassCell.m in Sources */,
+				7F2F7A1322E19B23005CF6E9 /* GroupBuyMananger.m in Sources */,
 				7CCB16B4206AA69B00CF208A /* UIViewController+SearchController.m in Sources */,
 				7CB4790D20DE4454000EAD16 /* SingleHeaderCell.m in Sources */,
 				86F3E2BF21379A650019FE72 /* RegistrViewController.m in Sources */,

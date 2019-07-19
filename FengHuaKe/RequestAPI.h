@@ -67,4 +67,8 @@
 #define GroupBuy_List @"GroupBuy/List"
 //POST /api/Pro/HotList
 #define Pro_HotList @"Pro/HotList"
+//"FirstClassify", "Group"
+#define FirstClassify_Group @"FirstClassify/Group"
+//PO_GroupBuy
+#define PO_GroupBuy @"PO/GroupBuy"
 #endif /* RequestAPI_h */

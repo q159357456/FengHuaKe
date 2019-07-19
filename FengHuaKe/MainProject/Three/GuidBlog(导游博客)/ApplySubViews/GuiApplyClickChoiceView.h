@@ -15,7 +15,9 @@ typedef NS_ENUM(NSUInteger,ClickSyle) {
     ClickSyle_3,
 };
 @interface GuiApplyClickChoiceView : GuidApplyBaseView
+-(instancetype)initWithFrame:(CGRect)frame style:(ClickSyle)style;
 @property(nonatomic,strong)UILabel * clickLabel;
+@property(nonatomic,strong)NSObject * tempObj;
 
 @end
 
