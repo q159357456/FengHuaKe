@@ -63,11 +63,12 @@ static GroupBuyMananger *groupBuyMananger = nil;
     return _travelgoods;
 }
 
--(void)backToGroupBuy
+-(void)backToGroupBuyWithProName:(NSString*)proName
 {
     UIViewController * current = [[DataProcess shareInstance] getCurrentVC];
     for (UIViewController * vc in current.navigationController.viewControllers) {
         if ([vc.class isEqual:DoGroupBuyController.class]) {
+            [vc performSelector:@selector(setProductInfo:) withObject:proName];
             [current.navigationController popToViewController:vc animated:YES];
         }
     }
@@ -77,46 +78,78 @@ static GroupBuyMananger *groupBuyMananger = nil;
 {
     NSDictionary * datalistDic;
     NSDictionary * system;
-    if ([model.module isEqualToString:@"ticket"]) {
+    if ([identify isEqualToString:@"ticket"]) {
         datalistDic = [self.ticket.commonArguments mj_keyValues];
         system = [self.ticket.groupBuyParams mj_keyValues];
     }
     
-    if ([model.module isEqualToString:@"hotel"]) {
+    if ([identify isEqualToString:@"hotel"]) {
         datalistDic = [self.hotel.commonArguments mj_keyValues];
         system = [self.hotel.groupBuyParams mj_keyValues];
     }
+//
+//    if ([identify isEqualToString:@"travelspec"]) {
+//        datalistDic = [self.travelspec.commonArguments mj_keyValues];
+//        system = [self.travelspec.groupBuyParams mj_keyValues];
+//    }
     
-    if ([model.module isEqualToString:@"travelspec"]) {
-        datalistDic = [self.travelspec.commonArguments mj_keyValues];
-        system = [self.travelspec.groupBuyParams mj_keyValues];
-    }
-    
-    if ([model.module isEqualToString:@"repast"]) {
+    if ([identify isEqualToString:@"repast"]) {
         datalistDic = [self.repast.commonArguments mj_keyValues];
         system = [self.repast.groupBuyParams mj_keyValues];
     }
     
-    if ([model.module isEqualToString:@"travelgoods"]) {
+    if ([identify isEqualToString:@"travelgoods"] || [identify isEqualToString:@"travelspec"]) {
         datalistDic = [self.travelgoods.commonArguments mj_keyValues];
         system = [self.travelgoods.groupBuyParams mj_keyValues];
     }
-    
-    NSLog(@"po_GroupBuy:%@",GETRequestStr(@[datalistDic], system, nil, nil, nil));
-//        [DataProcess requestDataWithURL:PO_GroupBuy RequestStr:GETRequestStr(@[datalistDic], system, nil, nil, nil) Result:^(id obj, id erro) {
-//            if (obj) {
-//                [SVProgressHUD showSuccessWithStatus:@"拼单成功!"];
-//            }
-//        }];
+    NSLog(@"1:%@",datalistDic);
+    NSLog(@"2:%@",system);
+    [DataProcess requestDataWithURL:PO_GroupBuy RequestStr:GETRequestStr(@[datalistDic], system, nil, nil, nil) Result:^(id obj, id erro) {
+            NSLog(@"obj===>%@",obj);
+            NSLog(@"erro===>%@",erro);
+            if (obj) {
+                [SVProgressHUD showSuccessWithStatus:@"拼单成功!"];
+                UIViewController * current = [[DataProcess shareInstance] getCurrentVC];
+                [current.navigationController popViewControllerAnimated:YES];
+                
+            }else
+            {
+                if (erro) {
+                [SVProgressHUD showErrorWithStatus:erro[@"msg"]];
+            }
+               
+            }
+        }];
 }
 
     
 @end
 
 @implementation CommonArguments
-
-
-
+-(NSString *)memberid
+{
+    if (!_memberid) {
+        
+        _memberid = UniqUserID;
+    }
+    return _memberid;
+}
+-(NSString *)membertype
+{
+    if (!_membertype) {
+        
+        _membertype = MEMBERTYPE;
+    }
+    return _membertype;
+}
+-(NSString *)remark
+{
+    if (!_remark) {
+        
+        _remark = @"";
+    }
+    return  _remark;
+}
 @end
 
 @implementation GroupBuyParams

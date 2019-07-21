@@ -168,15 +168,26 @@
 -(void)goToPayWith:(ProductSpecModel *)model Withnum:(NSInteger)num{
     
     [self.chooseView HiddenView];
-    
-    ConfirmBillVC *bill=[[ConfirmBillVC alloc]init];
-    model.nums = [NSString stringWithFormat:@"%ld",num];
-    bill.billData=@[model];
-    float sum = [model.saleprice1 floatValue] * num;
-    bill.totalPrice=[NSString stringWithFormat:@"%.3f",sum];
-    bill.blresult=false;
-    bill.state = 1;
-    [self.navigationController pushViewController:bill animated:YES];
+    if ([GroupBuyMananger singleton].isGroupStyle) {
+        
+        [GroupBuyMananger singleton].travelgoods.commonArguments.shopid = self.myProductModel.shopid;
+        [GroupBuyMananger singleton].travelgoods.commonArguments.prono = self.myProductModel.productno;
+        [GroupBuyMananger singleton].travelgoods.groupBuyParams.para9 = model.code;
+        [GroupBuyMananger singleton].travelgoods.groupBuyParams.intresult = [NSString stringWithFormat:@"%ld",num];
+        [[GroupBuyMananger singleton] backToGroupBuyWithProName:self.myProductModel.proname];
+        
+    }else
+    {
+        ConfirmBillVC *bill=[[ConfirmBillVC alloc]init];
+        model.nums = [NSString stringWithFormat:@"%ld",num];
+        bill.billData=@[model];
+        float sum = [model.saleprice1 floatValue] * num;
+        bill.totalPrice=[NSString stringWithFormat:@"%.3f",sum];
+        bill.blresult=false;
+        bill.state = 1;
+        [self.navigationController pushViewController:bill animated:YES];
+    }
+   
 }
 
 

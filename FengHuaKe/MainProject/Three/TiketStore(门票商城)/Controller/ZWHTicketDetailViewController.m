@@ -315,6 +315,10 @@
 -(void)payNow:(QMUIButton *)btn{
     ZWHSecondDetailTableViewCell *cell = [_ticketTable cellForRowAtIndexPath:btn.syindexPath];
     ZWHTicketBillViewController *vc=[[ZWHTicketBillViewController alloc]init];
+    if ([GroupBuyMananger singleton].isGroupStyle) {
+        vc.proname = _model.proname;
+        [GroupBuyMananger singleton].ticket.commonArguments.shopid = _model.shopid;
+    }
     vc.model=cell.model;
     [self.navigationController pushViewController:vc animated:YES];
 }

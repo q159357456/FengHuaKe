@@ -31,7 +31,8 @@
     _collectB.backgroundColor = [UIColor whiteColor];
     
     [_addShopCar setTitle:@"加入购物车" forState:UIControlStateNormal];
-    [_goPay setTitle:@"立即购买" forState:UIControlStateNormal];
+    NSString * title = [GroupBuyMananger singleton].isGroupStyle?@"拼单拼团":@"立即购买";
+    [_goPay setTitle:title forState:UIControlStateNormal];
     
     [_collectB setImage:[UIImage imageNamed:@"WechatIMG20"] forState:0];
 

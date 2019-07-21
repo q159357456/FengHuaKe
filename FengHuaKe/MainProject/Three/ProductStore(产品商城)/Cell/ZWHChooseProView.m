@@ -81,7 +81,8 @@
     _goPay=[[QMUIButton alloc]init];
     
     [_addShopCar setTitle:@"加入购物车" forState:UIControlStateNormal];
-    [_goPay setTitle:@"立即购买" forState:UIControlStateNormal];
+    NSString * title = [GroupBuyMananger singleton].isGroupStyle?@"拼单拼团":@"立即购买";
+    [_goPay setTitle:title forState:UIControlStateNormal];
     
     [_addShopCar addTarget:self action:@selector(addToCarMethod) forControlEvents:UIControlEventTouchUpInside];
     [_goPay addTarget:self action:@selector(paytoMethod) forControlEvents:UIControlEventTouchUpInside];

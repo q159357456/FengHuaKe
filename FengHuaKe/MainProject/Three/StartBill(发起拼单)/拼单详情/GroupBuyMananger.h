@@ -21,12 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)GroupBuyClassify * repast;
 @property(nonatomic,strong)GroupBuyClassify * travelgoods;
 -(void)po_GroupBuyIdentify:(NSString*)identify;
--(void)backToGroupBuy;
+-(void)backToGroupBuyWithProName:(NSString*)proName;
 @end
 
 @interface GroupBuyClassify :NSObject
 @property(nonatomic,strong)CommonArguments *commonArguments;
 @property(nonatomic,strong)GroupBuyParams *groupBuyParams;
+@property(nonatomic,copy)NSString * proName;
 @end
 
 @interface CommonArguments : NSObject

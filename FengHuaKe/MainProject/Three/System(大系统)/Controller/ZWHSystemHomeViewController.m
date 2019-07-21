@@ -575,7 +575,9 @@
             break;
         case 4:
         {
-            [self canshow];
+//            [self canshow];
+            RentCarViewController *vc = [[RentCarViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 5:

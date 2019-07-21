@@ -157,7 +157,8 @@
     _sumPrice.backgroundColor=[UIColor whiteColor];
     [self.view addSubview:_sumPrice];
     UIButton *button2=[[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth*0.4,self.view.height-64-50, ScreenWidth*0.6, 50)];
-    [button2 setTitle:@"提交订单" forState:0];
+    NSString * title = [GroupBuyMananger singleton].isGroupStyle?@"拼单拼团":@"提交订单";
+    [button2 setTitle:title forState:0];
     button2.backgroundColor=MainColor;
     [self.view addSubview:button2];
     [_sumPrice mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -306,7 +307,22 @@
         [self showHint:@"手机号不合法"];
         return;
     }
-    
+    if ([GroupBuyMananger singleton].isGroupStyle) {
+        [GroupBuyMananger singleton].hotel.commonArguments.shopid = self.model.shopid;
+        [GroupBuyMananger singleton].hotel.commonArguments.prono = self.model.productno;
+        [GroupBuyMananger singleton].hotel.groupBuyParams.para9 = self.roomModel.code;
+        [GroupBuyMananger singleton].hotel.groupBuyParams.para1 = _manName;
+        [GroupBuyMananger singleton].hotel.groupBuyParams.para2 = _manPhone;
+        [GroupBuyMananger singleton].hotel.groupBuyParams.para4 = _remark;
+        [GroupBuyMananger singleton].hotel.groupBuyParams.para8 = _mantime;
+        [[GroupBuyMananger singleton] backToGroupBuyWithProName:self.roomModel.proname];
+    }else
+    {
+        [self payOrder];
+    }
+  
+}
+-(void)payOrder{
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:UniqUserID forKey:@"memberid"];
     [dict setValue:userType forKey:@"member_type"];
@@ -346,7 +362,6 @@
         [weakSelf hideHud];
     }];
 }
-
 
 //时间差
 - (NSInteger)getDifferenceByDate:(NSString *)oneday with:(NSString *)twoday {

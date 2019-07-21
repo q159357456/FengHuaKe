@@ -13,7 +13,7 @@
 
 
 @property(nonatomic,strong)TicketSubSonModel *model;
-
+@property(nonatomic,copy)NSString * proname;
 @end
 
 

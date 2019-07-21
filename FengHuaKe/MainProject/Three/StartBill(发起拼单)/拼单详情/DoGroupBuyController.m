@@ -55,6 +55,7 @@
 //@property(nonatomic,strong)GuidApplyTxtInputView * shipping_addres;
 @property(nonatomic,strong)NSArray * titles;
 @property(nonatomic,strong)UIScrollView * scro;
+@property(nonatomic,strong)GroupBuyMananger * groupBuyMananger;
 @end
 
 @implementation DoGroupBuyController
@@ -65,6 +66,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _groupBuyMananger = [GroupBuyMananger singleton];
     self.view.backgroundColor = [UIColor whiteColor];
     self.titles = @[self.ptitle,self.bigClassfy,self.orderNums,self.product,self.group_end_date,self.group_result,self.describ];
     [self setUI];
@@ -101,7 +103,7 @@
     if (!self.bigClassfy.tempObj) {
         [self showHint:@"请先选择大类"];
     }
-    [GroupBuyMananger singleton].isGroupStyle = YES;
+    _groupBuyMananger.isGroupStyle = YES;
     ZWHClassifyModel * model = (ZWHClassifyModel*)self.bigClassfy.tempObj;
     if ([model.module isEqualToString:@"ticket"]) {
         ZWHTiketStoreViewController *vc = [[ZWHTiketStoreViewController alloc]init];
@@ -148,15 +150,19 @@
         [formatter setDateFormat:@"yyyy-MM-dd"];
         if ([weakSelf.live_date.clickLabel isEqual:tap.view]) {
             weakSelf.live_date.clickLabel.text= [formatter stringFromDate:date];
+            weakSelf.live_date.tempObj = [formatter stringFromDate:date];
         }
         if ([weakSelf.left_date.clickLabel isEqual:tap.view]) {
             weakSelf.left_date.clickLabel.text = [formatter stringFromDate:date];
+            weakSelf.left_date.tempObj = [formatter stringFromDate:date];
         }
         if ([weakSelf.group_end_date.clickLabel isEqual:tap.view]) {
             weakSelf.group_end_date.clickLabel.text = [formatter stringFromDate:date];
+            weakSelf.group_end_date.tempObj = [formatter stringFromDate:date];
         }
         if ([weakSelf.use_date.clickLabel isEqual:tap.view]) {
             weakSelf.use_date.clickLabel.text= [formatter stringFromDate:date];
+            weakSelf.use_date.tempObj = [formatter stringFromDate:date];
         }
         
     }];
@@ -168,25 +174,126 @@
 }
 
 -(void)groupBuy:(UIButton*)btn{
+    if (!self.bigClassfy.tempObj) {
+        [self showHint:@"请选择大类"];
+        return;
+    }
+    if (!self.ptitle.outPutTxt.length) {
+        [self showHint:@"请填写标题"];
+        return;
+    }
+    if (!self.group_end_date.tempObj) {
+        [self showHint:@"请填写截止日期"];
+        return;
+    }
+    /*----------*/
+    ZWHClassifyModel * model = (ZWHClassifyModel*)self.bigClassfy.tempObj;
     if ([model.module isEqualToString:@"ticket"]) {
-        
-        [[GroupBuyMananger singleton] po_GroupBuyIdentify:@"ticket"];
+        if (!_groupBuyMananger.ticket.proName.length) {
+            [self showHint:@"选择产品"];
+            return;
+        }
+        if (!self.use_date.tempObj) {
+            [self showHint:@"选择时间"];
+            return;
+        }
+        _groupBuyMananger.ticket.commonArguments.title = self.ptitle.outPutTxt;
+        _groupBuyMananger.ticket.commonArguments.nums = self.orderNums.outPutTxt;
+        _groupBuyMananger.ticket.commonArguments.firstclassify = model.code;
+        _groupBuyMananger.ticket.commonArguments.deadline = (NSString*)self.group_end_date.tempObj;
+        _groupBuyMananger.ticket.commonArguments.remark = self.describ.textview.text;
+        _groupBuyMananger.ticket.groupBuyParams.para5 = @"tickets";
+        _groupBuyMananger.ticket.groupBuyParams.para6 = (NSString*)self.use_date.tempObj;
+        _groupBuyMananger.ticket.groupBuyParams.blresult = self.group_result.selctIndex==0?@"true":@"false";
+        [_groupBuyMananger po_GroupBuyIdentify:@"ticket"];
     }
     
+    /*----------*/
     if ([model.module isEqualToString:@"hotel"]) {
-        [[GroupBuyMananger singleton] po_GroupBuyIdentify:@"hotel"];
+        if (!self.live_date.tempObj || !self.left_date.tempObj) {
+            [self showHint:@"选择时间"];
+            return;
+        }
+        if (!_groupBuyMananger.hotel.proName.length) {
+            [self showHint:@"选择产品"];
+            return;
+        }
+        _groupBuyMananger.hotel.commonArguments.title = self.ptitle.outPutTxt;
+        _groupBuyMananger.hotel.commonArguments.nums = self.orderNums.outPutTxt;
+        _groupBuyMananger.hotel.commonArguments.firstclassify = model.code;
+        _groupBuyMananger.hotel.commonArguments.deadline = (NSString*)self.group_end_date.tempObj;
+        _groupBuyMananger.hotel.commonArguments.remark = self.describ.textview.text;
+        _groupBuyMananger.hotel.groupBuyParams.para5 = @"hotel";
+        _groupBuyMananger.hotel.groupBuyParams.blresult = self.group_result.selctIndex==0?@"true":@"false";
+        _groupBuyMananger.hotel.groupBuyParams.para6 = (NSString*)self.live_date.tempObj;
+        _groupBuyMananger.hotel.groupBuyParams.para7 = (NSString*)self.left_date.tempObj;
+        _groupBuyMananger.hotel.groupBuyParams.intresult = @"1";
+        [_groupBuyMananger po_GroupBuyIdentify:@"hotel"];
     }
     
+    /*----------*/
     if ([model.module isEqualToString:@"travelspec"]) {
-        [[GroupBuyMananger singleton] po_GroupBuyIdentify:@"travelspec"];
+        if (!self.shipping_addres.tempObj) {
+            [self showHint:@"选择收货地址"];
+        }
+        if (!_groupBuyMananger.travelgoods.proName.length) {
+            [self showHint:@"选择产品"];
+            return;
+        }
+        _groupBuyMananger.travelgoods.commonArguments.title = self.ptitle.outPutTxt;
+        _groupBuyMananger.travelgoods.commonArguments.nums = self.orderNums.outPutTxt;
+        _groupBuyMananger.travelgoods.commonArguments.firstclassify = model.code;
+        _groupBuyMananger.travelgoods.commonArguments.deadline = (NSString*)self.group_end_date.tempObj;
+        _groupBuyMananger.travelgoods.commonArguments.remark = self.describ.textview.text;
+        _groupBuyMananger.travelgoods.groupBuyParams.para5 = @"store";
+        _groupBuyMananger.travelgoods.groupBuyParams.blresult = self.group_result.selctIndex==0?@"true":@"false";
+        AdressListModel * model = (AdressListModel*)self.shipping_addres.tempObj;
+        _groupBuyMananger.travelgoods.groupBuyParams.para3 = model.Code;;
+        [_groupBuyMananger po_GroupBuyIdentify:@"travelgoods"];
     }
     
+    /*----------*/
     if ([model.module isEqualToString:@"repast"]) {
-        [[GroupBuyMananger singleton] po_GroupBuyIdentify:@"repast"];
+        if (!self.use_date.tempObj || !self.group_end_date.tempObj) {
+            [self showHint:@"选择时间"];
+            return;
+        }
+        if (!_groupBuyMananger.repast.proName.length) {
+            [self showHint:@"选择产品"];
+            return;
+        }
+        _groupBuyMananger.repast.commonArguments.title = self.ptitle.outPutTxt;
+        _groupBuyMananger.repast.commonArguments.nums = self.orderNums.outPutTxt;
+        _groupBuyMananger.repast.commonArguments.firstclassify = model.code;
+        _groupBuyMananger.repast.commonArguments.deadline = (NSString*)self.group_end_date.tempObj;
+        _groupBuyMananger.repast.commonArguments.remark = self.describ.textview.text;
+        _groupBuyMananger.repast.groupBuyParams.para4 = self.use_Time.filerTitles[self.use_Time.selctIndex];
+        _groupBuyMananger.repast.groupBuyParams.para5 = @"repast";
+        _groupBuyMananger.repast.groupBuyParams.para6 = (NSString*)self.use_date.tempObj;
+        _groupBuyMananger.repast.groupBuyParams.intresult = @"1";
+        _groupBuyMananger.repast.groupBuyParams.blresult = self.group_result.selctIndex==0?@"true":@"false";
+        [_groupBuyMananger po_GroupBuyIdentify:@"repast"];
     }
     
+    /*----------*/
     if ([model.module isEqualToString:@"travelgoods"]) {
-        [[GroupBuyMananger singleton] po_GroupBuyIdentify:@"travelgoods"];
+        if (!self.shipping_addres.tempObj) {
+            [self showHint:@"选择收货地址"];
+        }
+        if (!_groupBuyMananger.travelgoods.proName.length) {
+            [self showHint:@"选择产品"];
+            return;
+        }
+        _groupBuyMananger.travelgoods.commonArguments.title = self.ptitle.outPutTxt;
+        _groupBuyMananger.travelgoods.commonArguments.nums = self.orderNums.outPutTxt;
+        _groupBuyMananger.travelgoods.commonArguments.firstclassify = model.code;
+        _groupBuyMananger.travelgoods.commonArguments.deadline = (NSString*)self.group_end_date.tempObj;
+        _groupBuyMananger.travelgoods.commonArguments.remark = self.describ.textview.text;
+        _groupBuyMananger.travelgoods.groupBuyParams.para5 = @"store";
+        _groupBuyMananger.travelgoods.groupBuyParams.blresult = self.group_result.selctIndex==0?@"true":@"false";
+        AdressListModel * model = (AdressListModel*)self.shipping_addres.tempObj;
+        _groupBuyMananger.travelgoods.groupBuyParams.para3 = model.Code;;
+        [_groupBuyMananger po_GroupBuyIdentify:@"travelgoods"];
     }
 }
 
@@ -201,26 +308,33 @@
         if ([model.module isEqualToString:@"ticket"]) {
             self.titles = @[self.ptitle,self.bigClassfy,self.orderNums,self.product,self.use_date,self.group_end_date,self.group_result,self.describ];
             [self setUI];
+            self.product.clickLabel.text = _groupBuyMananger.ticket.proName?:@"请选择产品";
+           
         }
         
         if ([model.module isEqualToString:@"hotel"]) {
             self.titles = @[self.ptitle,self.bigClassfy,self.orderNums,self.product,self.live_date,self.left_date,self.group_end_date,self.group_result,self.describ];
             [self setUI];
+            self.product.clickLabel.text = _groupBuyMananger.hotel.proName?:@"请选择产品";
+            
         }
         
         if ([model.module isEqualToString:@"travelspec"]) {
             self.titles = @[self.ptitle,self.bigClassfy,self.orderNums,self.product,self.shipping_addres,self.group_end_date,self.group_result,self.describ];
             [self setUI];
+            self.product.clickLabel.text = _groupBuyMananger.travelspec.proName?:@"请选择产品";
         }
         
         if ([model.module isEqualToString:@"repast"]) {
             self.titles = @[self.ptitle,self.bigClassfy,self.orderNums,self.product,self.use_date,self.group_end_date,self.use_Time,self.group_result,self.describ];
             [self setUI];
+            self.product.clickLabel.text = _groupBuyMananger.repast.proName?:@"请选择产品";
         }
         
         if ([model.module isEqualToString:@"travelgoods"]) {
             self.titles = @[self.ptitle,self.bigClassfy,self.orderNums,self.product,self.shipping_addres,self.group_end_date,self.group_result,self.describ];
             [self setUI];
+            self.product.clickLabel.text = _groupBuyMananger.travelgoods.proName?:@"请选择产品";
         }
         
     }
@@ -331,8 +445,6 @@
         _describ = [[GuidApplyTextView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, WIDTH_PRO(150)) ];
         //文字介绍
         _describ.label.text = @"文字介绍";
-//        _describ.textview.qmui_borderColor = [UIColor lightGrayColor];
-//        _describ.textview.qmui_borderWidth = 1;
         _describ.textview.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
         _describ.textview.layer.borderWidth = 1.0f;
         
@@ -413,6 +525,33 @@
     }
     return _use_Time;
 }
+
+-(void)setProductInfo:(NSString *)proName
+{
+    self.product.clickLabel.text = proName;
+    ZWHClassifyModel * model = (ZWHClassifyModel*)self.bigClassfy.tempObj;
+    if ([model.module isEqualToString:@"ticket"]) {
+        _groupBuyMananger.ticket.proName = proName;
+    }
+    
+    if ([model.module isEqualToString:@"hotel"]) {
+        _groupBuyMananger.hotel.proName = proName;
+    }
+    
+    if ([model.module isEqualToString:@"travelspec"]) {
+        _groupBuyMananger.travelspec.proName = proName;
+    }
+    
+    if ([model.module isEqualToString:@"repast"]) {
+      
+       _groupBuyMananger.repast.proName = proName;
+    }
+    
+    if ([model.module isEqualToString:@"travelgoods"]) {
+        _groupBuyMananger.travelgoods.proName = proName;
+    }
+}
+
 
 
 /*

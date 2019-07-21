@@ -216,92 +216,110 @@
 }
 
 -(void)bottomView{
-    UIView * bottom = [[UIView alloc]init];
-    bottom.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:bottom];
-    UIView * view1 = [[UIView alloc]init];
-    UIView * view2 = [[UIView alloc]init];
-    UIView * view3 = [[UIView alloc]init];
-    [bottom addSubview:view1];
-    [bottom addSubview:view2];
-    [bottom addSubview:view3];
-    
-    view1.backgroundColor = [UIColor whiteColor];
-    view2.backgroundColor = A_COLOR_STRING(0x4BA4FF, 0.9);
-    view3.backgroundColor = MainColor;
-    
-    [bottom mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, 50*MULPITLE));
-        make.left.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.view);
-    }];
-    
-    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH/3, 50*MULPITLE));
-        make.left.mas_equalTo(bottom);
-        make.bottom.mas_equalTo(bottom);
-    }];
-    
-    [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH/3, 50*MULPITLE));
-        make.left.mas_equalTo(view1.mas_right);
-        make.bottom.mas_equalTo(bottom);
+    if ([GroupBuyMananger singleton].isGroupStyle)
+    {
+        UIButton * btn = [[UIButton alloc]init];
+        btn.backgroundColor = MainColor;
+        [btn setTitle:@"拼单拼团" forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(groupBuy:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:btn];
+        [self.view bringSubviewToFront:btn];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(self.view);
+            make.left.mas_equalTo(self.view);
+            make.right.mas_equalTo(self.view);
+            make.height.mas_equalTo(50*MULPITLE);
+        }];
+    }else
+    {
+        UIView * bottom = [[UIView alloc]init];
+        bottom.backgroundColor = [UIColor whiteColor];
+        [self.view addSubview:bottom];
+        UIView * view1 = [[UIView alloc]init];
+        UIView * view2 = [[UIView alloc]init];
+        UIView * view3 = [[UIView alloc]init];
+        [bottom addSubview:view1];
+        [bottom addSubview:view2];
+        [bottom addSubview:view3];
         
-    }];
-    
-    
-    [view3 mas_makeConstraints:^(MASConstraintMaker *make) {
-     
-        make.left.mas_equalTo(view2.mas_right);
-        make.bottom.mas_equalTo(bottom);
-        make.right.mas_equalTo(bottom);
-        make.top.mas_equalTo(bottom);
-    }];
-    
-    UIButton *v1_btn = [[UIButton alloc]init];
-//    v1_btn.backgroundColor = [UIColor redColor];
-    [view1 addSubview:v1_btn];
-    [v1_btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(view1);
-        make.left.mas_equalTo(view1).offset(10*MULPITLE);
-        make.size.mas_equalTo(CGSizeMake(30*MULPITLE, 30*MULPITLE));
-    }];
-    [v1_btn setImage:[UIImage imageNamed:@"cooking_1"] forState:UIControlStateNormal];
-    [v1_btn setImage:[UIImage imageNamed:@"cooking_2"] forState:UIControlStateSelected];
-    
-    UIButton *v2_btn = [[UIButton alloc]init];
-    [v2_btn setTitle:@"下单" forState:UIControlStateNormal];
-    [view2 addSubview:v2_btn];
-    [v2_btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0 ));
-    }];
-    
-    UIButton *v3_btn = [[UIButton alloc]init];
-    [v3_btn setTitle:@"去支付" forState:UIControlStateNormal];
-    [view3 addSubview:v3_btn];
-    [v3_btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0 ));
-    }];
-    
-    [v1_btn addTarget:self action:@selector(collet:) forControlEvents:UIControlEventTouchUpInside];
-    [v2_btn addTarget:self action:@selector(bill:) forControlEvents:UIControlEventTouchUpInside];
-    [v3_btn addTarget:self action:@selector(pay:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.countLabel = [[UILabel alloc]init];
-    self.countLabel.font = ZWHFont(8*MULPITLE);
-    self.countLabel.textColor = [UIColor whiteColor];
-    self.countLabel.layer.cornerRadius = 9*MULPITLE;
-    self.countLabel.layer.masksToBounds = YES;
-    self.countLabel.text = @"1";
-    self.countLabel.backgroundColor = [UIColor redColor];
-    self.countLabel.textAlignment = NSTextAlignmentCenter;
-    [view2 addSubview:self.countLabel];
-    [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(18*MULPITLE, 18*MULPITLE));
-        make.top.mas_equalTo(view2).offset(10*MULPITLE);
-        make.left.mas_equalTo(view2).offset(SCREEN_WIDTH/6+20*MULPITLE);
-    }];
-    self.countLabel.hidden = YES;
+        view1.backgroundColor = [UIColor whiteColor];
+        view2.backgroundColor = A_COLOR_STRING(0x4BA4FF, 0.9);
+        view3.backgroundColor = MainColor;
+        
+        [bottom mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, 50*MULPITLE));
+            make.left.mas_equalTo(self.view);
+            make.bottom.mas_equalTo(self.view);
+        }];
+        
+        [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH/3, 50*MULPITLE));
+            make.left.mas_equalTo(bottom);
+            make.bottom.mas_equalTo(bottom);
+        }];
+        
+        [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH/3, 50*MULPITLE));
+            make.left.mas_equalTo(view1.mas_right);
+            make.bottom.mas_equalTo(bottom);
+            
+        }];
+        
+        
+        [view3 mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.mas_equalTo(view2.mas_right);
+            make.bottom.mas_equalTo(bottom);
+            make.right.mas_equalTo(bottom);
+            make.top.mas_equalTo(bottom);
+        }];
+        
+        UIButton *v1_btn = [[UIButton alloc]init];
+        //    v1_btn.backgroundColor = [UIColor redColor];
+        [view1 addSubview:v1_btn];
+        [v1_btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.mas_equalTo(view1);
+            make.left.mas_equalTo(view1).offset(10*MULPITLE);
+            make.size.mas_equalTo(CGSizeMake(30*MULPITLE, 30*MULPITLE));
+        }];
+        [v1_btn setImage:[UIImage imageNamed:@"cooking_1"] forState:UIControlStateNormal];
+        [v1_btn setImage:[UIImage imageNamed:@"cooking_2"] forState:UIControlStateSelected];
+        
+        UIButton *v2_btn = [[UIButton alloc]init];
+        [v2_btn setTitle:@"下单" forState:UIControlStateNormal];
+        [view2 addSubview:v2_btn];
+        [v2_btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0 ));
+        }];
+        
+        UIButton *v3_btn = [[UIButton alloc]init];
+        [v3_btn setTitle:@"去支付" forState:UIControlStateNormal];
+        [view3 addSubview:v3_btn];
+        [v3_btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0 ));
+        }];
+        
+        [v1_btn addTarget:self action:@selector(collet:) forControlEvents:UIControlEventTouchUpInside];
+        [v2_btn addTarget:self action:@selector(bill:) forControlEvents:UIControlEventTouchUpInside];
+        [v3_btn addTarget:self action:@selector(pay:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.countLabel = [[UILabel alloc]init];
+        self.countLabel.font = ZWHFont(8*MULPITLE);
+        self.countLabel.textColor = [UIColor whiteColor];
+        self.countLabel.layer.cornerRadius = 9*MULPITLE;
+        self.countLabel.layer.masksToBounds = YES;
+        self.countLabel.text = @"1";
+        self.countLabel.backgroundColor = [UIColor redColor];
+        self.countLabel.textAlignment = NSTextAlignmentCenter;
+        [view2 addSubview:self.countLabel];
+        [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(18*MULPITLE, 18*MULPITLE));
+            make.top.mas_equalTo(view2).offset(10*MULPITLE);
+            make.left.mas_equalTo(view2).offset(SCREEN_WIDTH/6+20*MULPITLE);
+        }];
+        self.countLabel.hidden = YES;
+    }
+  
 }
 -(void)collet:(UIButton*)btn{
     btn.selected = !btn.selected;
@@ -356,6 +374,12 @@
     [attStr addAttribute:NSParagraphStyleAttributeName value:para range:NSMakeRange(0, attStr.length)];
     return attStr;
 }
+-(void)groupBuy:(UIButton*)btn{
+    [GroupBuyMananger singleton].repast.commonArguments.shopid = self.pmodel.shopid;
+    [GroupBuyMananger singleton].repast.commonArguments.prono = self.pmodel.productno;
+    [GroupBuyMananger singleton].repast.groupBuyParams.para9 = self.cmodel.code;
+    [[GroupBuyMananger singleton] backToGroupBuyWithProName:self.pmodel.proname];
+}
 /*
 #pragma mark - Navigation
 
@@ -365,5 +389,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

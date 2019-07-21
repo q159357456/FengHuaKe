@@ -301,6 +301,22 @@
         return;
     }
     
+    if ([GroupBuyMananger singleton].isGroupStyle) {
+        [GroupBuyMananger singleton].ticket.commonArguments.prono = _model.prono;
+        [GroupBuyMananger singleton].ticket.groupBuyParams.para9 = _model.code;
+        [GroupBuyMananger singleton].ticket.groupBuyParams.intresult = self.payNum.text;
+        [GroupBuyMananger singleton].ticket.groupBuyParams.para1 = _nameF.text;
+        [GroupBuyMananger singleton].ticket.groupBuyParams.para2 = _phoneF.text;
+        [[GroupBuyMananger singleton] backToGroupBuyWithProName:self.proname];
+        
+    }else
+    {
+        [self toPay];
+    }
+ 
+}
+
+-(void)toPay{
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:UniqUserID forKey:@"memberid"];
     [dict setValue:userType forKey:@"member_type"];
@@ -338,8 +354,6 @@
         
     }];
 }
-
-
 #pragma mark - uicollectionviewdelegate
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return _dataArray.count;
@@ -411,7 +425,8 @@
     [self.view addSubview:_sumPrice];
     
     UIButton *button2=[[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth*0.4,self.view.height-64-50, ScreenWidth*0.6, 50)];
-    [button2 setTitle:@"立即购买" forState:0];
+    NSString * title = [GroupBuyMananger singleton].isGroupStyle?@"拼单拼团":@"立即购买";
+    [button2 setTitle:title forState:0];
     button2.backgroundColor=MainColor;
     [self.view addSubview:button2];
     [_sumPrice mas_makeConstraints:^(MASConstraintMaker *make) {

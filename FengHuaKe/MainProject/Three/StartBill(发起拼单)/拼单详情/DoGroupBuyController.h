@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DoGroupBuyController : ZWHBaseViewController
-
+-(void)setProductInfo:(NSString*)proName;
 @end
 
 NS_ASSUME_NONNULL_END

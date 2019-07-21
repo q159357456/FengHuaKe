@@ -247,29 +247,8 @@
 }
 
 -(void)pay:(UIButton*)btn{
-    if ([GroupBuyMananger singleton].isGroupStyle) {
-        NSString * mark ;
-        if (self.selctIndex-100 == 0) {
-            mark = @"早";
-        }else if (self.selctIndex-100 == 1)
-        {
-            mark = @"中";
-        }else
-        {
-            mark = @"晚";
-        }
-        [GroupBuyMananger singleton].repast.commonArguments.shopid = self.pmodel.shopid;
-        [GroupBuyMananger singleton].repast.commonArguments.prono = self.pmodel.productno;
-        [GroupBuyMananger singleton].repast.groupBuyParams.intresult = [NSString stringWithFormat:@"%ld",self.pcount];
-        [GroupBuyMananger singleton].repast.groupBuyParams.para4 = mark;
-        [GroupBuyMananger singleton].repast.groupBuyParams.para9 = self.cmodel.code;
-        
-    }else
-    {
-        [self payOrder];
-    }
-  
-    
+   
+    [self payOrder];
     
 }
 -(void)payOrder{
