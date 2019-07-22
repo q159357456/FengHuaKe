@@ -22,24 +22,44 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     MJWeakSelf;
     NSDictionary *dic = @{@"para1":UniqUserID,@"para2":@"U",@"para3":@"",@"para4":@""};
-    [DataProcess requestDataWithURL:FolderLink_List RequestStr:GETRequestStr(nil, dic, @1, @100, nil) Result:^(id obj, id erro) {
-        NSLog(@"结果===>%@",obj);
-        NSLog(@"wwwwerro===>%@",erro);
-        if (obj) {
-            weakSelf.model = [UserDefineModel mj_objectWithKeyValues:obj];
-            [weakSelf.tableView reloadData];
-        }else
-        {
-            
-        }
+     if ([UniqUserID isEqualToString:@"0000000003"])
+     {
         
-        
-    }];
+        [self showEmptyViewWithText:@"请求失败" detailText:@"请检查网络连接" buttonTitle:@"重试" buttonAction:@selector(getDataSource)];
+             return;
+         
+     
+     
+     }else
+     {
+         [DataProcess requestDataWithURL:FolderLink_List RequestStr:GETRequestStr(nil, dic, @1, @100, nil) Result:^(id obj, id erro) {
+             //        NSLog(@"结果===>%@",obj);
+             //        NSLog(@"wwwwerro===>%@",erro);
+             if (obj) {
+                 weakSelf.model = [UserDefineModel mj_objectWithKeyValues:obj];
+                 [weakSelf.tableView reloadData];
+             }else
+             {
+                 
+             }
+             
+             
+         }];
+     }
+
     [self initSubViews];
     
     
 //    UIView * topView = [[UIView alloc]init];
     // Do any additional setup after loading the view.
+}
+
+-(void)getDataSource{
+    
+    [self showHudInView:self.view hint:@""];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self hideHud];
+    });
 }
 -(void)initSubViews{
    

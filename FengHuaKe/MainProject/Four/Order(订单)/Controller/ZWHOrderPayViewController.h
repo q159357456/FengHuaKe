@@ -13,7 +13,7 @@
 @interface ZWHOrderPayViewController : ZWHBaseViewController
 
 
-//0订单进入 1立即下单  2购物车下单 3保险 4门票 5酒店 6旅游 7会员升级 8美食美味
+//0订单进入 1立即下单  2购物车下单 3保险 4门票 5酒店 6旅游 7会员升级 8美食美味 9拼单
 @property(nonatomic,assign)NSInteger state;
 
 @property(nonatomic,strong)NSArray *orderModelList;

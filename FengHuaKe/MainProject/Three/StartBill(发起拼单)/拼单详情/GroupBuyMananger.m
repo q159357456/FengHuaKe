@@ -8,6 +8,8 @@
 
 #import "GroupBuyMananger.h"
 #import "DoGroupBuyController.h"
+#import "ZWHOrderModel.h"
+#import "ZWHOrderPayViewController.h"
 static GroupBuyMananger *groupBuyMananger = nil;
 @implementation GroupBuyMananger
 + (instancetype)singleton
@@ -107,10 +109,17 @@ static GroupBuyMananger *groupBuyMananger = nil;
     [DataProcess requestDataWithURL:PO_GroupBuy RequestStr:GETRequestStr(@[datalistDic], system, nil, nil, nil) Result:^(id obj, id erro) {
             NSLog(@"obj===>%@",obj);
             NSLog(@"erro===>%@",erro);
-            if (obj) {
-                [SVProgressHUD showSuccessWithStatus:@"拼单成功!"];
+            if (ReturnValue) {
+//                [SVProgressHUD showSuccessWithStatus:@"拼单成功!"];
                 UIViewController * current = [[DataProcess shareInstance] getCurrentVC];
-                [current.navigationController popViewControllerAnimated:YES];
+//                [current.navigationController popViewControllerAnimated:YES];
+                NSDictionary *dict = obj[@"DataList"][0];
+                [ZWHOrderModel mj_objectClassInArray];
+                ZWHOrderModel *model = [ZWHOrderModel mj_objectWithKeyValues:dict];
+                ZWHOrderPayViewController *vc = [[ZWHOrderPayViewController alloc]init];
+                vc.state = 9;
+                vc.orderModelList = @[model];
+                [current.navigationController pushViewController:vc animated:YES];
                 
             }else
             {

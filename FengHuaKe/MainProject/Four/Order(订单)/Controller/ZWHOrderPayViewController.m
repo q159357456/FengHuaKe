@@ -15,7 +15,7 @@
 #import "ZWHTiketStoreViewController.h"
 #import "ZWHHotelDetailViewController.h"
 #import "ZWHVacationListViewController.h"
-
+#import "StartTogetherBillController.h"
 @interface ZWHOrderPayViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *payTable;
@@ -280,6 +280,16 @@
                 break;
             case 8://美食美味
             {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+                break;
+            case 9://拼单
+            {
+                for (UIViewController *vc in self.navigationController.childViewControllers) {
+                    if ([vc isKindOfClass:[StartTogetherBillController class]]) {
+                        [self.navigationController popToViewController:vc animated:YES];
+                    }
+                }
                 [self.navigationController popViewControllerAnimated:YES];
             }
                 break;

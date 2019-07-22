@@ -79,7 +79,7 @@
     for (NSInteger i=0; i<5; i++) {
          NSInteger temp = 100+i;
         UIImageView * imageview = [self viewWithTag:temp];
-        if (i>model.grade)
+        if (i>=model.grade)
         {
             imageview.image = [UIImage imageNamed:@"cooking_1"];
             

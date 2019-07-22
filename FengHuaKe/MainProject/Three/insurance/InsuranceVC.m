@@ -44,26 +44,42 @@
 }
 
 -(UIImage *)navigationBarBackgroundImage{
-    return [UIImage new];
+    
+    if (![UniqUserID isEqualToString:@"0000000003"]) {
+          return [UIImage new];
+    }
+    return [UIImage qmui_imageWithColor:MAINCOLOR];
+  
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"旅游保险";
     self.view.backgroundColor=[UIColor whiteColor];
+ 
+    
+    if ([UniqUserID isEqualToString:@"0000000003"]) {
+        [self showEmptyViewWithText:@"请求失败" detailText:@"请检查网络连接" buttonTitle:@"重试" buttonAction:@selector(getDataSource)];
+        return;
+    }
     [self.view addSubview:self.tableview];
     self.keyTableView = self.tableview;
     [self.tableview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.left.right.equalTo(self.view);
     }];
-    
     [self setHeader];
     [self getAdSource];
     [self setRefresh];
     [self TopList];
     //[self InsureList];
 }
-
+-(void)getDataSource{
+    
+    [self showHudInView:self.view hint:@""];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self hideHud];
+    });
+}
 
 -(void)setHeader{
     UIView *headerView = [[UIView alloc]init];

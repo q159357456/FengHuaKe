@@ -274,9 +274,11 @@
         NSArray *productArr = @[@{@"product":self.pmodel.productno,@"prospec":self.cmodel.code,@"nums":@(self.pcount)}];
         [dict setObject:productArr forKey:@"product"];
         DefineWeakSelf;
+        [self showHudInView:self.view hint:@""];
         [DataProcess requestDataWithURL:PO_Create RequestStr:GETRequestStr(@[dict], nil, nil, nil, nil) Result:^(id obj, id erro) {
-            NSLog(@"obj===>%@",obj);
-            NSLog(@"erro==>%@",erro);
+            [weakSelf hideHud];
+//            NSLog(@"obj===>%@",obj);
+//            NSLog(@"erro==>%@",erro);
             if (ReturnValue==1) {
                 NSDictionary *dict = obj[@"DataList"][0];
                 [ZWHOrderModel mj_objectClassInArray];

@@ -27,7 +27,7 @@
     NSDictionary * sysmodel = @{@"intresult":@"1",@"para1":self.shopid,@"para2":@"",@"para3":@"",@"para4":@"",@"para5":@"MS001",@"para6":MEMBERTYPE};
     DefineWeakSelf;
     [DataProcess requestDataWithURL:Cate_ProList RequestStr:GETRequestStr(nil, sysmodel, @1, @100, nil) Result:^(id obj, id erro) {
-        NSLog(@"SingleProbj===>%@",obj);
+//        NSLog(@"SingleProbj===>%@",obj);
         NSArray * array = (NSArray*) [HttpTool getDictWithData:obj[@"sysmodel"][@"strresult"]];
         weakSelf.dataArr = [ProductModel mj_objectArrayWithKeyValuesArray:array];
         [weakSelf.tableView reloadData];

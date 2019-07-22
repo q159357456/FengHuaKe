@@ -28,7 +28,7 @@
     DefineWeakSelf;
     NSDictionary * sysmodel = @{@"para1":self.proId,@"para2":UniqUserID,@"para3":MEMBERTYPE};
     [DataProcess requestDataWithURL:Cate_SinglePro RequestStr:GETRequestStr(nil, sysmodel, nil, nil, nil) Result:^(id obj, id erro) {
-        NSLog(@"SingleProobj===>%@",obj);
+//        NSLog(@"Cate_SinglePro===>%@",obj);
         if (obj[@"DataList"]) {
             weakSelf.cmodel = [CookingDetailModel mj_objectWithKeyValues:obj[@"DataList"][0]];
             NSArray * array1 = (NSArray*)[HttpTool getDictWithData:obj[@"sysmodel"][@"para1"]];

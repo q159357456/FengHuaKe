@@ -18,6 +18,7 @@
 @property(nonatomic,strong)GuidApplyTxtInputView *ruZhu_leave;
 @property(nonatomic,strong)GuidApplyTxtInputView *ruZhu_end;
 @property(nonatomic,strong)GuidApplyTextView *shuoMing;
+@property(nonatomic,strong)NSArray * titles;
 @end
 
 @implementation GroupByOrderController
@@ -25,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.titles = @[self.ptitle,self.orderNums,self.buyer,self.ruZhu_start,self.ruZhu_leave,self.ruZhu_end,self.shuoMing];
     [self setUI];
     //
 
@@ -40,7 +42,7 @@
     GuidApplyBaseView * head = [[GuidApplyBaseView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(imageV.frame), SCREEN_WIDTH, WIDTH_PRO(40))];
     head.label.text = self.bmodel.proname;
     [scro addSubview:head];
-    NSArray * array = @[self.ptitle,self.orderNums,self.buyer,self.ruZhu_start,self.ruZhu_leave,self.ruZhu_end,self.shuoMing];
+    NSArray * array = self.titles;
     UIView * last = head;
     for (NSInteger i = 0; i<array.count; i++) {
         UIView * view = array[i];
